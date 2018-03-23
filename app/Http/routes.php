@@ -3,9 +3,8 @@
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
-Route::get('/',function(){
-    return view('index.index');
-});
+Route::get('/','IndexController@index');
+Route::get('index','IndexController@index');
 Route::resource('posts', 'PostController');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
