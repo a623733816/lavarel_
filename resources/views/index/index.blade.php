@@ -15,45 +15,45 @@
           content="广州设计公司,设计公司,餐饮品牌策划公司,vi设计公司,标志设计公司,包装设计公司,商标设计公司,logo设计公司,品牌设计公司,广州标志设计公司,广州包装设计公司,广州VI设计公司,广州商标设计公司,广州logo设计公司"/>
     <meta name="searchtitle"
           content="广州设计公司,设计公司,vi设计公司,品牌设计公司,标志设计公司,包装设计公司,商标设计公司,logo设计公司,广州logo设计公司,广州标志设计公司,广州包装设计公司,广州VI设计公司,广州标志设计,广州包装设计,广州商标设计,广州VI设计"/>
-    <link href="/Public/images/favicon.ico" rel="shortcut icon"/>
-    <link rel="stylesheet" type="text/css" href="css/font.css"/>
-    <link rel="stylesheet" type="text/css" href="css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <link href="{{URL::asset('assets/images/images/favicon.ico')}}" rel="shortcut icon"/>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/font.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/base.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/index.css')}}"/>
+    <script src="{{URL::asset('assets/js/newWeb/jquery-1.11.0.min.js')}}"></script>
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script><![endif]-->
-    <script charset="utf-8" src="other/wpa.php"></script>
+    <script src="{{URL::asset('assets/js/newWeb/html5shiv.min.js')}}"></script>
+    <script src="{{URL::asset('assets/js/newWeb/respond.min.js')}}"></script><![endif]-->
+    <script charset="utf-8" src="{{URL::asset('assets/other/wpa.php')}}"></script>
 </head>
 <body>
 <!-- header -->
 <div class="header">
-    <a href="/index.html"><img class="logo1" src="images/logo.jpg" title="赤风品牌策划与设计"/></a>
-    <img class="navBtn" src="images/navBtn.png" title="点我!点我!"/>
+    <a href="/index.html"><img class="logo1" src="{{URL::asset('assets/images/images/logo.jpg')}}" title="赤风品牌策划与设计"/></a>
+    <img class="navBtn" src="{{URL::asset('assets/images/images/navBtn.png')}}" title="点我!点我!"/>
     <div class="container">
         <ul class="nav">
-            <a href="./index.html">
+            <a href="{{URL::asset('index.html')}}">
                 <li class="on">首页</li>
             </a>
-            <a href="./superiority.html">
+            <a href="{{URL::asset('superiority.html')}}">
                 <li>国家品牌智库</li>
             </a>
-            <a href="./project.html">
+            <a href="{{URL::asset('project.html')}}">
                 <li>评审标准</li>
             </a>
-            <a href="./project.html">
+            <a href="{{URL::asset('project.html')}}">
                 <li>申报流程</li>
             </a>
-            <a href="./redwind.html">
+            <a href="{{URL::asset('redwind.html')}}">
                 <li>申报表索取</li>
             </a>
-            <a href="./news.html">
+            <a href="{{URL::asset('news.html')}}">
                 <li>品牌明星</li>
             </a>
-            <a href="./partner.html">
+            <a href="{{URL::asset('partner.html')}}">
                 <li>品牌总裁</li>
             </a>
-            <a href="./contact.html">
+            <a href="{{URL::asset('contact.html')}}">
                 <li>联系我们</li>
             </a>
         </ul>
@@ -84,7 +84,7 @@
             <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
         </div>
     </div>
-    <img id="listCloseBtn" src="images/closeIcon.png"/>
+    <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}"/>
 </div>
 <!-- list over -->
 <link rel="stylesheet" type="text/css" href="css/indexAnimate.css"/>
@@ -92,7 +92,7 @@
 <div class="banner">
     <div class="contents">
         <a href="/redwind.html">
-            <div class="content" style="background-image:url(Public/upload/banner/index/1483427615.jpg)">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1483427615.jpg')}})">
                 <div class="contentInfo">
                     <p class="title1">始于2001年</p>
                     <p class="title2">中国品牌设计公司50强</p>
@@ -101,7 +101,7 @@
             </div>
         </a>
         <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
-            <div class="content" style="background-image:url(Public/upload/banner/index/1461650738.jpg)">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1461650738.jpg')}})">
                 <div class="contentInfo">
                     <p class="title1">赤风品牌全案策划</p>
                     <p class="title2">净致消毒级卫生巾苏宁众筹上线</p>
@@ -110,7 +110,7 @@
             </div>
         </a>
         <a href="/project.html">
-            <div class="content" style="background-image:url(Public/upload/banner/index/1432952879.jpg)">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1432952879.jpg')}})">
                 <div class="contentInfo">
                     <p class="title1">赤风餐饮品牌策划</p>
                     <p class="title2">全城人气爆棚的粤菜主题餐厅</p>
@@ -119,7 +119,7 @@
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/143.html">
-            <div class="content" style="background-image:url(Public/upload/banner/index/1435031633.jpg)">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031633.jpg')}})">
                 <div class="contentInfo">
                     <p class="title1">佳都科技</p>
                     <p class="title2">世界级智能科技倡行者</p>
@@ -128,7 +128,7 @@
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/127.html">
-            <div class="content" style="background-image:url(/Public/upload/banner/index/1433515769.jpg)">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1433515769.jpg')}})">
                 <div class="contentInfo">
                     <p class="title1">SMART ENJOY FUTURE</p>
                     <p class="title2">鲜柚智能科技全新形象</p>
@@ -138,9 +138,9 @@
         </a>
     </div>
     <div class="bannerNav"></div>
-    <img class="bannerBtn leftBtn" onclick="bannerBtnClick('-')" src="images/bannerLeft.png"/>
-    <img class="bannerBtn rightBtn" onclick="bannerBtnClick('+')" src="images/bannerRight.png"/>
-    <img class="bannerBg" src="images/bannerBg.jpg"/>
+    <img class="bannerBtn leftBtn" onclick="bannerBtnClick('-')" src="{{URL::asset('assets/images/images/bannerLeft.png')}}"/>
+    <img class="bannerBtn rightBtn" onclick="bannerBtnClick('+')" src="{{URL::asset('assets/images/images/bannerRight.png')}}"/>
+    <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}"/>
 </div>
 <!-- banner over -->
 <!-- about -->
@@ -185,7 +185,7 @@
     <div class="content">
         <a href="/Home/Project/detail/project_id/161.html">
             <div class="child">
-                <img class="childImg" src="images/1499499098.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>VI</p>
@@ -196,13 +196,13 @@
                         <p class="title">老炮鸭</p>
                         <p class="info">重情！重义！重口味！</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/160.html">
             <div class="child">
-                <img class="childImg" src="images/1497520017.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>VI</p>
@@ -213,13 +213,13 @@
                         <p class="title">摩登猩球</p>
                         <p class="info">活泼，可爱</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/144.html">
             <div class="child">
-                <img class="childImg" src="images/1454383338.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>LOGO</p>
@@ -230,13 +230,13 @@
                         <p class="title">爱范儿</p>
                         <p class="info">连接热爱</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/143.html">
             <div class="child">
-                <img class="childImg" src="images/1454311379.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>VI</p>
@@ -247,13 +247,13 @@
                         <p class="title">佳都科技</p>
                         <p class="info">城市，慧变得更好！</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/142.html">
             <div class="child">
-                <img class="childImg" src="images/1454311843.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>VI</p>
@@ -264,13 +264,13 @@
                         <p class="title">三潮煮艺</p>
                         <p class="info">地道乡情，原生潮味</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/141.html">
             <div class="child">
-                <img class="childImg" src="images/1454381491.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -281,13 +281,13 @@
                         <p class="title">湘剧场时尚餐饮</p>
                         <p class="info">湘菜有戏，生活有味</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/151.html">
             <div class="child">
-                <img class="childImg" src="images/1471259608.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -298,13 +298,13 @@
                         <p class="title">广东道至正餐厅</p>
                         <p class="info">平实广东味道，地道广东文化</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/127.html">
             <div class="child">
-                <img class="childImg" src="images/1433514448.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>VI</p>
@@ -315,13 +315,13 @@
                         <p class="title">NPC鲜柚智能科技</p>
                         <p class="info">智享未来</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/154.html">
             <div class="child">
-                <img class="childImg" src="images/1471576431.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -332,13 +332,13 @@
                         <p class="title">老重庆饭店</p>
                         <p class="info">老子不上班也要吃酸菜鱼</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/137.html">
             <div class="child">
-                <img class="childImg" src="images/1438242091.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -349,13 +349,13 @@
                         <p class="title">LIVEON厨房用品</p>
                         <p class="info">时尚家用厨刀 美食规划专家</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/138.html">
             <div class="child">
-                <img class="childImg" src="images/1438266406.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -366,13 +366,13 @@
                         <p class="title">普罗旺斯旅游投资集团</p>
                         <p class="info">德国智慧 美丽中国</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/134.html">
             <div class="child">
-                <img class="childImg" src="images/1438093006.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -383,13 +383,13 @@
                         <p class="title">善元堂保建品</p>
                         <p class="info">中西结合更贴心</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/121.html">
             <div class="child">
-                <img class="childImg" src="images/1433309385.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -400,13 +400,13 @@
                         <p class="title">TMT计测检测</p>
                         <p class="info">厚重大气，沉稳性，严谨性</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/111.html">
             <div class="child">
-                <img class="childImg" src="images/1433310187.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -417,13 +417,13 @@
                         <p class="title">阿里棒时尚餐饮</p>
                         <p class="info">我的午餐握着吃</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
         <a href="/Home/Project/detail/project_id/140.html">
             <div class="child">
-                <img class="childImg" src="images/1438610389.jpg"/>
+                <img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>
                 <div class="childHide">
                     <div class="childTag">
                         <p>BRAND</p>
@@ -434,7 +434,7 @@
                         <p class="title">季然宁夏枸杞</p>
                         <p class="info">生活，季然这样......</p>
                     </div>
-                    <img class="childPointer" src="images/hidePointer.png"/>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                 </div>
             </div>
         </a>
@@ -456,137 +456,137 @@
             <div class="contentss">
                 <div class="content">
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/141.html"><img
-                            src="images/1461036511.jpg" alt="湘剧场" title="湘剧场"/></a>
+                            src="{{URL::asset('assets/images/images/1461036511.jpg')}}" alt="湘剧场" title="湘剧场"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/144.html"><img
-                            src="images/1461036471.jpg" alt="爱范儿" title="爱范儿"/></a>
+                            src="{{URL::asset('assets/images/images/1461036471.jpg')}}" alt="爱范儿" title="爱范儿"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/127.html"><img
-                            src="images/1460969116.jpg" alt="NPC鲜柚智能科技" title="NPC鲜柚智能科技"/></a>
+                            src="{{URL::asset('assets/images/images/1460969116.jpg')}}" alt="NPC鲜柚智能科技" title="NPC鲜柚智能科技"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/142.html"><img
-                            src="images/1461036300.jpg" alt="三潮煮艺" title="三潮煮艺"/></a>
+                            src="{{URL::asset('assets/images/images/1461036300.jpg')}}" alt="三潮煮艺" title="三潮煮艺"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/138.html"><img
-                            src="images/1461035258.jpg" alt="普罗旺斯旅游投资集团" title="普罗旺斯旅游投资集团"/></a>
+                            src="{{URL::asset('assets/images/images/1461035258.jpg')}}" alt="普罗旺斯旅游投资集团" title="普罗旺斯旅游投资集团"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/135.html"><img
-                            src="images/1461035800.jpg" alt="哈博电热水器" title="哈博电热水器"/></a>
+                            src="{{URL::asset('assets/images/images/1461035800.jpg')}}" alt="哈博电热水器" title="哈博电热水器"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/139.html"><img
-                            src="images/1461223128.jpg" alt="言采其杞" title="言采其杞"/></a>
+                            src="{{URL::asset('assets/images/images/1461223128.jpg')}}" alt="言采其杞" title="言采其杞"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/140.html"><img
-                            src="images/1461225842.jpg" alt="季然宁夏枸杞" title="季然宁夏枸杞"/></a>
-                    <a href="#"><img src="images/1461918227.jpg" alt="太禾米业" title="太禾米业"/></a>
-                    <a href="#"><img src="images/1461916826.jpg" alt="新粤交通" title="新粤交通"/></a>
+                            src="{{URL::asset('assets/images/images/1461225842.jpg')}}" alt="季然宁夏枸杞" title="季然宁夏枸杞"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461918227.jpg')}}" alt="太禾米业" title="太禾米业"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461916826.jpg')}}" alt="新粤交通" title="新粤交通"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1461918448.jpg" alt="乐天实业" title="乐天实业"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461918448.jpg')}}" alt="乐天实业" title="乐天实业"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/145.html"><img
-                            src="images/1461917219.jpg" alt="拓普莱塑胶电子" title="拓普莱塑胶电子"/></a>
+                            src="{{URL::asset('assets/images/images/1461917219.jpg')}}" alt="拓普莱塑胶电子" title="拓普莱塑胶电子"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/124.html"><img
-                            src="images/1461036399.jpg" alt="勇士安全套" title="勇士安全套"/></a>
+                            src="{{URL::asset('assets/images/images/1461036399.jpg')}}" alt="勇士安全套" title="勇士安全套"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/130.html"><img
-                            src="images/1461036140.jpg" alt="BBU邦孚" title="BBU邦孚"/></a>
+                            src="{{URL::asset('assets/images/images/1461036140.jpg')}}" alt="BBU邦孚" title="BBU邦孚"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/133.html"><img
-                            src="images/1461036020.jpg" alt="加能饮料包装设计" title="加能饮料包装设计"/></a>
+                            src="{{URL::asset('assets/images/images/1461036020.jpg')}}" alt="加能饮料包装设计" title="加能饮料包装设计"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/122.html"><img
-                            src="images/1461036046.jpg" alt="一江化工" title="一江化工"/></a>
+                            src="{{URL::asset('assets/images/images/1461036046.jpg')}}" alt="一江化工" title="一江化工"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/118.html"><img
-                            src="images/1461223453.jpg" alt="盛立皮具" title="盛立皮具"/></a>
-                    <a href="#"><img src="images/1433499509.jpg" alt="DTS" title="DTS"/></a>
-                    <a href="#"><img src="images/1433418038.jpg" alt="飞利浦" title="飞利浦"/></a>
-                    <a href="#"><img src="images/1433418044.jpg" alt="富士通" title="富士通"/></a>
+                            src="{{URL::asset('assets/images/images/1461223453.jpg')}}" alt="盛立皮具" title="盛立皮具"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433499509.jpg')}}" alt="DTS" title="DTS"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418038.jpg')}}" alt="飞利浦" title="飞利浦"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418044.jpg')}}" alt="富士通" title="富士通"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1433418051.jpg" alt="中国平安" title="中国平安"/></a>
-                    <a href="#"><img src="images/1433418060.jpg" alt="华为" title="华为"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418051.jpg')}}" alt="中国平安" title="中国平安"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418060.jpg')}}" alt="华为" title="华为"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/125.html"><img
-                            src="images/1433418068.jpg" alt="五羊母婴用品" title="五羊母婴用品"/></a>
-                    <a href="#"><img src="images/1433418075.jpg" alt="思朗" title="思朗"/></a>
+                            src="{{URL::asset('assets/images/images/1433418068.jpg')}}" alt="五羊母婴用品" title="五羊母婴用品"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418075.jpg')}}" alt="思朗" title="思朗"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/131.html"><img
-                            src="images/1433418084.jpg" alt="GOFAIR 2012" title="GOFAIR 2012"/></a>
-                    <a href="#"><img src="images/1433418093.jpg" alt="耐克" title="耐克"/></a>
-                    <a href="#"><img src="images/1433418101.jpg" alt="珍珍薯片" title="珍珍薯片"/></a>
+                            src="{{URL::asset('assets/images/images/1433418084.jpg')}}" alt="GOFAIR 2012" title="GOFAIR 2012"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418093.jpg')}}" alt="耐克" title="耐克"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418101.jpg')}}" alt="珍珍薯片" title="珍珍薯片"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/113.html"><img
-                            src="images/1433418119.jpg" alt="汉莎航空食品" title="汉莎航空食品"/></a>
-                    <a href="#"><img src="images/1433418126.jpg" alt="广东道" title="广东道"/></a>
+                            src="{{URL::asset('assets/images/images/1433418119.jpg')}}" alt="汉莎航空食品" title="汉莎航空食品"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418126.jpg')}}" alt="广东道" title="广东道"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/114.html"><img
-                            src="images/1433418131.jpg" alt="广州妇女儿童医疗中心" title="广州妇女儿童医疗中心"/></a>
+                            src="{{URL::asset('assets/images/images/1433418131.jpg')}}" alt="广州妇女儿童医疗中心" title="广州妇女儿童医疗中心"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1433418137.jpg" alt="鹰唛" title="鹰唛"/></a>
-                    <a href="#"><img src="images/1433418142.jpg" alt="致美斋" title="致美斋"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418137.jpg')}}" alt="鹰唛" title="鹰唛"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418142.jpg')}}" alt="致美斋" title="致美斋"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/143.html"><img
-                            src="images/1433418164.jpg" alt="佳都科技" title="佳都科技"/></a>
-                    <a href="#"><img src="images/1433418170.jpg" alt="双飞人" title="双飞人"/></a>
+                            src="{{URL::asset('assets/images/images/1433418164.jpg')}}" alt="佳都科技" title="佳都科技"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418170.jpg')}}" alt="双飞人" title="双飞人"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/129.html"><img
-                            src="images/1433418176.jpg" alt="UPTON上腾科技" title="UPTON上腾科技"/></a>
-                    <a href="#"><img src="images/1433418182.jpg" alt="广东交通集团" title="广东交通集团"/></a>
+                            src="{{URL::asset('assets/images/images/1433418176.jpg')}}" alt="UPTON上腾科技" title="UPTON上腾科技"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418182.jpg')}}" alt="广东交通集团" title="广东交通集团"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/134.html"><img
-                            src="images/1433418188.jpg" alt="善元堂保建品" title="善元堂保建品"/></a>
-                    <a href="#"><img src="images/1433418193.jpg" alt="金健" title="金健"/></a>
-                    <a href="#"><img src="images/1433418197.jpg" alt="渝城味都" title="渝城味都"/></a>
-                    <a href="#"><img src="images/1433418203.jpg" alt="鹰金钱" title="鹰金钱"/></a>
+                            src="{{URL::asset('assets/images/images/1433418188.jpg')}}" alt="善元堂保建品" title="善元堂保建品"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418193.jpg')}}" alt="金健" title="金健"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418197.jpg')}}" alt="渝城味都" title="渝城味都"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418203.jpg')}}" alt="鹰金钱" title="鹰金钱"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1433418208.jpg" alt="广东如春" title="广东如春"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418208.jpg')}}" alt="广东如春" title="广东如春"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/137.html"><img
-                            src="images/1433418213.jpg" alt="LIVEON厨房用品" title="LIVEON厨房用品"/></a>
-                    <a href="#"><img src="images/1433418218.jpg" alt="宏新贷款" title="宏新贷款"/></a>
-                    <a href="#"><img src="images/1433418223.jpg" alt="彩田食品" title="彩田食品"/></a>
+                            src="{{URL::asset('assets/images/images/1433418213.jpg')}}" alt="LIVEON厨房用品" title="LIVEON厨房用品"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418218.jpg')}}" alt="宏新贷款" title="宏新贷款"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418223.jpg')}}" alt="彩田食品" title="彩田食品"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/136.html"><img
-                            src="images/1433418228.jpg" alt="星星国际影城" title="星星国际影城"/></a>
-                    <a href="#"><img src="images/1433418233.jpg" alt="康贝喜" title="康贝喜"/></a>
-                    <a href="#"><img src="images/1433418238.jpg" alt="香满楼" title="香满楼"/></a>
-                    <a href="#"><img src="images/1433418242.jpg" alt="CKR" title="CKR"/></a>
+                            src="{{URL::asset('assets/images/images/1433418228.jpg')}}" alt="星星国际影城" title="星星国际影城"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418233.jpg')}}" alt="康贝喜" title="康贝喜"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418238.jpg')}}" alt="香满楼" title="香满楼"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418242.jpg')}}" alt="CKR" title="CKR"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/126.html"><img
-                            src="images/1433418248.jpg" alt="迈普再生医学科技" title="迈普再生医学科技"/></a>
-                    <a href="#"><img src="images/1433418255.jpg" alt="慈丹" title="慈丹"/></a>
+                            src="{{URL::asset('assets/images/images/1433418248.jpg')}}" alt="迈普再生医学科技" title="迈普再生医学科技"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418255.jpg')}}" alt="慈丹" title="慈丹"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1433418260.jpg" alt="嘉美博" title="嘉美博"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418260.jpg')}}" alt="嘉美博" title="嘉美博"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/128.html"><img
-                            src="images/1433418265.jpg" alt="ENPOT雄冠条码" title="ENPOT雄冠条码"/></a>
-                    <a href="#"><img src="images/1433418270.jpg" alt="环亚大通" title="环亚大通"/></a>
-                    <a href="#"><img src="images/1433418274.jpg" alt="嘉可思" title="嘉可思"/></a>
+                            src="{{URL::asset('assets/images/images/1433418265.jpg')}}" alt="ENPOT雄冠条码" title="ENPOT雄冠条码"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418270.jpg')}}" alt="环亚大通" title="环亚大通"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418274.jpg')}}" alt="嘉可思" title="嘉可思"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/123.html"><img
-                            src="images/1433418279.jpg" alt="壹号大药房" title="壹号大药房"/></a>
+                            src="{{URL::asset('assets/images/images/1433418279.jpg')}}" alt="壹号大药房" title="壹号大药房"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/110.html"><img
-                            src="images/1433418292.jpg" alt="Filo斐诺数码电子" title="Filo斐诺数码电子"/></a>
-                    <a href="#"><img src="images/1433418304.jpg" alt="海尊" title="海尊"/></a>
-                    <a href="#"><img src="images/1433418311.jpg" alt="中盈国际商务港" title="中盈国际商务港"/></a>
-                    <a href="#"><img src="images/1433418322.jpg" alt="倍尔康" title="倍尔康"/></a>
-                    <a href="#"><img src="images/1433418328.jpg" alt="陈村" title="陈村"/></a>
+                            src="{{URL::asset('assets/images/images/1433418292.jpg')}}" alt="Filo斐诺数码电子" title="Filo斐诺数码电子"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418304.jpg')}}" alt="海尊" title="海尊"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418311.jpg')}}" alt="中盈国际商务港" title="中盈国际商务港"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418322.jpg')}}" alt="倍尔康" title="倍尔康"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418328.jpg')}}" alt="陈村" title="陈村"/></a>
                 </div>
                 <div class="content">
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/120.html"><img
-                            src="images/1433418334.jpg" alt="史丹宝五金工具" title="史丹宝五金工具"/></a>
+                            src="{{URL::asset('assets/images/images/1433418334.jpg')}}" alt="史丹宝五金工具" title="史丹宝五金工具"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/115.html"><img
-                            src="images/1433418343.jpg" alt="味道仔调味品" title="味道仔调味品"/></a>
-                    <a href="#"><img src="images/1433418352.jpg" alt="第二季" title="第二季"/></a>
-                    <a href="#"><img src="images/1433418360.jpg" alt="广东地质" title="广东地质"/></a>
+                            src="{{URL::asset('assets/images/images/1433418343.jpg')}}" alt="味道仔调味品" title="味道仔调味品"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418352.jpg')}}" alt="第二季" title="第二季"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418360.jpg')}}" alt="广东地质" title="广东地质"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/117.html"><img
-                            src="images/1433418366.jpg" alt="蓝狮投资咨询" title="蓝狮投资咨询"/></a>
-                    <a href="#"><img src="images/1433418371.jpg" alt="三菱制药" title="三菱制药"/></a>
+                            src="{{URL::asset('assets/images/images/1433418366.jpg')}}" alt="蓝狮投资咨询" title="蓝狮投资咨询"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418371.jpg')}}" alt="三菱制药" title="三菱制药"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/132/serviceid/1.html"><img
-                            src="images/1433418377.jpg" alt="OBest饼干包装设计" title="OBest饼干包装设计"/></a>
+                            src="{{URL::asset('assets/images/images/1433418377.jpg')}}" alt="OBest饼干包装设计" title="OBest饼干包装设计"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/111.html"><img
-                            src="images/1433418384.jpg" alt="阿里棒时尚餐饮" title="阿里棒时尚餐饮"/></a>
-                    <a href="#"><img src="images/1433418392.jpg" alt="鑫峰" title="鑫峰"/></a>
+                            src="{{URL::asset('assets/images/images/1433418384.jpg')}}" alt="阿里棒时尚餐饮" title="阿里棒时尚餐饮"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418392.jpg')}}" alt="鑫峰" title="鑫峰"/></a>
                     <a href="http://www.redwind.cn/Home/Project/detail/project_id/121.html"><img
-                            src="images/1433418398.jpg" alt="TMT计测检测" title="TMT计测检测"/></a>
+                            src="{{URL::asset('assets/images/images/1433418398.jpg')}}" alt="TMT计测检测" title="TMT计测检测"/></a>
                 </div>
                 <div class="content">
-                    <a href="#"><img src="images/1433418406.jpg" alt="鲍鱼哥" title="鲍鱼哥"/></a>
-                    <a href="#"><img src="images/1433418413.jpg" alt="广益" title="广益"/></a>
-                    <a href="#"><img src="images/1433418419.jpg" alt="番禺电缆集团" title="番禺电缆集团"/></a>
-                    <a href="#"><img src="images/1461225199.jpg" alt="招财猫" title="招财猫"/></a>
-                    <a href="#"><img src="images/1461225342.jpg" alt="中科檀香" title="中科檀香"/></a>
-                    <a href="#"><img src="images/1461225758.jpg" alt="新邦乐实业" title="新邦乐实业"/></a>
-                    <a href="Url address"><img src="images/1463815632.jpg" alt="好逸客丰" title="好逸客丰"/></a>
-                    <a href="Url address"><img src="images/1463816915.jpg" alt="馨捷" title="馨捷"/></a>
-                    <a href="Url address"><img src="images/1463815356.jpg" alt="塑兴" title="塑兴"/></a>
-                    <a href="Url address"><img src="images/1463813776.jpg" alt="云能科技" title="云能科技"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418406.jpg')}}" alt="鲍鱼哥" title="鲍鱼哥"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418413.jpg')}}" alt="广益" title="广益"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1433418419.jpg')}}" alt="番禺电缆集团" title="番禺电缆集团"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461225199.jpg')}}" alt="招财猫" title="招财猫"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461225342.jpg')}}" alt="中科檀香" title="中科檀香"/></a>
+                    <a href="#"><img src="{{URL::asset('assets/images/images/1461225758.jpg')}}" alt="新邦乐实业" title="新邦乐实业"/></a>
+                    <a href="Url address"><img src="{{URL::asset('assets/images/images/1463815632.jpg')}}" alt="好逸客丰" title="好逸客丰"/></a>
+                    <a href="Url address"><img src="{{URL::asset('assets/images/images/1463816915.jpg')}}" alt="馨捷" title="馨捷"/></a>
+                    <a href="Url address"><img src="{{URL::asset('assets/images/images/1463815356.jpg')}}" alt="塑兴" title="塑兴"/></a>
+                    <a href="Url address"><img src="{{URL::asset('assets/images/images/1463813776.jpg')}}" alt="云能科技" title="云能科技"/></a>
                 </div>
             </div>
         </div>
-        <img class="customerBtn leftBtn" onclick="customerBtnClick('-')" src="images/customerLeft.png"/>
-        <img class="customerBtn rightBtn" onclick="customerBtnClick('+')" src="images/customerRight.png"/>
+        <img class="customerBtn leftBtn" onclick="customerBtnClick('-')" src="{{URL::asset('assets/images/images/customerLeft.png')}}"/>
+        <img class="customerBtn rightBtn" onclick="customerBtnClick('+')" src="{{URL::asset('assets/images/images/customerRight.png')}}"/>
         <a href="/customer.html">
             <div class="linkBtn">
                 <span>查看更多合作客户</span>
@@ -597,7 +597,7 @@
 <!-- customer over -->
 <!-- say -->
 <div class="say" style="background-color:#FF000B;">
-    <div class="imgBg" style="background-image:url('Public/images/index/say.jpg')"></div>
+    <div class="imgBg" style="background-image:url('Public/{{URL::asset('assets/images/images/index/say.jpg')}}')"></div>
     <div class="container">
         <div class="sub sub1"></div>
         <p class="title1">&nbsp;客户说</p>
@@ -618,7 +618,7 @@
         <div class="content">
             <p class="title">通过研究商业模式来定义品牌模式</p>
             <p class="info">提供优秀的品牌整合解决方案，令品牌长远发展，更具竞争力</p>
-            <p><img src="images/superiority.jpg"/></p>
+            <p><img src="{{URL::asset('assets/images/images/superiority.jpg')}}"/></p>
         </div>
         <a href="/model.html">
             <div class="linkBtn">
@@ -638,7 +638,7 @@
             <a href="http://www.redwind.cn/team.html">
                 <div class="child">
                     <div class="childImg">
-                        <img src="images/1434954106.jpg"/>
+                        <img src="{{URL::asset('assets/images/images/1434954106.jpg')}}"/>
                     </div>
                     <p class="titleEn">FANKY ZENG</p>
                     <p class="title">曾凡新</p>
@@ -649,7 +649,7 @@
             <a href="http://www.redwind.cn/team.html">
                 <div class="child">
                     <div class="childImg">
-                        <img src="images/1433416692.jpg"/>
+                        <img src="{{URL::asset('assets/images/images/1433416692.jpg')}}"/>
                     </div>
                     <p class="titleEn">ZHIQIANG WU</p>
                     <p class="title">吴志强</p>
@@ -660,7 +660,7 @@
             <a href="http://www.redwind.cn/team.html">
                 <div class="child">
                     <div class="childImg">
-                        <img src="images/1433417314.jpg"/>
+                        <img src="{{URL::asset('assets/images/images/1433417314.jpg')}}"/>
                     </div>
                     <p class="titleEn">YONGWU SU</p>
                     <p class="title">苏用武</p>
@@ -923,5 +923,6 @@
 <!-- footerNav over -->
 <!-- footer -->
 @extends('common.footer')
+<script src="{{URL::asset('assets/js/newWeb/index.js')}}"></script>
 </body>
 </html>
