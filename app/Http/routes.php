@@ -27,6 +27,7 @@ Route::get('logs-1',['middleware' => 'auth'],'LogController@logs1');
 Route::get('logs-2', ['middleware' => 'auth', 'uses' => 'LogController@logs2']);
 //用户管理
 Route::group(['prefix' => 'admin', 'namespace' => 'Auth','middleware' =>'auth'], function () {
+    Route::get('/', 'UserController@kzt');
     Route::get('index', 'UserController@kzt');
     //用户管理
     Route::get('user','UserController@index');
@@ -55,8 +56,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth','middleware' =>'auth'],
     Route::post('menu/update', ['as' => 'admin.menu.update', 'uses' => 'UserController@update_menu']);
 
 });
-
-
+//客户数据
+Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
+    Route::get('customerList', 'CustomerDataController@customerList');
+    Route::get('projectList', 'CustomerDataController@projectList');
+});
 Route::get('background/articles', ['as'=> 'background.articles.index', 'uses' => 'background\ArticlesController@index']);
 Route::post('background/articles', ['as'=> 'background.articles.store', 'uses' => 'background\ArticlesController@store']);
 Route::get('background/articles/create', ['as'=> 'background.articles.create', 'uses' => 'background\ArticlesController@create']);
