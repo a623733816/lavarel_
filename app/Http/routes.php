@@ -2,9 +2,19 @@
 
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+// 前台页面
 
-Route::get('/','IndexController@index');
-Route::get('index','IndexController@index');
+    Route::get('/', 'IndexController@index');
+    Route::get('index', 'IndexController@index');
+    Route::get('contact','IndexController@contact');
+    Route::get('job','IndexController@job');
+    Route::get('news','IndexController@news');
+    Route::get('partner','IndexController@partner');
+    Route::get('project','IndexController@project');
+    Route::get('redwind','IndexController@redwind');
+    Route::get('superiority','IndexController@superiority');
+
+
 Route::resource('posts', 'PostController');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

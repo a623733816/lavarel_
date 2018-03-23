@@ -16,9 +16,28 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index.index');
+        return view('index.index',['active'=>'index']);
     }
-
+    public function job()
+    {
+        return view('index.job');
+    }
+    public function news()
+    {
+        return view('index.news');
+    }
+    public function partner()
+    {
+        return view('index.partner');
+    }
+    public function redwind()
+    {
+        return view('index.redwind');
+    }
+    public function superiority()
+    {
+        return view('index.superiority');
+    }
     public function addProjectInfo(ProjectInfo $p_model, Request $request)
     {
         $posts = $request->input();

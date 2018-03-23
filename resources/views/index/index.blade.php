@@ -32,28 +32,28 @@
     <img class="navBtn" src="{{URL::asset('assets/images/images/navBtn.png')}}" title="点我!点我!"/>
     <div class="container">
         <ul class="nav">
-            <a href="{{URL::asset('index.html')}}">
-                <li class="on">首页</li>
+            <a href="{{URL::asset('index')}}">
+                <li  @if($active=='index')class="on" @endif>首页</li>
             </a>
-            <a href="{{URL::asset('superiority.html')}}">
+            <a href="{{URL::asset('superiority')}}">
                 <li>国家品牌智库</li>
             </a>
-            <a href="{{URL::asset('project.html')}}">
+            <a href="{{URL::asset('project')}}">
                 <li>评审标准</li>
             </a>
-            <a href="{{URL::asset('project.html')}}">
+            <a href="{{URL::asset('project')}}">
                 <li>申报流程</li>
             </a>
-            <a href="{{URL::asset('redwind.html')}}">
+            <a href="{{URL::asset('redwind')}}">
                 <li>申报表索取</li>
             </a>
-            <a href="{{URL::asset('news.html')}}">
+            <a href="{{URL::asset('news')}}">
                 <li>品牌明星</li>
             </a>
-            <a href="{{URL::asset('partner.html')}}">
+            <a href="{{URL::asset('partner')}}">
                 <li>品牌总裁</li>
             </a>
-            <a href="{{URL::asset('contact.html')}}">
+            <a href="{{URL::asset('contact')}}">
                 <li>联系我们</li>
             </a>
         </ul>
