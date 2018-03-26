@@ -40,6 +40,7 @@
                                     <th>姓名</th>
                                     <th>电话</th>
                                     <th>邮箱</th>
+                                    <th>类型</th>
                                     <th>
                                         <i class="icon-time bigger-110 hidden-480"></i>
                                         创建时间
@@ -61,6 +62,7 @@
                                     </td>
                                     <td>{{$v->phone}}</td>
                                     <td>{{$v->email}}</td>
+                                    <td>{{$v->type==1?'品牌明星':'品牌总裁'}}</td>
                                     <td class="hidden-480">{{$v->created_at}}</td>
 
                                 </tr>

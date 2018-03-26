@@ -39,11 +39,9 @@
                                     </th>
                                     <th>姓名</th>
                                     <th>电话</th>
-                                    <th>
-                                        公司名称
-                                    </th>
-                                    <th class="hidden-480">项目名称</th>
-                                    <th>项目描述</th>
+                                    <th>邮箱</th>
+                                    <th>公司名称</th>
+                                    <th>品牌名称</th>
                                     <th>创建时间</th>
                                 </tr>
                                 </thead>
@@ -56,15 +54,14 @@
                                             <span class="lbl">{{$k+1}}</span>
                                         </label>
                                     </td>
-
                                     <td>
                                         <a href="#">{{$v->name}}</a>
                                     </td>
                                     <td>{{$v->phone}}</td>
+                                    <td>{{$v->email}}</td>
                                     <td>{{$v->company}}</td>
-                                    <td class="hidden-480">{{$v->project_desc}}</td>
-                                    <td class="hidden-480">{{$v->project_theme}}</td>
-                                    <td class="hidden-480">{{$v->created_at}}</td>
+                                    <td>{{$v->project_theme}}</td>
+                                    <td>{{$v->created_at}}</td>
 
                                 </tr>
                                 @endforeach

@@ -23,8 +23,8 @@ class ProjectInfo extends Model
             $this->name = $new_data['name'];
             $this->company = $new_data['company'];
             $this->phone = $new_data['phone'];
-            $this->project_theme = $new_data['project_theme'];
-            $this->project_desc = $new_data['project_desc'];
+            $this->project_theme = $new_data['project_theme'];//品牌名称
+            $this->project_desc = $new_data['email'];
             $this->created_at = date('Y-m-d H:i:s');
         }
         return $this->save();

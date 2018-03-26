@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\CustomerInfo;
 use App\Models\ProjectInfo;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-use Excel;
-use DB;
+/**
+ * 前台展示接口及两个提交接口
+ * Class IndexController
+ * @package App\Http\Controllers
+ */
 
 class IndexController extends Controller
 {
@@ -46,6 +47,13 @@ class IndexController extends Controller
     {
         return view('index.contact',['active'=>__FUNCTION__]);
     }
+
+    /**
+     * 添加项目业务信息接口
+     * @param ProjectInfo $p_model
+     * @param Request $request
+     * @return bool
+     */
     public function addProjectInfo(ProjectInfo $p_model, Request $request)
     {
         $posts = $request->input();
@@ -53,6 +61,12 @@ class IndexController extends Controller
         return $p_model->add($posts);
     }
 
+    /**
+     * 添加客户信息接口
+     * @param CustomerInfo $c_model
+     * @param Request $request
+     * @return bool
+     */
     public function addCustomerInfo(CustomerInfo $c_model, Request $request)
     {
         $posts = $request->input();
