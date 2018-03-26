@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <title>赤风品牌策划与设计_品牌设计_VI设计_标志设计_包装设计_商标设计_logo设计成功案例</title>
-  <meta name="robots" content="all" />
-  <meta name="author" content="redwind design" />
-  <meta name="Copyright" content="Copyright 2001-2015 All Rights Reserved Redwind design co.,ltd." />
-  <meta name="description" content="广州设计公司专业设计服务.14年品牌设计公司经验,我们以鲜明独特的设计风格从众多设计公司中异军突起,是广州优秀的设计公司,本页面为VI设计案例,标志设计案例,包装设计案例,品牌设计案例,设计案例,设计案例欣赏,案例欣赏,标志设计作品，包装设计作品，VI设计作品，设计作品" />
-  <meta name="keywords" content="VI设计,标志设计,包装设计,品牌设计,LOGO设计,商标设计，品牌创建，品牌更新，品牌管理，品牌咨询顾问，产品包装设计，品牌形象设计，品牌包装设计,品牌案例" />
-  <meta name="searchtitle" content="VI设计,标志设计,包装设计,品牌设计,LOGO设计,商标设计，品牌创建，品牌更新，品牌管理，品牌咨询顾问，产品包装设计，品牌形象设计，品牌包装设计,品牌案例" />
-  <link href="/Public/images/favicon.ico" rel="shortcut icon" />
-  <link rel="stylesheet" type="text/css" href="css/font.css" />
-  <link rel="stylesheet" type="text/css" href="css/base.css" />
-  <link rel="stylesheet" type="text/css" href="css/project.css" />
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
-  <script charset="utf-8" src="other/wpa.php"></script>
- </head>
- <body>
-  <!-- header -->
-  <div class="header">
-   <a href="/index.html"><img class="logo1" src="images/logo.jpg" title="赤风品牌策划与设计" /></a>
-   <img class="navBtn" src="images/navBtn.png" title="点我!点我!" />
-   <div class="container">
-    <ul class="nav">
-     <a href="./index.html"><li>首页</li></a>
-     <a href="./superiority.html"><li>国家品牌智库</li></a>
-     <a href="./project.html"><li class="on">评审标准</li></a>
-     <a href="./project.html"><li>申报流程</li></a>
-     <a href="./redwind.html"><li>申报表索取</li></a>
-     <a href="./news.html"><li>品牌明星</li></a>
-     <a href="./partner.html"><li>品牌总裁</li></a>
-     <a href="./contact.html"><li>联系我们</li></a>
-    </ul>
-   </div>
-  </div>
+@extends('index.lay')
+
+@section('body')
   <!-- header over-->
   <div class="stance"></div>
   <!-- list -->
@@ -659,11 +622,8 @@
   </div>
   <!-- footerNav over -->
   <!-- footer -->
-  @extends('common.footer')
-  <script src="{{ URL::asset('assets/js/newWeb/project.js')}}"></script>
+  @endsection
   <script src="{{ URL::asset('assets/js/newWeb/projectAjax.js')}}"></script>
   <script>    setUrl('/Home/Project/indexAjax.html','/Home/Project/detail','','');
 
 </script>
- </body>
-</html>

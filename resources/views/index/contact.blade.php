@@ -1,55 +1,7 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <title>联系赤风设计公司_广州设计公司_品牌设计公司,vi设计公司,标志设计公司,包装设计公司</title>
-    <meta name="robots" content="all"/>
-    <meta name="author" content="redwind design"/>
-    <link href="/Public/images/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="css/font.css"/>
-    <link rel="stylesheet" type="text/css" href="css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="css/contact.css"/>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script><![endif]-->
-    <script charset="utf-8" src="other/wpa.php"></script>
-</head>
-<body><!-- header -->
-<div class="header"><a href="/index.html"><img class="logo1" src="images/logo.jpg" title="赤风品牌策划与设计"></a><img
-        class="navBtn" src="images/navBtn.png" title="点我!点我!"/>
-    <div class="container">
-        <ul class="nav">
-            <a href="./index.html">
-                <li>首页</li>
-            </a>
-            <a href="./superiority.html">
-                <li>国家品牌智库</li>
-            </a>
-            <a href="./project.html">
-                <li>评审标准</li>
-            </a>
-            <a href="./project.html">
-                <li>申报流程</li>
-            </a>
-            <a href="./redwind.html">
-                <li>申报表索取</li>
-            </a>
-            <a href="./news.html">
-                <li>品牌明星</li>
-            </a>
-            <a href="./partner.html">
-                <li>品牌总裁</li>
-            </a>
-            <a href="javascript:void(0)">
-                <li class="on navBtn_">联系我们</li>
-            </a>
-        </ul>
-    </div>
-</div><!-- header over-->
+@extends('index.lay')
+
+@section('body')
+<!-- header over-->
 <div class="stance"></div><!-- list -->
 <div class="list">
     <div class="container">
@@ -217,6 +169,4 @@
         </div>
     </div>
 </div><!-- footerNav over --><!-- footer -->
-@extends('common.footer')
-<script src="{{ URL::asset('assets/js/newWeb/contact.js')}}"></script>
-</html>
+@endsection

@@ -1,43 +1,7 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <title>赤风品牌策划与设计_中国品牌设计50强_提供品牌整合设计</title>
-  <meta name="robots" content="all" />
-  <meta name="author" content="redwind design" />
-  <meta name="Copyright" content="Copyright 2001-2015 All Rights Reserved Redwind design co.,ltd." />
-  <meta name="description" content="作为专业的品牌设计公司，从赤风的发展历程，品牌服务模式，品牌设计服务内容，品牌服务流程，品牌合作客户进行全方位介绍" />
-  <meta name="keywords" content="专业设计公司，最好的品牌设计公司，品牌设计合作流程，品牌全案设计公司，广州赤风设计公司优势，品牌形象设计公司，标志设计公司优势，包装设计公司，logo设计公司，商标设计公司" />
-  <meta name="searchtitle" content="中国品牌设计50强，赤风品牌策划与设计，专业品牌设计公司品牌整合设计服务优势" />
-  <link href="/Public/images/favicon.ico" rel="shortcut icon" />
-  <link rel="stylesheet" type="text/css" href="css/font.css" />
-  <link rel="stylesheet" type="text/css" href="css/base.css" />
-  <link rel="stylesheet" type="text/css" href="css/superiority.css" />
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
-  <script charset="utf-8" src="other/wpa.php"></script>
- </head>
- <body>
-  <!-- header -->
-  <div class="header">
-   <a href="/index.html"><img class="logo1" src="images/logo.jpg" title="赤风品牌策划与设计" /></a>
-   <img class="navBtn" src="images/navBtn.png" title="点我!点我!" />
-   <div class="container">
-    <ul class="nav">
-     <a href="./index.html"><li>首页</li></a>
-     <a href="./superiority.html"><li class="on">国家品牌智库</li></a>
-     <a href="./project.html"><li>评审标准</li></a>
-     <a href="./project.html"><li>申报流程</li></a>
-     <a href="./redwind.html"><li>申报表索取</li></a>
-     <a href="./news.html"><li>品牌明星</li></a>
-     <a href="./partner.html"><li>品牌总裁</li></a>
-     <a href="./contact.html"><li>联系我们</li></a>
-    </ul>
-   </div>
-  </div>
+@extends('index.lay')
+
+@section('body')
+ <?php $active='superiority' ?>
   <!-- header over-->
   <div class="stance"></div>
   <!-- list -->
@@ -63,7 +27,7 @@
      <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
     </div>
    </div>
-   <img id="listCloseBtn" src="images/closeIcon.png" />
+   <img id="listCloseBtn" src="{{URL::asset('assets/images/closeIcon.png')}}" />
   </div>
   <!-- list over -->
   <!-- banner -->
@@ -73,7 +37,7 @@
     <p class="title"> BEING DIFFERENT MAKES A DIFFERENCE</p>
     <span class="titleCh">与众不同 方能创造不同</span>
    </div>
-   <img class="bannerBg" src="images/bannerBg.jpg" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/bannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->
@@ -118,10 +82,10 @@
    <div class="mainChild mainChildList" id="mainChild2">
     <div class="container">
      <div class="wapImg">
-      <img src="images/wapmain1.jpg" />
+      <img src="{{URL::asset('assets/images/wapmain1.jpg')}}" />
      </div>
      <div class="right">
-      <img src="images/main1.jpg" />
+      <img src="{{URL::asset('assets/images/main1.jpg')}}" />
      </div>
      <div class="left">
       <div class="head">
@@ -143,10 +107,10 @@
    <div class="mainChild mainChildList" id="mainChild3">
     <div class="container">
      <div class="wapImg">
-      <img src="images/wapmain2.jpg" />
+      <img src="{{URL::asset('assets/images/wapmain2.jpg')}}" />
      </div>
      <div class="left">
-      <img src="images/main2.jpg" />
+      <img src="{{URL::asset('assets/images/main2.jpg')}}" />
      </div>
      <div class="right">
       <div class="head">
@@ -166,7 +130,7 @@
    <!-- mainChild3 over -->
    <!-- mainChild4 -->
    <div class="mainChild" id="mainChild4" style="background-color:#fff;">
-    <div class="container" style="background-image:url(Public/images/superiority/main3.jpg);">
+    <div class="container" style="background-image:url({{URL::asset('assets/images/superiority/main3.jpg')}});">
      <p class="title">[十六年背靠背组合]</p>
      <p class="info">赤风创始合伙人</p>
      <p class="info2">曾凡新 + 吴志强</p>
@@ -179,7 +143,7 @@
      <div class="content">
       <p class="title">通过研究商业模式来定义品牌模式</p>
       <p class="info">提供优秀的品牌整合解决方案，令品牌长远发展，更具竞争力</p>
-      <p><img src="images/main4.png" /></p>
+      <p><img src="{{URL::asset('assets/images/main4.png')}}" /></p>
      </div>
      <a href="/model.html">
       <div class="linkBtn">
@@ -192,10 +156,10 @@
    <div class="mainChild mainChildList" id="mainChild6">
     <div class="container">
      <div class="wapImg">
-      <img src="images/wapmain3.jpg" />
+      <img src="{{URL::asset('assets/images/wapmain3.jpg')}}" />
      </div>
      <div class="left">
-      <img src="images/main5.jpg" />
+      <img src="{{URL::asset('assets/images/main5.jpg')}}" />
      </div>
      <div class="right">
       <div class="head">
@@ -289,8 +253,8 @@
        </div>
       </div>
       <div class="contents">
-       <p class="child"><img src="images/main6a.jpg" /></p>
-       <p class="child on"><img src="images/main6.jpg" /></p>
+       <p class="child"><img src="{{URL::asset('assets/images/main6a.jpg')}}" /></p>
+       <p class="child on"><img src="{{URL::asset('assets/images/main6.jpg')}}" /></p>
       </div>
      </div>
     </div>
@@ -300,20 +264,20 @@
    <div class="mainChild" id="mainChild9">
     <div class="container">
      <div class="content">
-      <p class="mun"><img src="images/main7.jpg" /></p>
+      <p class="mun"><img src="{{URL::asset('assets/images/main7.jpg')}}" /></p>
       <p class="title">超过500家客户共同见证</p>
       <p class="info">感谢客户信任与支持，让我们从开始一直走到现在。未来，我们将一如既往地为客户提供专业的策划与设计服务；对于我们所热爱的事业保持高度的热情与专注，在市场上独树一帜，给予客户及我们自身的不断发展......</p>
       <div class="contents">
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/141.html"><img src="images/1461036511.jpg" alt="湘剧场" title="湘剧场" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/144.html"><img src="images/1461036471.jpg" alt="爱范儿" title="爱范儿" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/127.html"><img src="images/1460969116.jpg" alt="NPC鲜柚智能科技" title="NPC鲜柚智能科技" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/142.html"><img src="images/1461036300.jpg" alt="三潮煮艺" title="三潮煮艺" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/138.html"><img src="images/1461035258.jpg" alt="普罗旺斯旅游投资集团" title="普罗旺斯旅游投资集团" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/135.html"><img src="images/1461035800.jpg" alt="哈博电热水器" title="哈博电热水器" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/139.html"><img src="images/1461223128.jpg" alt="言采其杞" title="言采其杞" /></a>
-       <a href="http://www.redwind.cn/Home/Project/detail/project_id/140.html"><img src="images/1461225842.jpg" alt="季然宁夏枸杞" title="季然宁夏枸杞" /></a>
-       <a href="#"><img src="images/1461918227.jpg" alt="太禾米业" title="太禾米业" /></a>
-       <a href="#"><img src="images/1461916826.jpg" alt="新粤交通" title="新粤交通" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/141.html"><img src="{{URL::asset('assets/images/1461036511.jpg')}}" alt="湘剧场" title="湘剧场" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/144.html"><img src="{{URL::asset('assets/images/1461036471.jpg')}}" alt="爱范儿" title="爱范儿" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/127.html"><img src="{{URL::asset('assets/images/1460969116.jpg')}}" alt="NPC鲜柚智能科技" title="NPC鲜柚智能科技" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/142.html"><img src="{{URL::asset('assets/images/1461036300.jpg')}}" alt="三潮煮艺" title="三潮煮艺" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/138.html"><img src="{{URL::asset('assets/images/1461035258.jpg')}}" alt="普罗旺斯旅游投资集团" title="普罗旺斯旅游投资集团" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/135.html"><img src="{{URL::asset('assets/images/1461035800.jpg')}}" alt="哈博电热水器" title="哈博电热水器" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/139.html"><img src="{{URL::asset('assets/images/1461223128.jpg')}}" alt="言采其杞" title="言采其杞" /></a>
+       <a href="http://www.redwind.cn/Home/Project/detail/project_id/140.html"><img src="{{URL::asset('assets/images/1461225842.jpg')}}" alt="季然宁夏枸杞" title="季然宁夏枸杞" /></a>
+       <a href="#"><img src="{{URL::asset('assets/images/1461918227.jpg')}}" alt="太禾米业" title="太禾米业" /></a>
+       <a href="#"><img src="{{URL::asset('assets/images/1461916826.jpg')}}" alt="新粤交通" title="新粤交通" /></a>
       </div>
      </div>
      <a href="/customer.html">
@@ -390,6 +354,4 @@
   </div>
   <!-- footerNav over -->
   <!-- footer -->
- @extends('common.footer')
-  <script src="{{ URL::asset('assets/js/newWeb/superiority.js')}}"></script>
-</html>
+@endsection
