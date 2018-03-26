@@ -38,6 +38,14 @@ class IndexController extends Controller
     {
         return view('index.superiority',['active'=>__FUNCTION__]);
     }
+    public function project()
+    {
+        return view('index.project',['active'=>__FUNCTION__]);
+    }
+    public function contact()
+    {
+        return view('index.contact',['active'=>__FUNCTION__]);
+    }
     public function addProjectInfo(ProjectInfo $p_model, Request $request)
     {
         $posts = $request->input();
