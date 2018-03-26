@@ -26,17 +26,17 @@
      <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
     </div>
    </div>
-   <img id="listCloseBtn" src="images/closeIcon.png" />
+   <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}" />
   </div>
   <!-- list over -->
   <!-- banner -->
-  <div class="banner" style="background-image:url(Public/upload/banner/other/1433569313.jpg);">
+  <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/1433569313.jpg')}});">
    <div class="bannerInfo">
     <p class="title">REDWIND</p>
     <p class="title"> CHINA’S TOP 50 BRAND DESING COMPANIES</p>
     <span class="titleCh">中国品牌设计公司50强</span>
    </div>
-   <img class="bannerBg" src="images/bannerBg.jpg" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->
@@ -73,17 +73,17 @@
    <!-- mainChild2 -->
    <div class="mainChild" id="mainChild2" style="background-color: #dfddde;">
     <a href="/project.html">
-     <div class="container" style="background-image:url(Public/images/rewind/idea.gif);"></div></a>
+     <div class="container" style="background-image:url({{URL::asset('images/rewind/idea.gif')}});"></div></a>
    </div>
    <!-- mainChild2 over -->
    <!-- mainChild3 -->
    <div class="mainChild mainChildList" id="mainChild3">
     <div class="container">
      <div class="wapImg">
-      <img src="images/wapmain1.jpg" />
+      <img src="{{URL::asset('assets/images/images/wapmain1.jpg')}}" />
      </div>
      <div class="left">
-      <img src="images/main1.jpg" />
+      <img src="{{URL::asset('assets/images/images/main1.jpg')}}" />
      </div>
      <div class="right">
       <div class="head">
@@ -105,10 +105,10 @@
    <div class="mainChild mainChildList" id="mainChild4">
     <div class="container">
      <div class="wapImg">
-      <img src="images/wapmain2.jpg" />
+      <img src="{{URL::asset('assets/images/images/wapmain2.jpg')}}" />
      </div>
      <div class="right">
-      <img src="images/main2.jpg" />
+      <img src="{{URL::asset('assets/images/images/main2.jpg')}}" />
      </div>
      <div class="left">
       <div class="head">
@@ -134,44 +134,44 @@
      <p class="info">创作是一项脑力劳动，赤风的自由开放除了体现在我们的办公环境上。 工作氛围亦是如此， 我们没有豪华的办公装修&quot;红色与黑色&quot;依然是我们装饰的主色调，一切都是那么自自然然，简简单单....</p>
      <div class="contents">
       <div class="content">
-       <img src="images/1433567911.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433567911.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322493.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322493.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433567111.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433567111.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433927276.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433927276.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433323038.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433323038.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322603.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322603.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322931.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322931.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322683.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322683.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322757.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322757.jpg')}}" title="设计公司环境" />
       </div>
       <div class="content">
-       <img src="images/1433322831.jpg" title="设计公司环境" />
+       <img src="{{URL::asset('assets/images/images/1433322831.jpg')}}" title="设计公司环境" />
       </div>
-      <img class="mainChild5Btn leftBtn" onclick="mainChild5BtnClick('-')" src="Public/images/rewind/leftBtn.png" />
-      <img class="mainChild5Btn rightBtn" onclick="mainChild5BtnClick('+')" src="Public/images/rewind/rightBtn.png" />
+      <img class="mainChild5Btn leftBtn" onclick="mainChild5BtnClick('-')" src="{{URL::asset('images/rewind/leftBtn.png')}}" />
+      <img class="mainChild5Btn rightBtn" onclick="mainChild5BtnClick('+')" src="{{URL::asset('images/rewind/rightBtn.png')}}" />
      </div>
      <div class="navbtns"></div>
     </div>
    </div>
    <!-- mainChild5 over -->
    <!-- mainChild6 -->
-   <div class="mainChild" id="mainChild6" style="background-image:url(Public/images/rewind/banner2.jpg);">
+   <div class="mainChild" id="mainChild6" style="background-image:url({{URL::asset('images/rewind/banner2.jpg')}});">
     <p class="mainChildTitle">要么做到 要么别承诺</p>
     <div class="sub"></div>
     <p class="mainChildTitle2">赤风文化</p>

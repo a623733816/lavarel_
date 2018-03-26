@@ -1,6 +1,11 @@
 @extends('index.lay')
 
 @section('body')
+ <style>
+  body{
+   overflow: auto !important;
+  }
+ </style>
   <!-- header over-->
   <div class="stance"></div>
   <!-- list -->
@@ -26,17 +31,17 @@
      <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
     </div>
    </div>
-   <img id="listCloseBtn" src="images/closeIcon.png" />
+   <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}" />
   </div>
   <!-- list over -->
   <!-- banner -->
-  <div class="banner" style="background-image:url(Public/upload/banner/other/1433261103.jpg);">
+  <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/1433261103.jpg')}});">
    <div class="bannerInfo">
     <p class="title">INFOMATION</p>
     <p class="title">EVERYTHING IS FOR THE BUSINESS</p>
     <span class="titleCh">了解赤风 更超越赤风</span>
    </div>
-   <img class="bannerBg" src="images/bannerBg.jpg" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->
@@ -59,7 +64,7 @@
     <div class="content">
      <div class="child">
       <div class="childImg">
-       <img src="images/1516587412.jpg" />
+       <img src="{{URL::asset('assets/images/images/1516587412.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2018.1.31</p>
@@ -73,7 +78,7 @@
      </div>
      <div class="child">
       <div class="childImg">
-       <img src="images/1514516406.jpg" />
+       <img src="{{URL::asset('assets/images/images/1514516406.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2017.12.29</p>
@@ -87,7 +92,7 @@
      </div>
      <div class="child">
       <div class="childImg">
-       <img src="images/1510366614.jpg" />
+       <img src="{{URL::asset('assets/images/images/1510366614.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2017.11.11</p>
@@ -101,7 +106,7 @@
      </div>
      <div class="child">
       <div class="childImg">
-       <img src="images/1509081503.jpg" />
+       <img src="{{URL::asset('assets/images/images/1509081503.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2017.10.27</p>
@@ -115,7 +120,7 @@
      </div>
      <div class="child">
       <div class="childImg">
-       <img src="images/1508312387.jpg" />
+       <img src="{{URL::asset('assets/images/images/1508312387.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2017.10.18</p>
@@ -129,7 +134,7 @@
      </div>
      <div class="child">
       <div class="childImg">
-       <img src="images/1507882714.jpg" />
+       <img src="{{URL::asset('assets/images/images/1507882714.jpg')}}" />
       </div>
       <div class="childInfo">
        <p class="datetime">2017.10.13</p>

@@ -26,17 +26,17 @@
      <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
     </div>
    </div>
-   <img id="listCloseBtn" src="images/closeIcon.png" />
+   <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}" />
   </div>
   <!-- list over -->
   <!-- banner -->
-  <div class="banner" style="background-image:url(Public/upload/banner/other/1432914029.jpg);">
+  <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/1432914029.jpg')}});">
    <div class="bannerInfo">
     <p class="title">PARTNER</p>
     <p class="title">WORK MORE THAN WORK</p>
     <span class="titleCh">不只是工作 也可以是合作</span>
    </div>
-   <img class="bannerBg" src="images/bannerBg.jpg" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->
@@ -84,7 +84,7 @@
       </div></a>
     </div>
    </div>
-   <div class="mainChild" id="mainChild2" style="background-image:url(Public/images/partner/mainBg.jpg);  background-color: #000;">
+   <div class="mainChild" id="mainChild2" style="background-image:url({{URL::asset('images/partner/mainBg.jpg')}});  background-color: #000;">
     <div class="content">
      <p class="title">Redwind+</p>
      <p class="info">这不是概念，是趋势</p>
@@ -99,37 +99,37 @@
       <a href="#" target="_blank">
        <div class="child ">
         <div class="childImg">
-         <img src="images/1433506392.jpg" alt="30" title="30" />
+         <img src="{{URL::asset('assets/images/images/1433506392.jpg')}}" alt="30" title="30" />
         </div>
        </div></a>
       <a href="http://www.pidcn.com" target="_blank">
        <div class="child ">
         <div class="childImg">
-         <img src="images/1433427282.jpg" alt="派点互动" title="派点互动" />
+         <img src="{{URL::asset('assets/images/images/1433427282.jpg')}}" alt="派点互动" title="派点互动" />
         </div>
        </div></a>
       <a href="#" target="_blank">
        <div class="child no">
         <div class="childImg">
-         <img src="images/1433426692.jpg" alt="陈建业" title="陈建业" />
+         <img src="{{URL::asset('assets/images/images/1433426692.jpg')}}" alt="陈建业" title="陈建业" />
         </div>
        </div></a>
       <a href="#" target="_blank">
        <div class="child ">
         <div class="childImg">
-         <img src="images/1433427830.jpg" alt="天意数码快印" title="天意数码快印" />
+         <img src="{{URL::asset('assets/images/images/1433427830.jpg')}}" alt="天意数码快印" title="天意数码快印" />
         </div>
        </div></a>
       <a href="#" target="_blank">
        <div class="child ">
         <div class="childImg">
-         <img src="images/1433506856.jpg" alt="华盖" title="华盖" />
+         <img src="{{URL::asset('assets/images/images/1433506856.jpg')}}" alt="华盖" title="华盖" />
         </div>
        </div></a>
       <a href="#" target="_blank">
        <div class="child no">
         <div class="childImg">
-         <img src="images/1433506490.jpg" alt="28" title="28" />
+         <img src="{{URL::asset('assets/images/images/1433506490.jpg')}}" alt="28" title="28" />
         </div>
        </div></a>
      </div>
@@ -140,27 +140,27 @@
         <p>电话或邮件向赤风工作人员提供您的公司介绍及相关能力介绍</p>
        </div>
       </div>
-      <img class="pointer" src="Public/images/partner/pointer.png" />
+      <img class="pointer" src="{{URL::asset('images/partner/pointer.png')}}" />
       <div class="child">
        <div class="childContent two two1">
         <p>相关企业或个人需提供完整的企业资质及成功案例，连同企业/个人简介</p>
         <p>营业执照彩色扫描件等，发送至赤风指定邮箱</p>
        </div>
       </div>
-      <img class="pointer" src="Public/images/partner/pointer.png" />
+      <img class="pointer" src="{{URL::asset('images/partner/pointer.png')}}" />
       <div class="child">
        <div class="childContent one">
         <p>赤风工作人员收到邮件后会反馈参与进度（每一业务领域只招募1家）</p>
        </div>
       </div>
-      <img class="pointer" src="Public/images/partner/pointer.png" />
+      <img class="pointer" src="{{URL::asset('images/partner/pointer.png')}}" />
       <div class="child">
        <div class="childContent two">
         <p>最后展开相关业务合作</p>
         <p>与赤风品牌进行工作对接</p>
        </div>
       </div>
-      <img class="pointer" src="Public/images/partner/pointer.png" />
+      <img class="pointer" src="{{URL::asset('images/partner/pointer.png')}}" />
      </div>
     </div>
    </div>

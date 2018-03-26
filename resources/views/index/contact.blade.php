@@ -25,11 +25,11 @@
             <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
         </div>
     </div>
-    <img id="listCloseBtn" src="images/closeIcon.png"/></div><!-- list over --><!-- banner -->
-<div class="banner" style="background-image:url(Public/upload/banner/other/1432959134.jpg);">
+    <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}"/></div><!-- list over --><!-- banner -->
+<div class="banner" style="background-image:url({{URL::asset('upload/banner/other/1432959134.jpg')}});">
     <div class="bannerInfo"><p class="title">COMMUNICATION</p>
         <p class="title">THE BEGINNING OF PROBLEM SOLVING</p><span class="titleCh">万事俱备 只欠赤风</span></div>
-    <img class="bannerBg" src="images/bannerBg.jpg"/></div><!-- banner over --><!-- contactTable -->
+    <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}"/></div><!-- banner over --><!-- contactTable -->
 <div class="contactTable">
     <div class="container">
         <div class="left"><span class="redTitle">Hi,are you ready?</span>
@@ -58,31 +58,31 @@
 <div class="contactIcon">
     <div class="container"><a href="#">
         <div class="child codeChild">
-            <div class="childImg"><img src="Public/images/contact/2dCode.jpg" title="赤风品牌官方微信"/></div>
+            <div class="childImg"><img src="{{URL::asset('images/contact/2dCode.jpg')}}" title="赤风品牌官方微信"/></div>
             <p class="title">关注微信一举一动尽在掌握</p></div>
     </a>
         <div id="mapIcon" class="child secondChild">
-            <div class="childImg"><img src="Public/images/contact/addressIcon.png" title="百度地图位置"/></div>
+            <div class="childImg"><img src="{{URL::asset('images/contact/addressIcon.png')}}" title="百度地图位置"/></div>
             <p class="title">查看地图，了解赤风位置</p></div>
         <a href="tencent://message/?uin=454258656&Site=www.redwind.cn&Menu=yes" target=_blank>
             <div class="child threeChild" id="BizQQWPA1">
-                <div class="childImg"><img src="Public/images/contact/qqIcon.png" title="企业QQ在线咨询"/></div>
+                <div class="childImg"><img src="{{URL::asset('images/contact/qqIcon.png')}}" title="企业QQ在线咨询"/></div>
                 <p class="title">QQ在线454258656</p></div>
         </a>
         <script>/*BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 454258656, selector: 'BizQQWPA1'});*/</script>
         <a href="/Redwind.pps">
             <div class="child secondChild">
-                <div class="childImg"><img src="Public/images/contact/fileIcon.png" title="公司简介PPT下载"/></div>
+                <div class="childImg"><img src="{{URL::asset('images/contact/fileIcon.png')}}" title="公司简介PPT下载"/></div>
                 <p class="title">2015公司简介PPT下载</p></div>
         </a><a href="#"
                onclick="javascript:window.open('http://dwz.cn/NfCtQ','','height=608,width=838,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no,screenX=300px,screenY=300px, status=no')">
             <div class="child">
-                <div class="childImg"><img src="Public/images/contact/phoneIcon.png" title="免费电话咨询"/></div>
+                <div class="childImg"><img src="{{URL::asset('images/contact/phoneIcon.png')}}" title="免费电话咨询"/></div>
                 <p class="title">品牌设计咨询，免费电话回呼</p></div>
         </a><a href="http://www.baidu.com/s?wd=%E5%B9%BF%E5%B7%9E%E5%B8%82%E8%B5%A4%E9%A3%8E%E8%AE%BE%E8%AE%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E7%99%BE%E5%BA%A6%E4%BF%A1%E8%AA%89%E6%A1%A3%E6%A1%88"
                target="_blank">
             <div class="child threeChild secondChild">
-                <div class="childImg"><img src="Public/images/contact/emailIcon.png" title="赤风信誉档案"/></div>
+                <div class="childImg"><img src="{{URL::asset('images/contact/emailIcon.png')}}" title="赤风信誉档案"/></div>
                 <p class="title">查看赤风信誉档案</p></div>
         </a></div>
 </div><!-- contactIcon over --><!-- map -->

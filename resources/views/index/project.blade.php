@@ -26,17 +26,17 @@
      <p class="line"><input type="button" onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName').val(),$('#listCompany').val(),$('#listEmail').val(),$('#listTitle').val(),$('#listInfo').val())" class="inputBtn" value="立即提交" /></p>
     </div>
    </div>
-   <img id="listCloseBtn" src="images/closeIcon.png" />
+   <img id="listCloseBtn" src="{{URL::asset('assets/images/images/closeIcon.png')}}" />
   </div>
   <!-- list over -->
   <!-- banner -->
-  <div class="banner" style="background-image:url(Public/upload/banner/other/1433261141.jpg);">
+  <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/1433261141.jpg')}});">
    <div class="bannerInfo">
     <p class="title">PROJECT</p>
     <p class="title">ACHIEVE BEYOND YOUR EXPECTATIONS</p>
     <span class="titleCh">超越预期 做到你想不到</span>
    </div>
-   <img class="bannerBg" src="images/bannerBg.jpg" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->
@@ -72,7 +72,7 @@
    <div class="content">
     <a href="/Home/Project/detail/project_id/161.html">
      <div class="child">
-      <img class="childImg" src="images/1499499098.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -83,12 +83,12 @@
         <p class="title">老炮鸭</p>
         <p class="info">重情！重义！重口味！</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/160.html">
      <div class="child">
-      <img class="childImg" src="images/1497520017.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -99,12 +99,12 @@
         <p class="title">摩登猩球</p>
         <p class="info">活泼，可爱</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/144.html">
      <div class="child">
-      <img class="childImg" src="images/1454383338.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>LOGO</p>
@@ -115,12 +115,12 @@
         <p class="title">爱范儿</p>
         <p class="info">连接热爱</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/143.html">
      <div class="child">
-      <img class="childImg" src="images/1454311379.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -131,12 +131,12 @@
         <p class="title">佳都科技</p>
         <p class="info">城市，慧变得更好！</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/142.html">
      <div class="child">
-      <img class="childImg" src="images/1454311843.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -147,12 +147,12 @@
         <p class="title">三潮煮艺</p>
         <p class="info">地道乡情，原生潮味</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/141.html">
      <div class="child">
-      <img class="childImg" src="images/1454381491.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -163,12 +163,12 @@
         <p class="title">湘剧场时尚餐饮</p>
         <p class="info">湘菜有戏，生活有味</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/151.html">
      <div class="child">
-      <img class="childImg" src="images/1471259608.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -179,12 +179,12 @@
         <p class="title">广东道至正餐厅</p>
         <p class="info">平实广东味道，地道广东文化</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/127.html">
      <div class="child">
-      <img class="childImg" src="images/1433514448.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -195,12 +195,12 @@
         <p class="title">NPC鲜柚智能科技</p>
         <p class="info">智享未来</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/154.html">
      <div class="child">
-      <img class="childImg" src="images/1471576431.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -211,12 +211,12 @@
         <p class="title">老重庆饭店</p>
         <p class="info">老子不上班也要吃酸菜鱼</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/137.html">
      <div class="child">
-      <img class="childImg" src="images/1438242091.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -227,12 +227,12 @@
         <p class="title">LIVEON厨房用品</p>
         <p class="info">时尚家用厨刀 美食规划专家</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/138.html">
      <div class="child">
-      <img class="childImg" src="images/1438266406.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -243,12 +243,12 @@
         <p class="title">普罗旺斯旅游投资集团</p>
         <p class="info">德国智慧 美丽中国</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/134.html">
      <div class="child">
-      <img class="childImg" src="images/1438093006.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -259,12 +259,12 @@
         <p class="title">善元堂保建品</p>
         <p class="info">中西结合更贴心</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/121.html">
      <div class="child">
-      <img class="childImg" src="images/1433309385.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -275,12 +275,12 @@
         <p class="title">TMT计测检测</p>
         <p class="info">厚重大气，沉稳性，严谨性</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/111.html">
      <div class="child">
-      <img class="childImg" src="images/1433310187.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -291,12 +291,12 @@
         <p class="title">阿里棒时尚餐饮</p>
         <p class="info">我的午餐握着吃</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/140.html">
      <div class="child">
-      <img class="childImg" src="images/1438610389.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -307,12 +307,12 @@
         <p class="title">季然宁夏枸杞</p>
         <p class="info">生活，季然这样......</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/148.html">
      <div class="child">
-      <img class="childImg" src="images/1471085424.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1471085424.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -323,12 +323,12 @@
         <p class="title">比比味鸡排</p>
         <p class="info">比好吃，更有味</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/125.html">
      <div class="child">
-      <img class="childImg" src="images/1433514297.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433514297.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -339,12 +339,12 @@
         <p class="title">五羊母婴用品</p>
         <p class="info">五羊，更懂妈妈</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/130.html">
      <div class="child">
-      <img class="childImg" src="images/1438090776.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438090776.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>PACK</p>
@@ -355,12 +355,12 @@
         <p class="title">BBU邦孚</p>
         <p class="info">呵护宝宝健康</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/139.html">
      <div class="child">
-      <img class="childImg" src="images/1438430261.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438430261.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>LOGO</p>
@@ -371,12 +371,12 @@
         <p class="title">言采其杞</p>
         <p class="info">愈东方 愈国际</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/153.html">
      <div class="child">
-      <img class="childImg" src="images/1471508087.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1471508087.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -387,12 +387,12 @@
         <p class="title">泰宝医疗</p>
         <p class="info">健康热情，活力奔放</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/117.html">
      <div class="child">
-      <img class="childImg" src="images/1433310439.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433310439.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -403,12 +403,12 @@
         <p class="title">蓝狮投资咨询</p>
         <p class="info">专业视角、专业知识、专业操作</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/120.html">
      <div class="child">
-      <img class="childImg" src="images/1433309895.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433309895.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -419,12 +419,12 @@
         <p class="title">史丹宝五金工具</p>
         <p class="info">专业性、视觉冲击力</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/132.html">
      <div class="child">
-      <img class="childImg" src="images/1438266936.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438266936.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>PACK</p>
@@ -435,12 +435,12 @@
         <p class="title">OBest饼干包装设计</p>
         <p class="info">健康家庭的选择！</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/135.html">
      <div class="child">
-      <img class="childImg" src="images/1438170554.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438170554.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -451,12 +451,12 @@
         <p class="title">哈博电热水器</p>
         <p class="info">中国高端快热专家</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/158.html">
      <div class="child">
-      <img class="childImg" src="images/1472181743.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1472181743.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>BRAND</p>
@@ -467,12 +467,12 @@
         <p class="title">克尔卫汽车用品</p>
         <p class="info">专业净化、健康卫士</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/118.html">
      <div class="child">
-      <img class="childImg" src="images/1433309324.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433309324.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>LOGO</p>
@@ -483,12 +483,12 @@
         <p class="title">盛立皮具</p>
         <p class="info">简约、大气、高贵、时尚</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/122.html">
      <div class="child">
-      <img class="childImg" src="images/1433517378.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433517378.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>PACK</p>
@@ -499,12 +499,12 @@
         <p class="title">一江化工</p>
         <p class="info">时尚、大气、国际化</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/126.html">
      <div class="child">
-      <img class="childImg" src="images/1433427796.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1433427796.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -515,12 +515,12 @@
         <p class="title">迈普再生医学科技</p>
         <p class="info">简洁、大方、创新性</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/133.html">
      <div class="child">
-      <img class="childImg" src="images/1438090049.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438090049.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>PACK</p>
@@ -531,12 +531,12 @@
         <p class="title">加能饮料包装设计</p>
         <p class="info">为生活增加能量！</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
     <a href="/Home/Project/detail/project_id/136.html">
      <div class="child">
-      <img class="childImg" src="images/1438178076.jpg" />
+      <img class="childImg" src="{{URL::asset('assets/images/images/1438178076.jpg')}}" />
       <div class="childHide">
        <div class="childTag">
         <p>VI</p>
@@ -547,7 +547,7 @@
         <p class="title">星星国际影城</p>
         <p class="info">时尚，简洁，国际范</p>
        </div>
-       <img class="childPointer" src="images/hidePointer.png" />
+       <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}" />
       </div>
      </div></a>
    </div>

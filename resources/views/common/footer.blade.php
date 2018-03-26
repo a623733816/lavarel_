@@ -48,9 +48,8 @@
             <img src="{{ URL::asset('assets/images/images/code.png')}}"/>
         </div>
     </div>
-    <script>/*BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 454258656, selector: 'fixedQQ'});*/</script>
     <div class="fixedCodeInfo">
-        <img class="fixedPointer" src="{{ URL::asset('assets/images/images/leftPointer.png')}}')}}"/>
+        <img class="fixedPointer" src="{{ URL::asset('assets/images/images/leftPointer.png')}}"/>
         <img class="fixedCode" src="{{ URL::asset('assets/images/images/1432290251.jpg')}}"/>
     </div>
     </div>
