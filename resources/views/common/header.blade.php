@@ -10,7 +10,7 @@
             <a href="@if($active=='superiority') javascript:void(0) @endif{{URL::asset('superiority')}}">
                 <li  @if($active=='superiority')class="on navBtn_" @endif>国家品牌智库</li>
             </a>
-            <a href="{{URL::asset('partner')}}">
+            <a href=" @if($active=='partner') javascript:void(0) @endif{{URL::asset('partner')}}">
                 <li  @if($active=='partner')class="on" @endif>关于申报</li>
             </a>
             <a href="@if($active=='project') javascript:void(0) @endif{{URL::asset('project')}}">
@@ -25,7 +25,7 @@
             <a href="@if($active=='partner') javascript:void(0) @endif{{URL::asset('partner')}}">
                 <li  @if($active=='partner')class="on navBtn_" @endif>品牌总裁</li>
             </a>
-            <a href="{{URL::asset('contact')}}">
+            <a href=" @if($active=='contact') javascript:void(0) @endif{{URL::asset('contact')}} ">
                 <li  @if($active=='contact')class="on" @endif>联系我们</li>
             </a>
         </ul>
