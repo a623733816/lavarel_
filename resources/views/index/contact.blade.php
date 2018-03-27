@@ -73,7 +73,7 @@
         <a href="/Redwind.pps">
             <div class="child secondChild">
                 <div class="childImg"><img src="{{URL::asset('images/contact/fileIcon.png')}}" title="公司简介PPT下载"/></div>
-                <p class="title">2015公司简介PPT下载</p></div>
+                <p class="title">2015公司简介PPT下载</p></div >
         </a><a href="#"
                onclick="javascript:window.open('http://dwz.cn/NfCtQ','','height=608,width=838,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no,screenX=300px,screenY=300px, status=no')">
             <div class="child">
