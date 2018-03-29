@@ -59,6 +59,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth', 'middleware' => 'auth'
     //客户数据
     Route::get('customerList', 'CustomerDataController@customerList');
     Route::get('projectList', 'CustomerDataController@projectList');
+    //网站配置
+    Route::get('banner', 'WebPageController@banner');
+    Route::get('page', 'WebPageController@page');
 
 });
 
