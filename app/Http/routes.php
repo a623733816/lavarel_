@@ -3,7 +3,6 @@
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 // 前台页面
-
 Route::get('/', 'IndexController@index');
 Route::get('index', 'IndexController@index');
 Route::get('contact', 'IndexController@contact');
@@ -15,6 +14,7 @@ Route::get('redwind', 'IndexController@redwind');
 Route::get('superiority', 'IndexController@superiority');
 Route::post('addProjectInfo', ['as' => 'index.addProjectInfo', 'uses' => 'IndexController@addProjectInfo']);
 Route::post('addCustomerInfo', ['as' => 'index.addCustomerInfo', 'uses' => 'IndexController@addCustomerInfo']);
+
 
 
 Route::resource('posts', 'PostController');
