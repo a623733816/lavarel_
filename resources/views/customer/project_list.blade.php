@@ -135,5 +135,5 @@
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
         });
-    </script>s
+    </script>
 @endsection

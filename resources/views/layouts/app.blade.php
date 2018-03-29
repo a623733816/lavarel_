@@ -22,7 +22,7 @@
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="{{ URL::asset('assets/css/ace-ie.min.css')}}" />
     <![endif]-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ URL::asset('assets/css/select2.css')}}" rel="stylesheet" />
     <!-- ace settings handler -->
     <script src="{{ URL::asset('assets/js/ace-extra.min.js')}}"></script>
     <!--[if lt IE 9]>
