@@ -85,13 +85,18 @@ class IndexController extends Controller
     {
         $posts = $request->all();
         foreach ($posts as $k => $item) {
-            if ('' == trim($item)) {
-                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
+            if (in_array($k, ['name', 'phone', 'company', 'address_detail'])) {
+                if ('' == trim($item)) {
+                    return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
+                }
+                $new_data[$k] = trim($item);
             }
-            $new_data[$k] = trim($item);
+        }
+        if (empty($new_data)) {
+            return Response()->json(['msg' => '非法操作！', 'code' => 4000], 200);
         }
         if ($c_model->add($new_data))
-            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
+            return Response()->json(['msg' => '提交成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '提交失败！', 'code' => 4000], 200);
     }
 }
