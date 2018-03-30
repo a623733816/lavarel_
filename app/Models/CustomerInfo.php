@@ -16,15 +16,18 @@ class CustomerInfo extends Model
     {
         $new_data = [];
         foreach ($data as $k => &$item) {
-            $new_data[$k] = trim($item);
+            if ('' != trim($item)) {
+                $new_data[$k] = trim($item);
+            }
         }
         if (!empty($new_data)) {
-            $this->name = $new_data['name'];
-            $this->phone = $new_data['phone'];
-            $this->email = $new_data['email'];
+            $this->name = strlen($new_data['name']) > 45 ? mb_substr($new_data['name'], 0, 45, 'utf-8') : $new_data['name'];
+            $this->phone = strlen($new_data['phone']) > 11 ? mb_substr($new_data['phone'], 0, 11, 'utf-8') : $new_data['phone'];
+            $this->email = strlen($new_data['email']) > 45 ? mb_substr($new_data['email'], 0, 45, 'utf-8') : $new_data['email'];
             $this->type = $new_data['type'];//1明星，２总裁
             $this->created_at = date('Y-m-d H:i:s');
+            return $this->save();
         }
-        return $this->save();
+        return false;
     }
 }

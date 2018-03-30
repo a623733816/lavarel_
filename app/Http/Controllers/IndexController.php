@@ -18,7 +18,7 @@ class IndexController extends Controller
     public function __construct(Request $request)
     {
         $fun_ = explode('@', $request->route()->getAction()['controller'])[1];
-        view()->share('active',$fun_);
+        view()->share('active', $fun_);
     }
 
     public function index()
@@ -70,7 +70,9 @@ class IndexController extends Controller
     public function addProjectInfo(ProjectInfo $p_model, Request $request)
     {
         $posts = $request->input();
-        return $p_model->add($posts);
+        if ($p_model->add($posts))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
     }
 
     /**
@@ -82,6 +84,8 @@ class IndexController extends Controller
     public function addCustomerInfo(CustomerInfo $c_model, Request $request)
     {
         $posts = $request->input();
-        return $c_model->add($posts);
+        if ($c_model->add($posts))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
     }
 }

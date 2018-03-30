@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\CustomerInfo;
-use App\Models\Menu;
-use App\Models\PermissionRole;
-use App\Models\ProjectInfo;
-use App\Models\Role;
-use App\Models\UserRole;
+use App\Models\BannerInfo;
+use App\Models\WebPageInfo;
+use App\Models\WebPageType;
 use Illuminate\Http\Request;
-use App\Models\Permission;
-use App\Models\User;
-use Illuminate\Support\Facades\Storage;
 use Validator;
 use App\Http\Controllers\Controller;
 use DB;
@@ -20,12 +14,52 @@ class WebPageController extends Controller
 {
     public function banner()
     {
-        return view('webSet.banner')->withUsers(CustomerInfo::paginate(15));
+        return view('webSet.banner')->with('banner_info', BannerInfo::paginate(15));
     }
 
     public function page()
     {
-        return view('webSet.page')->withUsers(ProjectInfo::paginate(15));
+        return view('webSet.page')
+            ->with('web_page_type', WebPageType::all())
+            ->with('web_page_info', WebPageInfo::paginate(15));
+    }
+
+    /**
+     * 添加页面信息
+     * @param WebPageInfo $webPageInfo
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addPageInfo(WebPageInfo $webPageInfo, Request $request)
+    {
+        $data = $request->input();
+        foreach ($data as $item) {
+            if ('' == $item) {
+                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+            }
+        }
+        if ($webPageInfo->save($data))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+    }
+
+    /**
+     * 添加ｂａｎｎｅｒ信息
+     * @param BannerInfo $bannerInfo
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addBannerInfo(BannerInfo $bannerInfo, Request $request)
+    {
+        $data = $request->input();
+        foreach ($data as $item) {
+            if ('' == $item) {
+                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+            }
+        }
+        if ($bannerInfo->save($data))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
     }
 
     /**

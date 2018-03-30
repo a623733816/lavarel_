@@ -17,16 +17,19 @@ class ProjectInfo extends Model
     {
         $new_data = [];
         foreach ($data as $k => &$item) {
-            $new_data[$k] = trim($item);
+            if ('' != $item) {
+                $new_data[$k] = trim($item);
+            }
         }
         if (!empty($new_data)) {
-            $this->name = $new_data['name'];
-            $this->company = $new_data['company'];
-            $this->phone = $new_data['phone'];
-            $this->project_theme = $new_data['project_theme'];//品牌名称
-            $this->project_desc = $new_data['email'];
+            $this->name = strlen($new_data['name']) > 45 ? mb_substr($new_data['name'], 0, 45, 'utf-8') : $new_data['name'];
+            $this->company = strlen($new_data['company']) > 200 ? mb_substr($new_data['company'], 0, 200, 'utf-8') : $new_data['company'];
+            $this->phone = strlen($new_data['phone']) > 11 ? mb_substr($new_data['phone'], 0, 11, 'utf-8') : $new_data['phone'];
+            $this->project_theme = strlen($new_data['project_theme']) > 250 ? mb_substr($new_data['project_theme'], 0, 250, 'utf-8') : $new_data['project_theme'];//品牌名称
+            $this->project_desc = strlen($new_data['email']) > 45 ? mb_substr($new_data['email'], 0, 45, 'utf-8') : $new_data['email'];
             $this->created_at = date('Y-m-d H:i:s');
+            return $this->save();
         }
-        return $this->save();
+        return false;
     }
 }
