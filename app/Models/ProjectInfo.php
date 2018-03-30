@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectInfo extends Model
 {
     public $table = 'project_info';
+    public $timestamps = false;
 
 
     /**

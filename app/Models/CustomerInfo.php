@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomerInfo extends Model
 {
     public $table = 'customer_info';
+    public $timestamps = false;
 
     /**
      * @param $data
