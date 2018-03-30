@@ -69,10 +69,10 @@ class IndexController extends Controller
      */
     public function addProjectInfo(ProjectInfo $p_model, Request $request)
     {
-        $posts = $request->input();
+        $posts = $request->all();
         if ($p_model->add($posts))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 
     /**
@@ -83,15 +83,15 @@ class IndexController extends Controller
      */
     public function addCustomerInfo(CustomerInfo $c_model, Request $request)
     {
-        $posts = $request->input();
+        $posts = $request->all();
         foreach ($posts as $k => $item) {
             if ('' == trim($item)) {
-                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
             }
             $new_data[$k] = trim($item);
         }
         if ($c_model->add($new_data))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 }

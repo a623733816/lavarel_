@@ -19,13 +19,13 @@ class WebPageController extends Controller
 
     public function page()
     {
-        return view('webSet.page')
-            ->with('web_page_type', WebPageType::all())
-            ->with('web_page_info', WebPageInfo::paginate(15));
+        return view('webSet.page')->with('web_page_info', WebPageInfo::paginate(15));
     }
 
+
+
     /**
-     * 添加页面信息
+     * 提交页面信息
      * @param WebPageInfo $webPageInfo
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -33,8 +33,8 @@ class WebPageController extends Controller
     public function addPageInfo(WebPageInfo $webPageInfo, Request $request)
     {
         $data = $request->input();
-        foreach ($data as $item) {
-            if ('' == $item) {
+        foreach ($data as $k => $item) {
+            if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
             }
         }
@@ -44,7 +44,30 @@ class WebPageController extends Controller
     }
 
     /**
-     * 添加ｂａｎｎｅｒ信息
+     * 添加页面信息页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function addPageView()
+    {
+        return view('webSet.setPage');
+    }
+
+    /**
+     * 修改页面信息页面
+     * @param WebPageInfo $webPageInfo
+     * @param $id
+     * @return mixed
+     */
+    public function editPageView(WebPageInfo $webPageInfo, $id)
+    {
+        if(!$id) return false;
+        return view('webSet.setPage')
+            ->with('web_page_type', WebPageType::all())
+            ->with('edit_info', $webPageInfo->find($id));
+    }
+
+    /**
+     * 提交ｂａｎｎｅｒ信息
      * @param BannerInfo $bannerInfo
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -52,8 +75,8 @@ class WebPageController extends Controller
     public function addBannerInfo(BannerInfo $bannerInfo, Request $request)
     {
         $data = $request->input();
-        foreach ($data as $item) {
-            if ('' == $item) {
+        foreach ($data as $k => $item) {
+            if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
             }
         }
@@ -62,6 +85,26 @@ class WebPageController extends Controller
         return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
     }
 
+    /**
+     * 添加ｂａｎｎｅｒ页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function addBannerView()
+    {
+        return view('webSet.setBanner');
+    }
+
+    /**
+     * 修改ｂａｎｎｅｒ页面
+     * @param BannerInfo $bannerInfo
+     * @param $id
+     * @return $this
+     */
+    public function editBannerView(BannerInfo $bannerInfo, $id)
+    {
+        if(!$id) return false;
+        return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
+    }
     /**
      * 多文件上传
      * @param Request $request
@@ -99,5 +142,10 @@ class WebPageController extends Controller
         } else {
             return Response()->json(['msg' => '上传失败！', 'code' => 4000], 400);
         }
+    }
+
+    public function test($id)
+    {
+        dd($id);
     }
 }

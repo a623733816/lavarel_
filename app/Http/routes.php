@@ -62,14 +62,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth', 'middleware' => 'auth'
     Route::get('banner', 'WebPageController@banner');
     Route::get('page', 'WebPageController@page');
     //文件上传
-    Route::post('mostUploads', ['as' => 'WebPage.mostUploads', 'uses' => 'Auth\WebPageController@mostUploads']);
+    Route::post('mostUploads', ['as' => 'WebPage.mostUploads', 'uses' => 'WebPageController@mostUploads']);
     //添加接口
-    Route::post('addBannerInfo', ['as' => 'WebPage.addBannerInfo', 'uses' => 'Auth\WebPageController@addBannerInfo']);
-    Route::post('addPageInfo', ['as' => 'WebPage.addPageInfo', 'uses' => 'Auth\WebPageController@addPageInfo']);
+    Route::post('addBannerInfo', ['as' => 'WebPage.addBannerInfo', 'uses' => 'WebPageController@addBannerInfo']);
+    Route::post('addPageInfo', ['as' => 'WebPage.addPageInfo', 'uses' => 'WebPageController@addPageInfo']);
+    Route::get('addBannerView', ['as' => 'WebPage.addBannerView', 'uses' => 'WebPageController@addBannerView']);
+    Route::get('addPageView', ['as' => 'WebPage.addPageView', 'uses' => 'WebPageController@addPageView']);
+    Route::get('editBannerView/{id}', ['as' => 'WebPage.editBannerView', 'uses' => 'WebPageController@editBannerView']);
+    Route::get('editPageView/{id}', ['as' => 'WebPage.editPageView', 'uses' => 'WebPageController@editPageView']);
     //上传测试
-    Route::get('/mostUploads', function () {
+    Route::get('mostUploads',function(){
         return view('webSet.testupload');
-    });
+    } );
+    Route::get('test/{id}', ['as' => 'WebPage.test', 'uses' => 'WebPageController@test']);
 });
 
 Route::get('background/articles', ['as' => 'background.articles.index', 'uses' => 'background\ArticlesController@index']);
