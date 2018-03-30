@@ -278,7 +278,7 @@ declare over-->
 <div class="contactUs">
     <div class="container">
         <div class="left">
-            <form action="" method="post">
+            <form action="{{route('index.addCustomerInfo')}}" method="post">
                 <p class="titleCn">项目合作</p>
                 <p class="titleEn">project cooperation</p>
                 {!! csrf_field() !!}
