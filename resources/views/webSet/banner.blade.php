@@ -22,9 +22,8 @@
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
+
+
                                     </ul>
                                 </div>
                             @endif
@@ -71,12 +70,18 @@
                             </table>
                                 {!! $users->render() !!}
                         </div><!-- /.table-responsive -->
+                        <div class="kv-main" style="position: relative;">
+                            <div class="file-loading">
+                                <input id="kv-explorer" type="file" multiple>
+                            </div>
+                        </div> <!-- kv-main -->
                     </div><!-- /span -->
                 </div><!-- /row -->
 
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
+
     <!-- Modal -->
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -136,6 +141,22 @@
     <script>
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
+        });
+        //    kv-main update banner
+        $(document).ready(function () {
+            $("#test-upload").fileinput({
+                'theme': 'fa',
+                'showPreview': false,
+                'allowedFileExtensions': ['jpg', 'png', 'gif'],
+                'elErrorContainer': '#errorBlock'
+            });
+            $("#kv-explorer").fileinput({
+                'theme': 'explorer-fa',
+                'uploadUrl': '#',
+                overwriteInitial: false,
+                initialPreviewAsData: true
+            });
+
         });
     </script>
 @endsection

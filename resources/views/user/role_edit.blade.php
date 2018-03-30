@@ -29,6 +29,7 @@
                         <textarea name="description" id="" cols="43" rows="9">{{$role->description}}</textarea>
                     </div>
                 </div>
+
                 <div class="space-4"></div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
