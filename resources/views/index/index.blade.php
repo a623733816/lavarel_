@@ -278,13 +278,13 @@ declare over-->
 <div class="contactUs">
     <div class="container">
         <div class="left">
-            <form action="" method="">
+            <form action="{{route('index.addCustomerInfo')}}" method="post">
                 <p class="titleCn">项目合作</p>
                 <p class="titleEn">project cooperation</p>
-                <p class="line"><input type="text" class="inputText" id="listCompany1" value="企业名称"/></p>
-                <p class="line"><input type="text" class="inputText" id="listArea1" value="行业地区"/></p>
-                <p class="line"><input type="text" class="inputText" id="listName1" value="联系人"/></p>
-                <p class="line"><input type="text" class="inputText" id="listPhone1" value="联系电话"/></p>
+                <p class="line"><input type="text" name="company" class="inputText" id="listCompany1" value="企业名称"/></p>
+                <p class="line"><input type="text" name="address_detail" class="inputText" id="listArea1" value="行业地区"/></p>
+                <p class="line"><input type="text" name="name" class="inputText" id="listName1" value="联系人"/></p>
+                <p class="line"><input type="text" name="phone" class="inputText" id="listPhone1" value="联系电话"/></p>
                 <p class="line">
                     <input type="submit" class="inputBtn"onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName1').val(),$('#listCompany1').val(),$('#listEmail1').val(),$('#listBrand1').val(),$('#listPhone1').val())" value="立即提交"/>
                 </p>
