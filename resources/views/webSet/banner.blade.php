@@ -136,6 +136,7 @@
     <div class="modal fade" tabindex="-1" role="dialog" id="mmmm" aria-labelledby="myModalLabel">
     </div>
     <!-- Modal 远程数据-->
+    <div style="display: none">{{route('WebPage.mostUploads')}}</div>
 @endsection
 @section('script')
     <script>
