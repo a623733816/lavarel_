@@ -19,7 +19,8 @@ class WebPageController extends Controller
 
     public function page()
     {
-        return view('webSet.page')->with('web_page_info', WebPageInfo::paginate(15));
+        $colum_data=array_column(WebPageType::all()->toArray(),'name','id');
+        return view('webSet.page')->with('web_page_type', $colum_data)->with('web_page_info', WebPageInfo::paginate(15));
     }
 
 
@@ -67,6 +68,20 @@ class WebPageController extends Controller
     }
 
     /**
+     * 删除
+     * @param WebPageInfo $webPageInfo
+     * @param $id
+     * @return bool|\Illuminate\Http\JsonResponse
+     */
+    public function deletePage(WebPageInfo $webPageInfo, $id)
+    {
+        if(!$id) return false;
+        if ($webPageInfo->destroy($id))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+    }
+
+    /**
      * 提交ｂａｎｎｅｒ信息
      * @param BannerInfo $bannerInfo
      * @param Request $request
@@ -105,6 +120,20 @@ class WebPageController extends Controller
         if(!$id) return false;
         return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
     }
+    /**
+     * 删除
+     * @param BannerInfo $bannerInfo
+     * @param $id
+     * @return bool|\Illuminate\Http\JsonResponse
+     */
+    public function deleteBanner(BannerInfo $bannerInfo, $id)
+    {
+        if(!$id) return false;
+        if ($bannerInfo->destroy($id))
+            return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+    }
+
     /**
      * 多文件上传
      * @param Request $request

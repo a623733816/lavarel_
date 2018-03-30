@@ -28,7 +28,6 @@
                                     </ul>
                                 </div>
                             @endif
-
                             <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
@@ -37,19 +36,18 @@
                                             <span class="lbl">序号</span>
                                         </label>
                                     </th>
-                                    <th>姓名</th>
-                                    <th>电话</th>
-                                    <th>邮箱</th>
+                                    <th>标题</th>
                                     <th>类型</th>
                                     <th>
                                         <i class="icon-time bigger-110 hidden-480"></i>
                                         创建时间
                                     </th>
+                                    <th>操作</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                @foreach($users as $k=>$v)
+                                @foreach($web_page_info as $k=>$v)
                                 <tr class="">
                                     <td class="center">
                                         <label>
@@ -58,18 +56,25 @@
                                     </td>
 
                                     <td>
-                                        <a href="#">{{$v->name}}</a>
+                                        <a href="#">{{$v->title}}</a>
                                     </td>
-                                    <td>{{$v->phone}}</td>
-                                    <td>{{$v->email}}</td>
-                                    <td>{{$v->type==1?'品牌明星':'品牌总裁'}}</td>
+                                    <td>{{$web_page_type[$v->type]}}</td>
                                     <td class="hidden-480">{{$v->created_at}}</td>
-
+                                    <td>
+                                        <div class="btn-group">
+                                            <a data-toggle="modal"  data-target="#mmmm" class="btn btn-xs btn-info" href="{{route('WebPage.editPageView',['id'=>$v->id])}}">
+                                                <i class="icon-edit bigger-120">修改</i>
+                                            </a>
+                                            <a class="btn btn-xs btn-danger" data-toggle="modal"  data-target="#confirm-delete" data-href="{{route('WebPage.deletePage',['id'=>$v->id])}}">
+                                                <i class="icon-trash bigger-120">删除</i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                                {!! $users->render() !!}
+                                {!! $web_page_info->render() !!}
                         </div><!-- /.table-responsive -->
                     </div><!-- /span -->
                 </div><!-- /row -->

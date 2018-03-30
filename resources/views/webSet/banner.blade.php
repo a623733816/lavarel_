@@ -48,7 +48,7 @@
                                 </thead>
 
                                 <tbody>
-                                @foreach($users as $k=>$v)
+                                @foreach($banner_info as $k=>$v)
                                 <tr class="">
                                     <td class="center">
                                         <label>
@@ -68,7 +68,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                                {!! $users->render() !!}
+                                {!! $banner_info->render() !!}
                         </div><!-- /.table-responsive -->
                         <div class="kv-main" style="position: relative;">
                             <div class="file-loading">

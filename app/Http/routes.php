@@ -70,6 +70,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth', 'middleware' => 'auth'
     Route::get('addPageView', ['as' => 'WebPage.addPageView', 'uses' => 'WebPageController@addPageView']);
     Route::get('editBannerView/{id}', ['as' => 'WebPage.editBannerView', 'uses' => 'WebPageController@editBannerView']);
     Route::get('editPageView/{id}', ['as' => 'WebPage.editPageView', 'uses' => 'WebPageController@editPageView']);
+    Route::get('deleteBanner/{id}', ['as' => 'WebPage.deleteBanner', 'uses' => 'WebPageController@deleteBanner']);
+    Route::get('deletePage/{id}', ['as' => 'WebPage.deletePage', 'uses' => 'WebPageController@deletePage']);
     //上传测试
     Route::get('mostUploads',function(){
         return view('webSet.testupload');
