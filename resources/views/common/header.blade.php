@@ -4,28 +4,31 @@
     <img class="navBtn" src="{{URL::asset('assets/images/images/navBtn.png')}}" title="点我!点我!"/>
     <div class="container">
         <ul class="nav">
-            <a href="@if($active=='index') javascript:void(0) @endif{{URL::asset('index')}}">
+            <a href="#">
                 <li  @if($active=='index')class="on navBtn_" @endif>首页</li>
             </a>
-            <a href="@if($active=='superiority') javascript:void(0) @endif{{URL::asset('superiority')}}">
-                <li  @if($active=='superiority')class="on navBtn_" @endif>国家品牌智库</li>
+            <a href="#">
+                <li  @if($active=='superiority')class="on navBtn_" @endif>最新动态</li>
             </a>
-            <a href=" @if($active=='partner') javascript:void(0) @endif{{URL::asset('partner')}}">
-                <li  @if($active=='partner')class="on" @endif>关于申报</li>
+            <a href="#">
+                <li  @if($active=='project')class="on navBtn_" @endif>重点品牌</li>
             </a>
-            <a href="@if($active=='project') javascript:void(0) @endif{{URL::asset('project')}}">
-                <li  @if($active=='project')class="on navBtn_" @endif>评审标准</li>
+            <!--<a href=" @if($active=='partner') javascript:void(0) @endif{{URL::asset('partner')}}">
+                <li  @if($active=='partner')class="on" @endif>伙伴</li>
+            </a>-->
+            <a href="#">
+                <li  @if($active=='superiority')class="on navBtn_" @endif>领军人物</li>
             </a>
-            <a href="@if($active=='redwind') javascript:void(0) @endif{{URL::asset('redwind')}}">
+            <!--<a href="@if($active=='redwind') javascript:void(0) @endif{{URL::asset('redwind')}}">
                 <li  @if($active=='redwind')class="on navBtn_" @endif>申报表索取</li>
             </a>
-            <a href="@if($active=='news') javascript:void(0) @endif{{URL::asset('news')}}">
+            <a href="#">
                 <li  @if($active=='news')class="on navBtn_" @endif>品牌明星</li>
+            </a>-->
+            <a href="#">
+                <li  @if($active=='partner')class="on navBtn_" @endif>入选条件</li>
             </a>
-            <a href="@if($active=='partner') javascript:void(0) @endif{{URL::asset('partner')}}">
-                <li  @if($active=='partner')class="on navBtn_" @endif>品牌总裁</li>
-            </a>
-            <a href=" @if($active=='contact') javascript:void(0) @endif{{URL::asset('contact')}} ">
+            <a href="#">
                 <li  @if($active=='contact')class="on" @endif>联系我们</li>
             </a>
         </ul>
