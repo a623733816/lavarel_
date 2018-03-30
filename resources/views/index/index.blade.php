@@ -352,53 +352,5 @@ declare over-->
     </div>
 </div>
 brand plan over -->
-<script>
-
-$(".contactSubmit").click(function(){
-	var formUrl=$("form").attr("action");
-
-	var _token=$("input[name='_token']").val();
-	var company=$("#listCompany1").val();
-	var address_detail=$("#listArea1").val();
-	var name=$("#listName1").val();
-	var phone=$("#listPhone1").val();
-
-    if(company==""||address_detail==""||name==""){
-        $('.formInfo .info').html('亲，请填写您的信息');
-        $('.formInfo').css({'display':'block','height':'30px'});
-        $('.formInfo .info').css({'height':'20px','line-height':'10px'});
-        return false;
-    }
-    var phoneReg = /^1[3|4|5|7|8][0-9]{9}$/;
-    var phoneExp = phoneReg.test(phone);
-    console.log(phoneExp);
-    if (!phoneExp) {
-        $('.formInfo .info').html('亲，请填写您的手机号信息');
-        $('.formInfo').css({'display':'block','height':'30px'});
-        $('.formInfo .info').css({'height':'20px','line-height':'10px'});
-        return false;
-    }
-	$.ajax({
-		url:formUrl,
-		type:"post",
-		data:{_token:_token,company:company,address_detail:address_detail,name:name,phone:phone},
-		success:function(data){
-			if(data.code==2000){
-				$(".formInfo .info").html("信息提交成功，我会尽快与您联系。<br/>您也可一键添加申报助手获取咨询更多信息，谢谢！");
-				$(".formInfo").css("display","block");
-			}else{
-				$(".formInfo .info").html(data.code.msg);
-				$(".formInfo").css("display","block");
-			}
-		},
-		error:function(){
-
-		}
-	})
-});
-$("body,html").click(function(){
-	$(".formInfo").css("display","none");
-})
-</script>
 <!-- footer -->
 @endsection
