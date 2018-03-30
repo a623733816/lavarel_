@@ -151,7 +151,7 @@ declare over-->
     <div class="mainSub"></div>
     <!--<span class="mainInfo">最新案例</span>-->
     <div class="content">
-        <a href="/Home/Project/detail/project_id/161.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>
                 <div class="childHide">
@@ -169,72 +169,72 @@ declare over-->
                 </div>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/160.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/144.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/143.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/142.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/141.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/151.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/127.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/154.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/137.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/138.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/134.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/121.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/111.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>
             </div>
         </a>
-        <a href="/Home/Project/detail/project_id/140.html">
+        <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>
             </div>
@@ -278,15 +278,16 @@ declare over-->
 <div class="contactUs">
     <div class="container">
         <div class="left">
-            <form action="{{route('index.addCustomerInfo')}}" method="post">
+            <form action="" method="post">
                 <p class="titleCn">项目合作</p>
                 <p class="titleEn">project cooperation</p>
+                {!! csrf_field() !!}
                 <p class="line"><input type="text" name="company" class="inputText" id="listCompany1" value="企业名称"/></p>
                 <p class="line"><input type="text" name="address_detail" class="inputText" id="listArea1" value="行业地区"/></p>
                 <p class="line"><input type="text" name="name" class="inputText" id="listName1" value="联系人"/></p>
                 <p class="line"><input type="text" name="phone" class="inputText" id="listPhone1" value="联系电话"/></p>
                 <p class="line">
-                    <input type="submit" class="inputBtn"onclick="contactSubmit('/Home/Public/contact_submit.html',$('#listName1').val(),$('#listCompany1').val(),$('#listEmail1').val(),$('#listBrand1').val(),$('#listPhone1').val())" value="立即提交"/>
+                    <input type="button" class="inputBtn contactSubmit" value="立即提交"/>
                 </p>
             </form>
         </div>
@@ -304,6 +305,11 @@ declare over-->
             <p class="contactInfo">监督电话<span></span>021-64089816</p>
             <p class="contactInfo">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱<span></span>ssd@vip.163.com</p>
         </div>
+    </div>
+    <!--表单弹窗-->
+    <div class="formInfo">
+        <div class="mask"></div>
+        <div class="info">信息提交失败。<br/>请您重新填写，谢谢！</div>
     </div>
 </div>
 <!-- contactUs over -->
