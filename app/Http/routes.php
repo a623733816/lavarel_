@@ -16,7 +16,6 @@ Route::post('addProjectInfo', ['as' => 'index.addProjectInfo', 'uses' => 'IndexC
 Route::post('addCustomerInfo', ['as' => 'index.addCustomerInfo', 'uses' => 'IndexController@addCustomerInfo']);
 
 
-
 Route::resource('posts', 'PostController');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -62,7 +61,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth', 'middleware' => 'auth'
     //网站配置
     Route::get('banner', 'WebPageController@banner');
     Route::get('page', 'WebPageController@page');
-
+    //文件上传
+    Route::post('mostUploads', ['as' => 'WebPage.mostUploads','uses' => 'Auth\WebPageController@mostUploads']);
+    Route::get('/mostUploads',function(){
+        return view('webSet.testupload');
+    });
 });
 
 Route::get('background/articles', ['as' => 'background.articles.index', 'uses' => 'background\ArticlesController@index']);
