@@ -9,14 +9,14 @@
             <p class="company">网站建设：上海泛响信息技术有限公司&nbsp;&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;&nbsp;联系电话：400-9999-321</p>
         </div>
 
-        <div class="right"><p class="title">关注我们：</p><a href="http://weibo.com/redwinddesign" target="_blank">
+        <div class="right"><p class="title">关注我们：</p><a href="#">
             <div class="child"><img src="{{ URL::asset('assets/images/images/weiboIcon.png')}}" title="品牌官方微博"/></div>
         </a>
             <div class="child" id="footChildCode">
                 <div class="childCode"><img src="{{ URL::asset('assets/images/images/1432290251.jpg')}}"/></div>
                 <img src="{{ URL::asset('assets/images/images/weixinIcon.png')}}" title="品牌官方微信"/>
             </div>
-            <a href="tencent://message/?uin=519416492&Site=www.redwind.cn&Menu=yes" target=_blank>
+            <a href="tencent://message/?uin=519416492&Site=www.chns.org.cn&Menu=yes" target=_blank>
                 <div class="child no" id="BizQQWPA"><img src="{{ URL::asset('assets/images/images/qqIcon.png')}}" border="0" title="品牌在线咨询"/></div>
             </a>
             <script>/*BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800016368, selector: 'BizQQWPA'});*/</script>
@@ -30,14 +30,13 @@
         <p>TOP</p>
         <img class="fixedTopPointer" src="{{ URL::asset('assets/images/images/pointer.png')}}"/>
     </div>
-    <a href="tencent://message/?uin=519416492&amp;Site=www.redwind.cn&amp;Menu=yes" target="_blank">
+    <a href="tencent://message/?uin=519416492&amp;Site=www.chns.org.cn&amp;Menu=yes" target="_blank">
         <div class="child fixedQQ" id="fixedQQ">
             <img src="{{ URL::asset('assets/images/images/QQ.png')}}"/>
             <p>QQ客服</p>
         </div>
     </a>
-    <a href="#"
-       onclick="javascript:window.open('http://dwz.cn/NfCtQ','','height=608,width=838,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, screenX=300px,screenY=300px,status=no')">
+    <a href="#">
         <div class="child fixedCall">
             <img src="{{ URL::asset('assets/images/images/call.png')}}"/>
             <p>021-63453030</p>
