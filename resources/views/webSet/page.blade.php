@@ -5,10 +5,10 @@
     <div class="page-content">
         <div class="page-header">
             <h1>
-                客户管理
+                网站设置
                 <small>
                     <i class="icon-double-angle-right"></i>
-                    客户列表
+                    页面设置
                 </small>
             </h1>
         </div><!-- /.page-header -->

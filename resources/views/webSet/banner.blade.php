@@ -5,10 +5,10 @@
     <div class="page-content">
         <div class="page-header">
             <h1>
-                客户管理
+                网站设置
                 <small>
                     <i class="icon-double-angle-right"></i>
-                    客户列表
+                    首页banner
                 </small>
             </h1>
         </div><!-- /.page-header -->
@@ -36,14 +36,12 @@
                                             <span class="lbl">序号</span>
                                         </label>
                                     </th>
-                                    <th>姓名</th>
-                                    <th>电话</th>
-                                    <th>邮箱</th>
-                                    <th>类型</th>
+                                    <th>banner名称</th>
                                     <th>
                                         <i class="icon-time bigger-110 hidden-480"></i>
                                         创建时间
                                     </th>
+                                    <th>操作</th>
                                 </tr>
                                 </thead>
 
@@ -59,11 +57,17 @@
                                     <td>
                                         <a href="#">{{$v->name}}</a>
                                     </td>
-                                    <td>{{$v->phone}}</td>
-                                    <td>{{$v->email}}</td>
-                                    <td>{{$v->type==1?'品牌明星':'品牌总裁'}}</td>
                                     <td class="hidden-480">{{$v->created_at}}</td>
-
+                                    <td>
+                                        <div class="btn-group">
+                                            <a data-toggle="modal"  data-target="#mmmm" class="btn btn-xs btn-info" href="{{route('WebPage.editBannerView',['id'=>$v->id])}}">
+                                                <i class="icon-edit bigger-120">修改</i>
+                                            </a>
+                                            <a class="btn btn-xs btn-danger" data-toggle="modal"  data-target="#confirm-delete" data-href="{{route('WebPage.deleteBanner',['id'=>$v->id])}}">
+                                                <i class="icon-trash bigger-120">删除</i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
