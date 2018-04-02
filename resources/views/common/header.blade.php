@@ -1,6 +1,6 @@
 <!-- header -->
 <div class="header">
-    <a href="/index.html"><img class="logo1" src="{{URL::asset('assets/images/images/logo.jpg')}}" title="赤风品牌策划与设计"/></a>
+    <a href="/index.html"><img class="logo1" src="{{URL::asset('assets/images/images/logo.jpg')}}" title="全国重点品牌"/></a>
     <img class="navBtn" src="{{URL::asset('assets/images/images/navBtn.png')}}" title="点我!点我!"/>
     <div class="container">
         <ul class="nav">
