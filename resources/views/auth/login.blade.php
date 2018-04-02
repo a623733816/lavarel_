@@ -41,10 +41,10 @@
                     <div class="center">
                         <h1>
                             <i class="icon-leaf green"></i>
-                            <span class="red">Ace</span>
-                            <span class="white">Application</span>
+                            <span class="red">后台</span>
+                            <span class="white">管理</span>
                         </h1>
-                        <h4 class="blue">&copy; hello,若风</h4>
+                        <h4 class="blue">&copy; hello</h4>
                     </div>
 
                     <div class="space-6"></div>
@@ -103,40 +103,40 @@
                                         </fieldset>
                                     </form>
 
-                                    <div class="social-or-login center">
-                                        <span class="bigger-110">其它登陆</span>
-                                    </div>
+                                    {{--<div class="social-or-login center">--}}
+                                        {{--<span class="bigger-110">其它登陆</span>--}}
+                                    {{--</div>--}}
 
-                                    <div class="social-login center">
-                                        <a class="btn btn-primary">
-                                            <i class="icon-facebook"></i>
-                                        </a>
+                                    {{--<div class="social-login center">--}}
+                                        {{--<a class="btn btn-primary">--}}
+                                            {{--<i class="icon-facebook"></i>--}}
+                                        {{--</a>--}}
 
-                                        <a class="btn btn-info">
-                                            <i class="icon-twitter"></i>
-                                        </a>
+                                        {{--<a class="btn btn-info">--}}
+                                            {{--<i class="icon-twitter"></i>--}}
+                                        {{--</a>--}}
 
-                                        <a class="btn btn-danger">
-                                            <i class="icon-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- /widget-main -->
+                                        {{--<a class="btn btn-danger">--}}
+                                            {{--<i class="icon-google-plus"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div><!-- /widget-main -->--}}
 
-                                <div class="toolbar clearfix">
-                                    <div>
-                                        <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
-                                            <i class="icon-arrow-left"></i>
-                                            忘记密码
-                                        </a>
-                                    </div>
+                                {{--<div class="toolbar clearfix">--}}
+                                    {{--<div>--}}
+                                        {{--<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">--}}
+                                            {{--<i class="icon-arrow-left"></i>--}}
+                                            {{--忘记密码--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
 
-                                    <div>
-                                        <a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-                                            我要注册
-                                            <i class="icon-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                    {{--<div>--}}
+                                        {{--<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">--}}
+                                            {{--我要注册--}}
+                                            {{--<i class="icon-arrow-right"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </div><!-- /widget-body -->
                         </div><!-- /login-box -->
 
