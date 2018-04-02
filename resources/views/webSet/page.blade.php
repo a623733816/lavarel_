@@ -1,7 +1,66 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <style type="text/css">
+        .setPage{
+        }
+        .setPage-content{
+            width: 708px;
+            margin: 0 auto;
+        }
+        .setPage-content .page-id{
+            font-size: 20px;
+        }
+        .setPage .input-item label{
+            display: inline-block;
+            width: 80px;
+        }
+        .setPage .input-item label i{
+            color: red;
+        }
+        .setPage .input-item input{
+            display: inline-block;
+            width: 400px;
+            height: 30px;
+            border-radius: 6px !important;
+        }
+        .setPage .input-item textarea{
+            display: inline-block;
+            resize: none;
+            width: 400px;
+            border-radius: 6px !important;
+        }
+        .setPage .input-class-item .setPage-title{
+            display: inline-block;
+            width: 80px;
+        }
+        .setPage .input-class-item .setPage-title i{
+            color: red;
+        }
+        .setPage .input-class-item .select-class{
+            display: inline-block;
+            width: 400px;
+        }
+        .setPage .input-file .update-file-pic{
+            width: 484px;
+            height: 150px;
+            background-color: #c7c7c7;
+            position: relative;
+        }
+        .setPage .input-file .update-file-pic .setpage-update-pic{
+            margin: 0;
+            display: block;
+            width: 100%;
+            height: 150px;
+            background-color: transparent;
+            text-align: center;
+            line-height: 150px;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
     <div class="page-content">
         <div class="page-header">
             <h1>
@@ -28,6 +87,8 @@
                                     </ul>
                                 </div>
                             @endif
+
+                            <a class="btn btn-primary pull-right" style="margin-bottom: 10px">点击添加</a>
                             <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
@@ -78,69 +139,113 @@
                         </div><!-- /.table-responsive -->
                     </div><!-- /span -->
                 </div><!-- /row -->
+                <!-- 编辑页面 -->
+                <div class="row">
+                    <div class="col-xs-12 setPage">
+                        <div class="setPage-content">
+                            <form action="">
+                                <div>
+                                    <span class="page-id">ID: <i>123456</i> </span>
+                                </div>
+                                <br/>
+                                <div class="input-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
+                                    <input type="text" placeholder="请输入标题" id="setPage-title">
+                                </div>
+                                <br/>
+                                <div class="input-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>关键词:</label>
+                                    <input type="text" placeholder="请输入关键词" id="setPage-title">
+                                </div>
+                                <br/>
+                                <div class="input-class-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>分类:</label>
+                                    <select class="select-class">
+                                        <option>分类一</option>
+                                        <option  selected>分类二</option>
+                                        <option>分类三</option>
+                                    </select>
 
+                                </div>
+                                <br/>
+                                <div class="input-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>描述:</label>
+                                    <textarea class="form-control" rows="3" placeholder="描述内容"></textarea>
+                                </div>
+                                <br/>
+                                <div class="input-file">
+                                    <div class="update-file-pic">
+                                        <img src="" alt="" id="page-pic">
+                                        <label for="setpage-update-pic" class="setpage-update-pic">
+                                            点击上传图片
+                                        </label>
+                                    </div>
+                                    <input type="file" id="setpage-update-pic" value="选择文件" style="display: none;">
+                                    <i>上传文图片推荐尺寸800*350,单张照片不大于20M</i>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <form action="{{route('admin.user')}}" method="post" class="form-horizontal">
-                <div class="modal-body">
-                        <div class="modal-body">
-                            {!! csrf_field() !!}
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 用户名:</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="name" id="form-field-1" placeholder="用户名" class="col-xs-10 col-sm-10">
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email:</label>
-                                <div class="col-sm-9">
-                                    <input type="email" id="form-field-1" name="email" placeholder="Email" class="col-xs-10 col-sm-10">
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">密码:</label>
-                                <div class="col-sm-9">
-                                    <input type="password" id="form-field-1" name="password" placeholder="密码" class="col-xs-10 col-sm-10">
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                           <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">确认密码:</label>
-                                <div class="col-sm-9">
-                                    <input type="password" id="form-field-1" name="password_confirmation" placeholder="确认密码" class="col-xs-10 col-sm-10">
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="submit" class="btn btn-primary">保存</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Modal edit远程数据-->
-    <div class="modal fade" tabindex="-1" role="dialog" id="mmmm" aria-labelledby="myModalLabel">
-    </div>
-    <!-- Modal 远程数据-->
 @endsection
 @section('script')
     <script>
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
         });
+        $('.input-class-item').on('click',function () {
+            $('.class-list-ul').toggleClass('active');
+        });
+        $('.class-list-ul').on('click','li',function () {
+            var text = $(this).text();
+            $('.class-list').append(text);
+        })
+        $('#setpage-update-pic').on('change',function () {
+            var file = this.files[0];
+            var el = $(".update-file-pic").get(0);
+            readFile(file,function(data){
+                //imgdata base64编码文本
+            });
+        });
+
+
+
+
+        //封装的图片获取的方法
+        function readFile(file,callback) {
+            //        新建阅读器
+            var reader = new FileReader();
+            //        根据文件类型选择阅读方式
+            switch (file.type){
+                case 'image/jpg':
+                case 'image/png':
+                case 'image/jpeg':
+                case 'image/gif':
+                    reader.readAsDataURL(file);
+                    break;
+            }
+            //        当文件阅读结束后执行的方法
+           reader.addEventListener('load',function () {
+                //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
+                switch (file.type){
+                    case 'image/jpg':
+                    case 'image/png':
+                    case 'image/jpeg':
+                    case 'image/gif':
+                        var img = document.getElementById('page-pic');
+                        img.src = reader.result;
+                        img.style.width = '100%';
+                        img.style.height  = '150px'
+                        callback&&callback(reader.result);
+                        break;
+                }
+            });
+
+        }
     </script>
 @endsection
