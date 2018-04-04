@@ -30,19 +30,21 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 
 
-.mainTitle{color:#434343;font-size:72px;line-height:72px;font-weight: 500;font-family:'MyriadPro-LightCond';font-stretch:ultra-condensed;width:100%;text-align:center; }
+.mainTitle{color:#434343;font-size:72px;line-height:72px;font-weight: 500;/*font-family:'MyriadPro-LightCond';*/font-stretch:ultra-condensed;width:100%;text-align:center; }
+
+.mainTitleSize{font-size: 30px;}
 
 .mainSub{width:37px;height:2px;background:#cb0101;margin:30px auto;}
 
 .mainInfo{padding:10px 0px;text-align:center;font-size:40px;color:#434343;font-family:'Noto Sans S Chinese Light','NotoSansHans-Light','微软雅黑';}
 
-.linkBtn{background-image:url(../../images/images/rightIcon.png); background-repeat:no-repeat; background-size:36px auto; background-position:254px center;width:308px;height:58px;line-height:58px;text-align:left;border:2px solid #e60012;color:#e60012;font-size:22px;}
+.linkBtn{background-image:url(../../images/images/btnBgBig.png); background-repeat:no-repeat;width:164px;height:26px;line-height:26px;text-align:left;color:#d62018;font-size:14px;}
 
 .linkBtn{transition-duration: .5s;-ms-transition-duration: .5s;-moz-transition-duration: .5s; -webkit-transition-duration: .5s; }
 
-.linkBtn span{margin-left:20px;}
+.linkBtn span{margin-left:20px;display:block;}
 
-.linkBtn:hover{color:#fff;background-color:#d41b19;background-image:url(../../images/images/rightIconOn.png);}
+.linkBtn:hover{color:#fff;background-image:url(../../images/images/btnBgBigHover.png);}
 
 
 
@@ -691,13 +693,17 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 @media (min-width: 1200px) and (max-width:1920px ) {
 
-.mainTitle{font-size:26px;line-height:50px;}
+.mainTitle{font-size:36px;line-height:50px;}
 
-.mainSub{width:68px;height:2px;margin:10px auto;}
+.mainTitleSize{font-size:28px;}
 
-.mainInfo{padding:8px 0px;font-size:36px;}
+.mainTitleColor{color:#d40f1b;}
 
-.linkBtn{background-size:18px auto;border:1px solid #e60012;background-position:131px center;width:158px;height:30px;line-height:30px;font-size:12px;}
+.mainSub{width:260px;height:2px;margin:10px auto;}
+
+.mainInfo{padding:0px;font-size:20px; display:block;}
+
+.linkBtn{width:164px;height:26px;line-height:26px;font-size:14px;}
 
 .linkBtn span{margin-left:16px;}
 

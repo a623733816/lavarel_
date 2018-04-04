@@ -13,7 +13,7 @@
             <div class="child"><img src="{{ URL::asset('assets/images/images/weiboIcon.png')}}" title="品牌官方微博"/></div>
         </a>
             <div class="child" id="footChildCode">
-                <div class="childCode"><img src="{{ URL::asset('assets/images/images/1432290251.jpg')}}"/></div>
+                <div class="childCode"><img src="{{ URL::asset('assets/images/images/2dCode.jpg')}}"/></div>
                 <img src="{{ URL::asset('assets/images/images/weixinIcon.png')}}" title="品牌官方微信"/>
             </div>
             <a href="tencent://message/?uin=519416492&Site=www.chns.org.cn&Menu=yes" target=_blank>

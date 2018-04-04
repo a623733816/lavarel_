@@ -46,6 +46,22 @@
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1461650738.jpg')}})">
             </div>
         </a>
+        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1432952879.jpg')}})">
+            </div>
+        </a>
+        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1433515769.jpg')}})">
+            </div>
+        </a>
+        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031633.jpg')}})">
+            </div>
+        </a>
+        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+            <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031636.jpg')}})">
+            </div>
+        </a>
     </div>
     <div class="bannerNav"></div>
     <img class="bannerBtn leftBtn" onclick="bannerBtnClick('-')" src="{{URL::asset('assets/images/images/bannerLeft.png')}}"/>
@@ -65,7 +81,7 @@
                 <div class="title">叩开通往国家品牌的大门</div>
                 <div class="text">全国重点品牌示范工程旨在通过《全国重点品牌发展规划(2018-2020年)》项目的实施，充分发挥政府政策的引导作用，为各级政府各行发展型企业提供全媒体多角度的品牌传播与品牌策划，贴心把脉，用三年时间培育一批高质量、高信誉、高市场占有率和高附加值的“全国重点品牌”。</div>
                 <div class="linkBtn">
-                    <span>></span>
+                    <span>全文&nbsp;&nbsp;→</span>
                 </div>
             </div>
         </div>
@@ -78,7 +94,7 @@
                 <div class="title">重点品牌入选范围包含</div>
                 <div class="text">企业品牌、产品品牌、成长性品牌、自主创新品牌、中华老字号品牌、旅游区域品牌。其中包括：食品、养生保健、餐饮、建材建筑装饰、农业、服装、轻工、电子商务、医药、汽车及配件制造、印刷、包装、礼品、金融业、信息技术、商业零售等行业。</div>
                 <div class="linkBtn">
-                    <span>></span>
+                    <span>全文&nbsp;&nbsp;→</span>
                 </div>
             </div>
         </div>
@@ -91,7 +107,7 @@
                 <div class="title">培育方向与入选品牌权益</div>
                 <div class="text">入选品牌代表了改革开放40年来企业品牌建设的高质量品牌成果，荣誉证书和证牌统一制作、编号和颁发。企业可使用统一的荣誉标识刊登广告和宣传。同时将在品牌价值提升，品牌商业化和品牌产权资本化等方面获得精准服务对接，由国家品牌战略研究智库提供一对一帮扶，助力成就国家品牌。</div>
                 <div class="linkBtn">
-                    <span>></span>
+                    <span>全文&nbsp;&nbsp;→</span>
                 </div>
             </div>
         </div>
@@ -145,11 +161,31 @@
    </div>
   </div>
 declare over-->
+<!-- breed -->
+<div class="breed">
+    <div class="container">
+        <a href="">
+            <img src="{{URL::asset('assets/images/images/indexBreed.jpg')}}" alt=""/>
+        </a>
+    </div>
+</div>
+<!-- breed over -->
+<!-- person -->
+<div class="person">
+    <div class="container">
+        <a href="">
+            <img src="{{URL::asset('assets/images/images/indexPerson.jpg')}}" alt=""/>
+        </a>
+    </div>
+</div>
+<!-- person over -->
 <!-- work -->
 <div class="work">
-    <p class="mainTitle mainInfo">重点品牌</p>
+    <p class="mainTitle">重点品牌</p>
+    <p class="mainTitle mainTitleSize mainTitleColor">national key brand</p>
     <div class="mainSub"></div>
-    <!--<span class="mainInfo">最新案例</span>-->
+   <span class="mainInfo">充分发挥政府政策的引导作用</span>
+   <span class="mainInfo mainTitleColor">支持重点品牌进入国家品牌设计</span>
     <div class="content">
         <a href="">
             <div class="child">
@@ -161,7 +197,7 @@ declare over-->
                         <div class="childSub"></div>
                     </div>
                     <div class="childContent">
-                        <p class="title"><img src="{{URL::asset('assets/images/images/brandIcon.png')}}" alt=""/></p>
+                        <p class="title"><img src="{{URL::asset('assets/images/images/brandIcon1.png')}}" alt=""/></p>
                         <p class="title">成就与责任</p>
                         <p class="info">国家级非物质文化遗产</p>
                     </div>
@@ -172,6 +208,18 @@ declare over-->
         <a href="">
             <div class="child">
                 <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>
+                <div class="childHide">
+                    <div class="childTag">
+                        <p>BRAND</p>
+                        <p>DISPLAY</p>
+                        <div class="childSub"></div>
+                    </div>
+                    <div class="childContent">
+                        <p class="title"><img src="{{URL::asset('assets/images/images/brandIcon2.png')}}" alt=""/></p>
+                        <p class="info">泛亚医药，一切为了健康</p>
+                    </div>
+                    <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
+                </div>
             </div>
         </a>
         <a href="">
@@ -242,29 +290,11 @@ declare over-->
     </div>
     <a href="">
         <div class="linkBtn">
-            <span>查看更多牛B案例</span>
+            <span>查看更多重点案例&nbsp;&nbsp;→</span>
         </div>
     </a>
 </div>
 <!-- work over -->
-<!-- breed -->
-<div class="breed">
-    <div class="container">
-        <a href="">
-            <img src="{{URL::asset('assets/images/images/indexBreed.jpg')}}" alt=""/>
-        </a>
-    </div>
-</div>
-<!-- breed over -->
-<!-- person -->
-<div class="person">
-    <div class="container">
-        <a href="">
-            <img src="{{URL::asset('assets/images/images/indexPerson.jpg')}}" alt=""/>
-        </a>
-    </div>
-</div>
-<!-- person over -->
 <!-- service -->
 <div class="service">
     <div class="container">
