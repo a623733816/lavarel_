@@ -33,7 +33,7 @@
 <!-- banner -->
 <div class="banner">
     <div class="contents">
-        <a href="/redwind.html">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1483427615.jpg')}})">
                 <!--<div class="contentInfo">
                     <p class="title1">始于2001年</p>
@@ -42,23 +42,23 @@
                 </div>-->
             </div>
         </a>
-        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1461650738.jpg')}})">
             </div>
         </a>
-        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1432952879.jpg')}})">
             </div>
         </a>
-        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1433515769.jpg')}})">
             </div>
         </a>
-        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031633.jpg')}})">
             </div>
         </a>
-        <a href="http://zc.suning.com/project/detail.htm?projectId=5598">
+        <a href="#">
             <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031636.jpg')}})">
             </div>
         </a>
