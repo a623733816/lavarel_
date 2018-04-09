@@ -89,9 +89,15 @@ class WebPageController extends Controller
     public function addBannerInfo(BannerInfo $bannerInfo, Request $request)
     {
         $data = $request->input();
-        foreach ($data as $k => $item) {
+        foreach ($data as $k => &$item) {
             if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+            }
+            if ($k == 'img_path') {
+                $item = json_encode($item);
+            }
+            if ($k != '_token') {
+                $bannerInfo->$k = $item;
             }
         }
         if ($bannerInfo->save($data))

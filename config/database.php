@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'bdm257366401.my3w.com',
-            'database'  => 'bdm257366401_db',
-            'username'  => 'bdm257366401',
-            'password'  => 'bdm257366401',
+            'host'      => '192.168.53.207',
+            'database'  => 'test',
+            'username'  => 'fanxiang',
+            'password'  => 'fanxiang123',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
