@@ -1,3 +1,6 @@
+@section('style')
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/setPage.css')}}">
+@endsection
 @extends('layouts.app')
 
 @section('content')
@@ -53,7 +56,7 @@
                                         </label>
                                     </div>
                                     <input type="file" id="setpage-update-pic" value="选择文件" style="display: none;">
-                                    <i>上传文图片推荐尺寸800*350,单张照片不大于20M</i>
+                                    <i>上传文图片推荐尺寸最好是png或者jpg,单张照片不大于20M</i>
                                 </div>
                                 <br>
                                 <div class="editor-con">
@@ -141,7 +144,8 @@
                     'image',  // 插入图片
                     'code',  // 插入代码
                     'undo',  // 撤销
-                    'redo'  // 重复
+                    'redo' , // 重复
+                    'video' //视频
                 ];
                 //图片以base64格式提交
                 editor.customConfig.uploadImgShowBase64 = true;
@@ -149,7 +153,9 @@
                 editor.customConfig.showLinkImg = false;
                 editor.create();
                 $('#btn1').on('click',function () {
-                    alert(editor.txt.html());
+                    var json = editor.txt.getJSON();
+                    var jsonStr = JSON.stringify(json)
+                    console.log(jsonStr);
                     return false
                 })
             }

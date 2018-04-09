@@ -20,16 +20,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/ace-rtl.min.css')}}" />
     <link rel="stylesheet" href="{{ URL::asset('assets/css/ace-skins.min.css')}}" />
     <!--  update banner -->
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/fileinput.min.css')}}" />
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/theme.min.css')}}" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        .kv-file-upload,.kv-file-zoom,.text-warning,.fileinput-upload-button{
-            display: none;
-        }
-    </style>
-    <!-- setPage样式 -->
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/setPage.css')}}">
+    @yield('style')
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="{{ URL::asset('assets/css/ace-ie.min.css')}}" />
     <![endif]-->
@@ -440,10 +431,6 @@
 </script>
 <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ URL::asset('assets/js/typeahead-bs2.min.js')}}"></script>
-<!-- update banner -->
-<script src="{{ URL::asset('assets/js/fileinput.js')}}" type="text/javascript"></script>
-<script src="{{ URL::asset('assets/js/theme.min.js')}}" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" type="text/javascript"></script>
 <!-- 文本编辑器 -->
 <script src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
 

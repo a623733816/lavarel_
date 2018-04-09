@@ -1,0 +1,89 @@
+
+.banner-input-item{
+    text-align: left;
+}
+.banner-input-item i{
+    color: red;
+}
+.banner-input-item label{
+    width: 100px;
+}
+.banner-input-item input{
+    border-radius: 6px !important;
+    display: inline-block;
+    width: 500px;
+}
+.banner-input-item textarea{
+    border-radius: 6px !important;
+    display: inline-block;
+    width: 500px;
+}
+
+.kuang{
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: inset 0px 1px 20px 5px #ddd;
+    background: #ddd;
+    width: 480px;
+    height: 193px;
+    position: relative;
+}
+.addhao{
+    width: 180px;
+    height: 193px;
+}
+.on{
+    text-align: left;
+    width: 480px;
+    height: 193px;
+    position: absolute;
+    overflow: hidden;
+    line-height: 200px;
+    top: 0;
+}
+
+.on img{
+    width: 480px;
+    height: 193px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.kuang input{
+    width: 480px;
+    height: 193px;
+    opacity: 0;
+}
+.button{
+    width: 500px;
+    height: 36px;
+    margin: 0 auto;
+
+}
+.button .set{
+    width: 216px;
+    height: 36px;
+    background: #ddd;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+.set label{
+    width: 216px;
+    height: 36px;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #0b6cbc;
+    cursor: pointer;
+}
+
+.bigk{
+    width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
