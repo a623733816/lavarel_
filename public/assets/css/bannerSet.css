@@ -45,45 +45,47 @@
 .on img{
     width: 480px;
     height: 193px;
-    height: auto;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
 }
+.set{
+    width: 480px;
+    height: 193px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+.set label{
+    width: 480px;
+    height: 193px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    cursor: pointer;
+}
 .kuang input{
     width: 480px;
     height: 193px;
     opacity: 0;
-}
-.button{
-    width: 500px;
-    height: 36px;
-    margin: 0 auto;
-
-}
-.button .set{
-    width: 216px;
-    height: 36px;
-    background: #ddd;
-    text-align: center;
-    position: relative;
-    margin: 0 auto;
-}
-.set label{
-    width: 216px;
-    height: 36px;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #0b6cbc;
-    cursor: pointer;
 }
 
 .bigk{
     width: 680px;
     margin: 0 auto;
     text-align: center;
+}
+.banner-btn-sublime{
+    width: 480px;
+    margin: 0 auto;
+}
+.banner-error-msg{
+    height: 30px;
+}
+.banner-error-msg p{
+    color: red;
+    font-size: 16px;
 }

@@ -7,14 +7,12 @@
         request: function(param){
             var _this = this;
             $.ajax({
-                type: param.method || 'get',
+                type: param.method || 'GET',
                 url: param.url || '',
-                dataType: param.type || 'json',
+                dataType: param.type || '',
                 data: param.data || '',
                 success: function(res){
-                    if(0 === res.status){
-                        typeof param.success === 'function'&& param.success(res.data,res.msg);
-                    }
+                        typeof param.success === 'function'&& param.success(res);
                 },
                 error: function(err){
                     typeof param.error === 'function'&& param.error(err.statusText);

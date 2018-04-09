@@ -79,49 +79,17 @@
     <script type="text/javascript">
         var page = {
             init: function () {
-                this.editor();
+                this.onLoad();
                 this.bindEvent();
+            },
+            onLoad: function () {
+                //文本框初始化
+                this.editor();
             },
             bindEvent: function () {
                 var _this = this;
-                $('#setpage-update-pic').on('change',function () {
-                    var file = this.files[0];
-                    var el = $(".update-file-pic").get(0);
-                    _this.readFile(file,function(data){
-                        console.log(data);
-                    });
-                });
-
             },
-            readFile: function (file,callback) {
-                //        新建阅读器
-                var reader = new FileReader();
-                //        根据文件类型选择阅读方式
-                switch (file.type){
-                    case 'image/jpg':
-                    case 'image/png':
-                    case 'image/jpeg':
-                    case 'image/gif':
-                        reader.readAsDataURL(file);
-                        break;
-                }
-                //        当文件阅读结束后执行的方法
-                reader.addEventListener('load',function () {
-                    //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
-                    switch (file.type){
-                        case 'image/jpg':
-                        case 'image/png':
-                        case 'image/jpeg':
-                        case 'image/gif':
-                            var img = document.getElementById('page-pic');
-                            img.src = reader.result;
-                            img.style.width = '100%';
-                            img.style.height  = '193.6px';
-                            callback&&callback(reader.result);
-                            break;
-                    }
-                });
-            },
+            //文本框方法
             editor: function () {
                 //初始化文本编辑器;
                 var E = window.wangEditor;
@@ -155,13 +123,12 @@
                 $('#btn1').on('click',function () {
                     var json = editor.txt.getJSON();
                     var jsonStr = JSON.stringify(json)
-                    console.log(jsonStr);
                     return false
                 })
             }
         }
        $(function () {
-           page.init()
+           page.init();
        });
     </script>
 @endsection

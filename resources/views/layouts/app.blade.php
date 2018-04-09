@@ -431,6 +431,7 @@
 </script>
 <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ URL::asset('assets/js/typeahead-bs2.min.js')}}"></script>
+
 <!-- 文本编辑器 -->
 <script src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
 
