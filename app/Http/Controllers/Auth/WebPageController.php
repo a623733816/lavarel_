@@ -19,10 +19,9 @@ class WebPageController extends Controller
 
     public function page()
     {
-        $colum_data=array_column(WebPageType::all()->toArray(),'name','id');
+        $colum_data = array_column(WebPageType::all()->toArray(), 'name', 'id');
         return view('webSet.page')->with('web_page_type', $colum_data)->with('web_page_info', WebPageInfo::paginate(15));
     }
-
 
 
     /**
@@ -61,7 +60,7 @@ class WebPageController extends Controller
      */
     public function editPageView(WebPageInfo $webPageInfo, $id)
     {
-        if(!$id) return false;
+        if (!$id) return false;
         return view('webSet.setPage')
             ->with('web_page_type', WebPageType::all())
             ->with('edit_info', $webPageInfo->find($id));
@@ -75,7 +74,7 @@ class WebPageController extends Controller
      */
     public function deletePage(WebPageInfo $webPageInfo, $id)
     {
-        if(!$id) return false;
+        if (!$id) return false;
         if ($webPageInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
@@ -117,9 +116,10 @@ class WebPageController extends Controller
      */
     public function editBannerView(BannerInfo $bannerInfo, $id)
     {
-        if(!$id) return false;
+        if (!$id) return false;
         return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
     }
+
     /**
      * 删除
      * @param BannerInfo $bannerInfo
@@ -128,7 +128,7 @@ class WebPageController extends Controller
      */
     public function deleteBanner(BannerInfo $bannerInfo, $id)
     {
-        if(!$id) return false;
+        if (!$id) return false;
         if ($bannerInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
@@ -144,6 +144,10 @@ class WebPageController extends Controller
         $file = $request->file('myfile');
         if (empty($file)) {
             return Response()->json(['msg' => '没有发现文件！', 'code' => 4000], 400);
+        }
+        if (is_object($file))//如果是对象那么是单文件上传
+        {
+            $file = [$file];
         }
         foreach ($file as $key => $value) {
             if (!empty($value)) {//此处防止没有多文件上   传的情况
