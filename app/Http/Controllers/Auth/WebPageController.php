@@ -123,6 +123,8 @@ class WebPageController extends Controller
     public function editBannerView(BannerInfo $bannerInfo, $id)
     {
         if (!$id) return false;
+        $find=$bannerInfo->find($id);
+        $find->img_path=json_decode($find->img_path,1);
         return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
     }
 
