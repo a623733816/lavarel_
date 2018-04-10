@@ -5,7 +5,12 @@
             <div class="title"><span class="titleB">BRAND</span><span>全国重点品牌示范工程办公室</span></div>
             <p class="titleEn">National key brand demonstration project office</p>
             <p class="info">地址：上海市黄浦区打浦路15号长城金融大厦3803 室 &nbsp;</p>
-            <p class="info"><span>咨询服务电话：021-63453030</span>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;<span>举报监督电话：<a>021-64089816</a></span>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;<span>E-mail：ssd@vip.163.com</span></p>
+            <p class="info">
+                <span>咨询服务电话：021-63453030</span>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+                <span>举报监督电话：<a>021-64089816</a></span>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+                <span>E-mail：ssd@vip.163.com</span>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+                <span>沪ICP备11012240号-2</span>
+            </p>
             <p class="company">网站建设：上海泛响信息技术有限公司&nbsp;&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;&nbsp;联系电话：400-9999-321</p>
         </div>
 

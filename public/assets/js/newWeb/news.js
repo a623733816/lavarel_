@@ -16,3 +16,4 @@ function cutStrings(i1){
         $(".main .content .child:eq("+i+")").find(".info").html(str);
     });
 }
+

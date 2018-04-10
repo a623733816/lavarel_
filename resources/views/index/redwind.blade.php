@@ -36,7 +36,7 @@
     <p class="title"> CHINA’S TOP 50 BRAND DESING COMPANIES</p>
     <span class="titleCh">中国品牌设计公司50强</span>
    </div>
-   <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}" />
+   <img class="bannerBg" src="{{URL::asset('assets/images/images/otherBannerBg.jpg')}}" />
   </div>
   <!-- banner over -->
   <!-- main -->

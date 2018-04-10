@@ -1,5 +1,5 @@
 $(function(){
-    $("#listName1").focus(function(){
+    /*$("#listName1").focus(function(){
         if($(this).val()=="联系人"){
             $(this).val("");
         }
@@ -61,7 +61,7 @@ $(function(){
         if($(this).val()==""){
             $(this).val("告诉我们您的项目基本信息");
         }
-    });
+    });*/
 
     /*icon*/
     $(".contactIcon .child").mouseover(function(){

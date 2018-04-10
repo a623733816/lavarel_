@@ -12,7 +12,7 @@ $(function(){
     $("#mainChild1 .child").click(function(){
         var screenHeight=$(window).height();
         var headerTop=parseInt($(".header").css("height"));
-        var scrollname=['#mainChild2','#mainChild3','#mainChild5','#mainChild6','#mainChild8','#mainChild9'];
+        var scrollname=['#main'];
         for(var i=0;i<scrollname.length;i++){
             scrolls[i]=parseInt($(scrollname[i]).offset().top)-headerTop;
         }

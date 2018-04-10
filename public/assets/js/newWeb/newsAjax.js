@@ -1,3 +1,4 @@
+/*
 var nowIndex=1;
 var suspend=false;
 var classifyid;
@@ -40,7 +41,7 @@ function scrollIndex(scrollTop){
 
     screenHeight=$(window).height();
     var scrollTop=scrollTop||$(document).scrollTop();
-    scrolls=parseInt($(".contact").offset().top)-screenHeight;
+    scrolls=parseInt($("#main").offset().top)-screenHeight;
 
     if(scrollTop>=scrolls){
         if(nowIndex==-1||suspend)return;
@@ -75,4 +76,4 @@ function scrollIndex(scrollTop){
 
         );
     }
-}
+}*/

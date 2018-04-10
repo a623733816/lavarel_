@@ -1,3 +1,4 @@
+/*
 var nowIndex=1;
 var suspend=false;
 var serviceid;
@@ -84,4 +85,4 @@ function scrollIndex(scrollTop){
 
         );
     }
-}
+}*/

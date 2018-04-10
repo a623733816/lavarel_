@@ -69,8 +69,8 @@
     <img class="bannerBg" src="{{URL::asset('assets/images/images/bannerBg.jpg')}}"/>
 </div>
 <!-- banner over -->
-<!-- about -->
-<div class="about">
+<!-- newActive -->
+<div class="newActive">
     <div class="container">
         <div class="content">
             <div class="left">
@@ -113,7 +113,7 @@
         </div>
     </div>
 </div>
-<!-- about over -->
+<!-- newActive over -->
 <!-- declare
 <div class="main">
    <div class="mainChild" id="mainChild1">
@@ -185,7 +185,7 @@ declare over-->
     <p class="mainTitle mainTitleSize mainTitleColor">national key brand</p>
     <div class="mainSub"></div>
    <span class="mainInfo">充分发挥政府政策的引导作用</span>
-   <span class="mainInfo mainTitleColor">支持重点品牌进入国家品牌设计</span>
+   <span class="mainInfo mainTitleColor">支持重点品牌进入国家品牌计划</span>
     <div class="content">
         <a href="">
             <div class="child">
@@ -289,8 +289,8 @@ declare over-->
         </a>
     </div>
     <a href="">
-        <div class="linkBtn">
-            <span>查看更多重点案例&nbsp;&nbsp;→</span>
+        <div class="indexLinkBtn">
+            <span>查看更多&nbsp;&nbsp;&nbsp;&nbsp;→</span>
         </div>
     </a>
 </div>
