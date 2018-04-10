@@ -125,6 +125,7 @@
                         var addBannerUrl = $('.addBanner').data('action');
                         //添加token
                         dataForm._token = token;
+                        console.log(dataForm);
                         $.ajax({
                             type:"POST",
                             url:addBannerUrl,

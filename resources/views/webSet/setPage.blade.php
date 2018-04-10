@@ -22,7 +22,8 @@
                     <div class="col-xs-12 setPage">
                         <div class="setPage-content">
                             <form action="" id="formBtn">
-                                <br/>
+                                <div class="input-err-item">
+                                </div>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
                                     <input type="text" placeholder="请输入标题" id="setPage-title">
@@ -30,22 +31,22 @@
                                 <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>关键词:</label>
-                                    <input type="text" placeholder="请输入关键词" id="setPage-title">
+                                    <input type="text" placeholder="请输入关键词" id="setPage-keyword">
                                 </div>
                                 <br/>
                                 <div class="input-class-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>分类:</label>
-                                    <select class="select-class">
-                                        <option>分类一</option>
-                                        <option  selected>分类二</option>
-                                        <option>分类三</option>
+                                    <select class="select-class" placeholder="请选择">
+                                        <option value="分类一">分类一</option>
+                                        <option value="分类二">分类二</option>
+                                        <option value="分类三">分类三</option>
                                     </select>
 
                                 </div>
                                 <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>描述:</label>
-                                    <textarea class="form-control" rows="3" placeholder="描述内容"></textarea>
+                                    <textarea class="form-control" rows="3" placeholder="描述内容" id="setPage-desc"></textarea>
                                 </div>
                                 <br/>
                                 <div class="input-file">
@@ -63,7 +64,7 @@
                                     <div id="editor"></div>
                                 </div>
                                 <br>
-                                <button class="btn btn-primary" id="btn1">点击保存</button>
+                                <button class="btn btn-primary" id="set-page-btn">点击保存</button>
                             </form>
 
                         </div>
@@ -73,10 +74,14 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
-
+    <div style="" class="fileGetUrl">{!! csrf_field() !!}</div>
+    <div style="" class="PageUrl" data-action="{{route('WebPage.mostUploads')}}"></div>
 @endsection
 @section('script')
     <script type="text/javascript">
+        var token = $('.fileGetUrl>input').val();
+        var urlFrom = $('.PageUrl').data('action');
+        var editor = null;
         var page = {
             init: function () {
                 this.onLoad();
@@ -84,16 +89,64 @@
             },
             onLoad: function () {
                 //文本框初始化
-                this.editor();
+                this.editor(function () {
+                    //点击调用提交的方法
+                });
             },
             bindEvent: function () {
+                var data= {
+                    title:'',
+                    desc:'',
+                    content:'',
+                    keyword:'',
+                    type:'',
+                    filesData: [],
+                    img_path:[]
+                 };
                 var _this = this;
+                $('#setpage-update-pic').on('change',function (e) {
+                    var targetEvent =  e.target,
+                        formData = new FormData();
+                        formData.append("myfile",targetEvent.files[0]);
+                        formData.append("_token",token);
+                    _this.setPage_update_Pic(formData,data);
+                });
+                //获取标题中值
+                $('#setPage-title').on('change',function () {
+                    data.title = $(this).val();
+                });
+                //获取关键字
+                $('#setPage-keyword').on('change',function () {
+                    data.keyword = $(this).val();
+                });
+                //获取类型
+                $('.select-class').on('change',function () {
+                    data.type = $(this).val();
+                });
+                //获取描述
+                $('#setPage-desc').on('change',function () {
+                    data.desc = $(this).val();
+                })
+
+                //点击提交保存
+                $('#set-page-btn').on('click',function () {
+                    var isStatus = _this.validateSetPage(data);
+//                    var editor.txt.html();
+                    if(isStatus.status){
+
+                    }else{
+                        $('.input-err-item').html('<p>'+ isStatus.msg +'</p>')
+                    }
+                    return false
+                });
+
             },
             //文本框方法
             editor: function () {
+                var _this = this;
                 //初始化文本编辑器;
                 var E = window.wangEditor;
-                var editor = new E('#editor');
+                editor = new E('#editor');
                 //定义编辑器的tab栏目
                 editor.customConfig.menus = [
                     'head',  // 标题
@@ -115,17 +168,99 @@
                     'redo' , // 重复
                     'video' //视频
                 ];
-                //图片以base64格式提交
-                editor.customConfig.uploadImgShowBase64 = true;
-                //隐藏网络图片上传
+                // 隐藏“网络图片”tab
                 editor.customConfig.showLinkImg = false;
+                // 配置服务器端地址
+                editor.customConfig.customUploadImg = function (files, insert) {
+                   if(files.length){
+                       _this.editor_file_pic(files,insert);
+                   }
+                };
                 editor.create();
-                $('#btn1').on('click',function () {
-                    var json = editor.txt.getJSON();
-                    var jsonStr = JSON.stringify(json)
-                    return false
+
+            },
+            //文本框上传图片
+            editor_file_pic: function (files,insert) {
+                var  formData = new FormData();
+                    formData.append('_token',token);
+                    formData.append('myfile',files[0]);
+                //上传图片
+                $.ajax({
+                    url: urlFrom,
+                    type: "POST",
+                    data:formData,
+                    cache: false,
+                    contentType: false,        //不可缺参数是
+                    processData: false,        //不可缺参数
+                    success: function (res) {
+                        if(res.code === 2000){
+                            var result = res.data;
+                            insert(result[0]);
+                        }else{
+                            console.log('文本编辑框上传图片出现问题');
+                        }
+                    },
+                    error: function (error) {
+                        //错误
+                        console.log('error',error);
+                    }
                 })
-            }
+            },
+            //上传缩率图,
+            setPage_update_Pic: function (formData,data) {
+                var _this = this;
+                $.ajax({
+                    url: urlFrom,
+                    type: "POST",
+                    data:formData,
+                    cache: false,
+                    contentType: false,        //不可缺参数是
+                    processData: false,        //不可缺参数
+                    success: function (res) {
+                       if(res.code === 2000){
+                           data.img_path.push(res.data[0]);
+                           $('#page-pic').prop('src',res.data[0]);
+                       }else{
+                           console.log('setPage上传缩率图出现错误');
+                       }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            },
+            //空格判断
+            validateSetPage: function (data) {
+                var pageInfo = {
+                    msg:'',
+                    status: false
+                };
+                if(!_mm.validate(data.title,'require')){
+                    pageInfo.msg = "请输入标题";
+                    pageInfo.status = false;
+                }else if(!_mm.validate(data.keyword,'require')){
+                    pageInfo.msg = "请输入关键词";
+                    pageInfo.status = false;
+                }else if(!_mm.validate(data.type,'require')){
+                    pageInfo.msg = "请选择类型";
+                    pageInfo.status = false;
+                }else if(!_mm.validate(data.desc,'require')){
+                    pageInfo.msg = "请输入描述";
+                    pageInfo.status = false;
+                    console.log(data.img_path.length);
+                }else if(!data.img_path.length){
+                    pageInfo.msg = "请上传缩率图";
+                    pageInfo.status = false;
+                }else{
+                    pageInfo.msg = "";
+                    pageInfo.status = true;
+                }
+                return pageInfo;
+            },
+            //可以编辑的文本框重构
+
+
+
         }
        $(function () {
            page.init();

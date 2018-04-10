@@ -1,5 +1,12 @@
 .setPage{
 }
+.input-err-item{
+    width: 482px;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+    height: 30px;
+}
 .setPage-content{
     width: 708px;
     margin: 0 auto;
