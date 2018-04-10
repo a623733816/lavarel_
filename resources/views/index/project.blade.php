@@ -1,11 +1,6 @@
 @extends('index.lay')
 
 @section('body')
-  <style>
-    body{
-        overflow:auto!important;
-    }
-  </style>
   <!-- header over-->
   <div class="stance"></div>
   <!-- list -->
@@ -152,7 +147,7 @@
   <!-- main over -->
   <!-- footer -->
   @endsection
-  <script src="{{ URL::asset('assets/js/newWeb/projectAjax.js')}}"></script>
+  <!--<script src="{{ URL::asset('assets/js/newWeb/projectAjax.js')}}"></script>
   <script>    setUrl('/Home/Project/indexAjax.html','/Home/Project/detail','','');
 
-</script>
+</script>-->
