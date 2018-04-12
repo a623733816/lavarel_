@@ -433,7 +433,7 @@
 <script src="{{ URL::asset('assets/js/typeahead-bs2.min.js')}}"></script>
 
 <!-- 文本编辑器 -->
-<script src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+<script src="{{ URL::asset('assets/js/wangeditor.js')}}"></script>
 
 <!-- 工具方法 -->
 <script type="text/javascript" src="{{ URL::asset('assets/js/util.js')}}"></script>

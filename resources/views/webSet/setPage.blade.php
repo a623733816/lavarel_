@@ -21,7 +21,6 @@
                 <div class="row">
                     <div class="col-xs-12 setPage">
                         <div class="setPage-content">
-                            <form action="" id="formBtn">
                                 <div class="input-err-item">
                                 </div>
                                 <div class="input-item">
@@ -36,7 +35,8 @@
                                 <br/>
                                 <div class="input-class-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>分类:</label>
-                                    <select class="select-class" placeholder="请选择">
+                                    <select class="select-class">
+                                        <option value="请选择">请选择</option>
                                         <option value="分类一">分类一</option>
                                         <option value="分类二">分类二</option>
                                         <option value="分类三">分类三</option>
@@ -65,8 +65,6 @@
                                 </div>
                                 <br>
                                 <button class="btn btn-primary" id="set-page-btn">点击保存</button>
-                            </form>
-
                         </div>
 
                     </div>
@@ -76,72 +74,87 @@
     </div>
     <div style="" class="fileGetUrl">{!! csrf_field() !!}</div>
     <div style="" class="PageUrl" data-action="{{route('WebPage.mostUploads')}}"></div>
+    <div class="addPage" data-action="{{route('WebPage.addPageInfo')}}"></div>
 @endsection
 @section('script')
     <script type="text/javascript">
         var token = $('.fileGetUrl>input').val();
         var urlFrom = $('.PageUrl').data('action');
+        var addUrl = $('.addPage').data('action');
         var editor = null;
         var page = {
+            data:{
+                _token:token,
+                title:'',
+                desc:'',
+                content:'',
+                keyword:'',
+                type:'',
+                img_path:[]
+            },
             init: function () {
                 this.onLoad();
                 this.bindEvent();
             },
             onLoad: function () {
                 //文本框初始化
-                this.editor(function () {
-                    //点击调用提交的方法
-                });
+                this.editor();
             },
             bindEvent: function () {
-                var data= {
-                    title:'',
-                    desc:'',
-                    content:'',
-                    keyword:'',
-                    type:'',
-                    filesData: [],
-                    img_path:[]
-                 };
                 var _this = this;
                 $('#setpage-update-pic').on('change',function (e) {
                     var targetEvent =  e.target,
                         formData = new FormData();
                         formData.append("myfile",targetEvent.files[0]);
                         formData.append("_token",token);
-                    _this.setPage_update_Pic(formData,data);
+                    _this.setPage_update_Pic(formData);
                 });
                 //获取标题中值
                 $('#setPage-title').on('change',function () {
-                    data.title = $(this).val();
+                    _this.data.title = $(this).val();
                 });
                 //获取关键字
                 $('#setPage-keyword').on('change',function () {
-                    data.keyword = $(this).val();
+                    _this.data.keyword = $(this).val();
                 });
                 //获取类型
                 $('.select-class').on('change',function () {
-                    data.type = $(this).val();
+                    _this.data.type = $(this).val();
                 });
                 //获取描述
                 $('#setPage-desc').on('change',function () {
-                    data.desc = $(this).val();
+                    _this.data.desc = $(this).val();
                 })
-
                 //点击提交保存
                 $('#set-page-btn').on('click',function () {
-                    var isStatus = _this.validateSetPage(data);
-//                    var editor.txt.html();
+                    _this.data.content = editor.txt.text().toString();
+                    var isStatus = _this.validateSetPage(_this.data);
                     if(isStatus.status){
-
+                        $('.input-err-item').html('');
+                        _this.data.content = editor.txt.html().toString();
+                       //提交上传
+                        $.ajax({
+                            url:addUrl,
+                            type:'POST',
+                            data: _this.data,
+                            success: function (res) {
+                                console.log(_this.data);
+                                if(res.code === 2000){
+                                    alert('添加成功');
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
                     }else{
                         $('.input-err-item').html('<p>'+ isStatus.msg +'</p>')
                     }
-                    return false
+                    return false;
                 });
 
             },
-            //文本框方法
+            //初始化文本框方法
             editor: function () {
                 var _this = this;
                 //初始化文本编辑器;
@@ -170,14 +183,13 @@
                 ];
                 // 隐藏“网络图片”tab
                 editor.customConfig.showLinkImg = false;
-                // 配置服务器端地址
+                //获取图片信息
                 editor.customConfig.customUploadImg = function (files, insert) {
                    if(files.length){
                        _this.editor_file_pic(files,insert);
                    }
                 };
                 editor.create();
-
             },
             //文本框上传图片
             editor_file_pic: function (files,insert) {
@@ -207,7 +219,7 @@
                 })
             },
             //上传缩率图,
-            setPage_update_Pic: function (formData,data) {
+            setPage_update_Pic: function (formData) {
                 var _this = this;
                 $.ajax({
                     url: urlFrom,
@@ -218,7 +230,7 @@
                     processData: false,        //不可缺参数
                     success: function (res) {
                        if(res.code === 2000){
-                           data.img_path.push(res.data[0]);
+                           _this.data.img_path.push(res.data[0]);
                            $('#page-pic').prop('src',res.data[0]);
                        }else{
                            console.log('setPage上传缩率图出现错误');
@@ -251,16 +263,15 @@
                 }else if(!data.img_path.length){
                     pageInfo.msg = "请上传缩率图";
                     pageInfo.status = false;
+                }else if(!_mm.validate(data.content,'require')){
+                    pageInfo.msg = "请输入文章内容";
+                    pageInfo.status = false;
                 }else{
                     pageInfo.msg = "";
                     pageInfo.status = true;
                 }
                 return pageInfo;
-            },
-            //可以编辑的文本框重构
-
-
-
+            }
         }
        $(function () {
            page.init();
