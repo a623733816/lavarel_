@@ -49,7 +49,6 @@
                                 <div class="banner-btn-sublime">
                                     <a href="javascript:;" class="pull-left btn btn-primary" id="banner-sublime">提交并保存</a>
                                 </div>
-
                             </div>  <!-- bigk -->
                     </div><!-- /span -->
                 </div><!-- /row -->
@@ -131,7 +130,11 @@
                             url:addBannerUrl,
                             data:dataForm,
                             success: function (res) {
-                                console.log("su",res);
+                                if(res.code === 2000){
+                                    window.location.href  = '/admin/banner';
+                                }else{
+                                    alert(res.msg);
+                                }
                             },
                             error:function (error) {
                                 console.log('err',error);

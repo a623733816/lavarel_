@@ -96,7 +96,7 @@ class WebPageController extends Controller
             if ($k == 'img_path') {
                 $item = json_encode($item);
             }
-            if ($k != '_token') {
+            if (!in_array($k, ['_token','q'])) {
                 $bannerInfo->$k = $item;
             }
         }

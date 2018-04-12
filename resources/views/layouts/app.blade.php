@@ -31,8 +31,6 @@
     <script src="{{ URL::asset('assets/js/html5shiv.js')}}"></script>
     <script src="{{ URL::asset('assets/js/respond.min.js')}}"></script>
     <![endif]-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" type="text/javascript"></script>
 </head>
 
 <body>
