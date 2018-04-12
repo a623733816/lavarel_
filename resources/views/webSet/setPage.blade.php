@@ -36,10 +36,10 @@
                                 <div class="input-class-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>分类:</label>
                                     <select class="select-class">
-                                        <option value="请选择">请选择</option>
-                                        <option value="分类一">分类一</option>
-                                        <option value="分类二">分类二</option>
-                                        <option value="分类三">分类三</option>
+                                        <option value="">请选择</option>
+                                        @foreach($web_page_type as $k=>$v)
+                                        <option value="{{$k}}">{{$v}}</option>
+                                        @endforeach
                                     </select>
 
                                 </div>

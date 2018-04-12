@@ -44,6 +44,7 @@ class WebPageController extends Controller
                 $webPageInfo->$k = $item;
             }
         }
+        $webPageInfo->created_at=date('Y-m-d H:i:s');
         if ($webPageInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
@@ -55,7 +56,8 @@ class WebPageController extends Controller
      */
     public function addPageView()
     {
-        return view('webSet.setPage');
+        $colum_data = array_column(WebPageType::all()->toArray(), 'name', 'id');
+        return view('webSet.setPage')->with('web_page_type', $colum_data);
     }
 
     /**
@@ -106,6 +108,7 @@ class WebPageController extends Controller
                 $bannerInfo->$k = $item;
             }
         }
+        $bannerInfo->created_at=date('Y-m-d H:i:s');
         if ($bannerInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
