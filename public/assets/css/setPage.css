@@ -71,3 +71,7 @@
     left: 0;
     top: 0;
 }
+#page-pic,#page-pic-msk{
+    width: 484px;
+    height: 193.6px;
+}

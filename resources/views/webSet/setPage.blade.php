@@ -132,19 +132,19 @@
                 });
                 //获取标题中值
                 $('#setPage-title').on('change',function () {
-                    _this.data.title = $(this).val();
+                    _this.data.title = $.trim($(this).val());
                 });
                 //获取关键字
                 $('#setPage-keyword').on('change',function () {
-                    _this.data.keyword = $(this).val();
+                    _this.data.keyword = $.trim($(this).val());
                 });
                 //获取类型
                 $('.select-class').on('change',function () {
-                    _this.data.type = $(this).val();
+                    _this.data.type = $.trim($(this).val());
                 });
                 //获取描述
                 $('#setPage-desc').on('change',function () {
-                    _this.data.desc = $(this).val();
+                    _this.data.desc = $.trim($(this).val());
                 })
                 //点击提交保存
                 $('#set-page-btn').on('click',function () {
