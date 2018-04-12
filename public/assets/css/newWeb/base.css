@@ -79,7 +79,7 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 .list .container{width:1161px;padding-top:65px;}
 
-.list .left{width:580px;float:left;}
+/*.list .left{width:580px;float:left;}
 
 .list .left .redTitle{padding:5px 0px;height:80px;line-height:80px;border-bottom:2px solid #e60012;color:#E50012;font-size:64px;font-family:'MyriadPro-Regular_0';}
 
@@ -109,11 +109,49 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 .list .right .line .inputBtn:hover{background:#e50012;color:#fff;}
 
-.list #listCloseBtn{position:absolute;top:34px;right:34px;cursor:pointer;}
-
 .list .container .contactTableTitle{color:#FF0000;font-size:22px;line-height:36px;margin-top:48px;}
 
-.list .container .contactTableInfo{line-height:28px;color:#434343;font-size:22px;margin-top:15px;}
+.list .container .contactTableInfo{line-height:28px;color:#434343;font-size:22px;margin-top:15px;}*/
+
+.list #listCloseBtn{position:absolute;top:34px;right:34px;cursor:pointer;}
+
+/*头部表单*/
+.list .contactUs{width:100%;padding:0;background:#fff;}
+
+.contactUs{width:100%;padding:60px 0 100px;background:#fff;}
+
+.contactUs .container{width:1050px;margin:0 auto;overflow:hidden;}
+
+.contactUs .container .left{width:430px;float:left;}
+
+.contactUs .container .left .titleCn{line-height:36px;color:#d51f19;font-size:30px;}
+
+.contactUs .container .left .titleEn{line-height:30px;color:#3e3a39;font-size:30px;padding-bottom:10px;border-bottom:#ca0000 1px solid;margin-bottom:20px;}
+
+.contactUs .container .left .line{padding:10px 0;}
+
+.contactUs .container .left .line .inputText{width:390px;height:40px;line-height:40px;padding:10px 20px;background:#f7f7f7;border:none;color:#727272;font-size:16px;}
+
+.contactUs .container .left .line .inputBtn{width:430px;height:60px;line-height:60px;font-size:18px;color:#fff;text-align:center;border:none;background:#d52019;cursor:pointer;}
+
+.contactUs .container .right{width:480px;float:right;}
+
+.contactUs .container .right .title{line-height:30px;color:#3e3a39;font-size:26px;padding-top:36px;padding-bottom:10px;border-bottom:#d3d3d4 1px solid;}
+
+.contactUs .container .right .info{line-height:26px;color:#727272;font-size:14px;letter-spacing:.05em;margin-bottom:50px;}
+
+.contactUs .container .right .contactInfo{line-height:26px;color:#0d0d0b;font-size:16px;letter-spacing:.05em;margin-bottom:5px;}
+
+.contactUs .container .right .contactInfo span.sign{width:20px;color:#d51f19;background:none;font-size:20px;margin:0;}
+
+.contactUs .container .right .contactInfo span{width:2px;height:20px;background:#d41e1d;display:inline-block;margin:-4px 8px;}
+
+.contactUs .formInfo{width:340px;height:60px;position:fixed;left:50%;top:50%;margin-left:-170px;margin-top:-30px;padding:10px;display:none;}
+
+.contactUs .formInfo .mask{width:100%;height:100%;background:#000;opacity:.7;position:absolute;left:0;top:0;border-radius:5px;z-index:-1;}
+
+.contactUs .formInfo .info{width:340px;height:40px;line-height:20px;padding:10px 0;text-align:center;font-size:14px;color:#fff;}
+
 
 
 .contact{position:relative;padding:80px 0px;border-bottom:1px solid #949494;text-align:center;}
@@ -869,6 +907,8 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 
 /*联系我们*/
+.list .contactUs{width:100%;padding:0;background:#fff;}
+
 .contactUs{width:100%;padding:60px 0 100px;background:#fff;}
 
 .contactUs .container{width:1050px;margin:0 auto;overflow:hidden;}
@@ -906,7 +946,7 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 
 
-    .footerNav .container{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
+.footerNav .container{transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;-webkit-transform-origin:center top;}
 
 .footerNav .container{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
 
