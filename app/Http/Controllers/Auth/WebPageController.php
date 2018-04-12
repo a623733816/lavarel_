@@ -35,12 +35,18 @@ class WebPageController extends Controller
         $data = $request->input();
         foreach ($data as $k => $item) {
             if ('' == $item && $k != 'id') {
-                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
+            }
+            if (!in_array($k, ['img_path', 'f_img_path'])) {
+                $item = $item[0];
+            }
+            if (!in_array($k, ['_token', 'q'])) {//过滤多余字段
+                $webPageInfo->$k = $item;
             }
         }
-        if ($webPageInfo->save($data))
+        if ($webPageInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 
     /**
@@ -60,7 +66,7 @@ class WebPageController extends Controller
      */
     public function editPageView(WebPageInfo $webPageInfo, $id)
     {
-        if (!$id) return false;
+        if (!$id)  return false;
         return view('webSet.setPage')
             ->with('web_page_type', WebPageType::all())
             ->with('edit_info', $webPageInfo->find($id));
@@ -74,10 +80,10 @@ class WebPageController extends Controller
      */
     public function deletePage(WebPageInfo $webPageInfo, $id)
     {
-        if (!$id) return false;
+        if (!$id)  return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
         if ($webPageInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 
     /**
@@ -89,20 +95,20 @@ class WebPageController extends Controller
     public function addBannerInfo(BannerInfo $bannerInfo, Request $request)
     {
         $data = $request->input();
-        foreach ($data as $k => &$item) {
+        foreach ($data as $k => $item) {
             if ('' == $item && $k != 'id') {
-                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 400);
+                return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
             }
             if ($k == 'img_path') {
-                $item = json_encode($item);
+                $item = $item[0];
             }
-            if (!in_array($k, ['_token','q'])) {
+            if (!in_array($k, ['_token', 'q'])) {//过滤多余字段
                 $bannerInfo->$k = $item;
             }
         }
-        if ($bannerInfo->save($data))
+        if ($bannerInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 
     /**
@@ -122,9 +128,7 @@ class WebPageController extends Controller
      */
     public function editBannerView(BannerInfo $bannerInfo, $id)
     {
-        if (!$id) return false;
-        $find=$bannerInfo->find($id);
-        $find->img_path=json_decode($find->img_path,1);
+        if (!$id)  return false;
         return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
     }
 
@@ -136,10 +140,10 @@ class WebPageController extends Controller
      */
     public function deleteBanner(BannerInfo $bannerInfo, $id)
     {
-        if (!$id) return false;
+        if (!$id)  return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
         if ($bannerInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
-        return Response()->json(['msg' => '失败！', 'code' => 4000], 400);
+        return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
     }
 
     /**
@@ -151,7 +155,7 @@ class WebPageController extends Controller
     {
         $file = $request->file('myfile');
         if (empty($file)) {
-            return Response()->json(['msg' => '没有发现文件！', 'code' => 4000], 400);
+            return Response()->json(['msg' => '没有发现文件！', 'code' => 4000], 200);
         }
         if (is_object($file))//如果是对象那么是单文件上传
         {
@@ -162,11 +166,11 @@ class WebPageController extends Controller
                 $allowed_extensions = ["png", "jpg", "gif"];
                 //文件类型判断
                 if ($value->getClientOriginalExtension() && !in_array($value->getClientOriginalExtension(), $allowed_extensions)) {
-                    return Response()->json(['msg' => '请上传:"' . explode(',', $allowed_extensions) . '",格式文件', 'code' => 4000], 400);
+                    return Response()->json(['msg' => '请上传:"' . explode(',', $allowed_extensions) . '",格式文件', 'code' => 4000], 200);
                 }
                 //文件的大小限制
                 if ($value->getClientSize() < 8 * 1024) {
-                    return Response()->json(['msg' => '上传文件大小不超过８M!', 'code' => 4000], 400);
+                    return Response()->json(['msg' => '上传文件大小不超过８M!', 'code' => 4000], 200);
                 }
                 $destinationPath = 'storage/uploads/'; //public 文件夹下面建 storage/uploads 文件夹
                 if (!file_exists($destinationPath)) {
@@ -181,7 +185,7 @@ class WebPageController extends Controller
         if (!empty($filePath)) {
             return Response()->json(['msg' => '上传成功！', 'data' => $filePath, 'code' => 2000], 200);
         } else {
-            return Response()->json(['msg' => '上传失败！', 'code' => 4000], 400);
+            return Response()->json(['msg' => '上传失败！', 'code' => 4000], 200);
         }
     }
 
