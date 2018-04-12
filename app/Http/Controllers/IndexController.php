@@ -60,6 +60,10 @@ class IndexController extends Controller
     {
         return view('index.contact');
     }
+    public function detail($id)
+    {
+        return view('index.detail'.$id);
+    }
 
     /**
      * 添加项目业务信息接口
