@@ -105,6 +105,7 @@
                             var result = res.data;
                             if(result.length){
                                 var picUrl = result[0];
+                                dataForm.img_path = [];
                                 dataForm.img_path.push(picUrl);
                                 $('.onPic').html('<img src="'+ picUrl+'"/>')
                             }else{

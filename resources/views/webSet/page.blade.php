@@ -26,7 +26,6 @@
                                     </ul>
                                 </div>
                             @endif
-
                             <a href="{{route('WebPage.addPageView')}}" class="btn btn-primary pull-right" style="margin-bottom: 10px">点击添加</a>
                             <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                                 <thead>
@@ -54,7 +53,6 @@
                                             <span class="lbl">{{$k+1}}</span>
                                         </label>
                                     </td>
-
                                     <td>
                                         <a href="#">{{$v->title}}</a>
                                     </td>
@@ -65,7 +63,7 @@
                                             <a  class="btn btn-xs btn-info" href="{{route('WebPage.editPageView',['id'=>$v->id])}}">
                                                 <i class="icon-edit bigger-120">修改</i>
                                             </a>
-                                            <a class="btn btn-xs btn-danger" data-href="{{route('WebPage.deletePage',['id'=>$v->id])}}">
+                                            <a  class="btn btn-xs btn-danger deleteSetPage" data-delete="{{route('WebPage.deletePage',['id'=>$v->id])}}">
                                                 <i class="icon-trash bigger-120">删除</i>
                                             </a>
                                         </div>
@@ -94,5 +92,33 @@
             var text = $(this).text();
             $('.class-list').append(text);
         });
+        var page = {
+            init: function () {
+              this.bindEvent();
+            },
+            bindEvent: function () {
+                $('.deleteSetPage').on('click',function () {
+                    var deteUrl = $(this).data('delete');
+                    //删除setPage数据；
+                    $.ajax({
+                        type:'GET',
+                        url: deteUrl,
+                        success: function (res) {
+                            if(res.code === 2000){
+                                var isDete = confirm('你确定要删除吗');
+                                if(isDete){
+                                    window.location.href = '/admin/page';
+                                }else{
+                                    alert(res.msg);
+                                }
+                            }
+                        }
+                    })
+                })
+            }
+        }
+        $(function () {
+            page.init();
+        })
     </script>
 @endsection

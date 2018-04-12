@@ -159,9 +159,10 @@
                             type:'POST',
                             data: _this.data,
                             success: function (res) {
-                                console.log(_this.data);
                                 if(res.code === 2000){
-                                    alert('添加成功');
+                                  window.location.href ="/admin/page";
+                                }else{
+                                    alert(res.msg);
                                 }
                             },
                             error: function (error) {
@@ -251,9 +252,15 @@
                     processData: false,        //不可缺参数
                     success: function (res) {
                        if(res.code === 2000){
-                           num == 1? _this.data.img_path.push(res.data[0]): _this.data.f_img_path.push(res.data[0]);
-                           num == 1? $('#page-pic').prop('src',res.data[0]): $('#page-pic-msk').prop('src',res.data[0]);
-
+                           if(num == 1){
+                               _this.data.img_path = [];
+                               _this.data.img_path.push(res.data[0]);
+                               $('#page-pic').prop('src',res.data[0]);
+                           }else{
+                               _this.data.f_img_path = [];
+                               _this.data.f_img_path.push(res.data[0]);
+                               $('#page-pic-msk').prop('src',res.data[0]);
+                           }
                        }else{
                            alert(res.msg);
                        }

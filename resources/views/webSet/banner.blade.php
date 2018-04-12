@@ -64,7 +64,7 @@
                                             <a data-toggle="modal"  data-target="#mmmm" class="btn btn-xs btn-info" href="{{route('WebPage.editBannerView',['id'=>$v->id])}}">
                                                 <i class="icon-edit bigger-120">修改</i>
                                             </a>
-                                            <a  id="bannerDelete" class="btn btn-xs btn-danger" data-delete="{{route('WebPage.deleteBanner',['id'=>$v->id])}}">
+                                            <a  class="btn btn-xs btn-danger bannerDelete" data-delete="{{route('WebPage.deleteBanner',['id'=>$v->id])}}">
                                                 <i class="icon-trash bigger-120">删除</i>
                                             </a>
                                         </div>
@@ -146,15 +146,14 @@
             },
             bindEvent:function () {
                 //删除banner图片
-                $('#bannerDelete').on('click',function () {
+                $('.bannerDelete').on('click',function () {
                     var isDelete = confirm('你确定要删除吗');
-                    var deleUrl = $('#bannerDelete').data('delete');
+                    var deleUrl = $(this).data('delete');
                     if(isDelete){
                         //删除banner数据
                         $.ajax({
                             type: "GET",
                             url:deleUrl,
-
                             success: function (res) {
                                 if(res.code === 2000){
                                     window.location.reload(true);
