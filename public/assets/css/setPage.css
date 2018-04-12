@@ -44,13 +44,21 @@
     display: inline-block;
     width: 400px;
 }
-.setPage .input-file .update-file-pic{
+.setPage .input-file span,.setPage .input-file-msk span{
+    display: inline-block;
+}
+.setPage .input-file span i,.setPage .input-file-msk span i{
+    color: red;
+}
+.setPage .input-file .update-file-pic,.setPage .input-file-msk .update-file-pic-msk{
+    display: inline-block;
     width: 484px;
     height: 193.6px;
     background-color: #c7c7c7;
     position: relative;
+    margin-left: 24px;
 }
-.setPage .input-file .update-file-pic .setpage-update-pic{
+.setPage .input-file .update-file-pic .setpage-update-pic,.setPage .input-file-msk .update-file-pic-msk .setpage-update-pic-msk{
     margin: 0;
     display: block;
     width: 100%;

@@ -50,6 +50,7 @@
                                 </div>
                                 <br/>
                                 <div class="input-file">
+                                    <span><i>*</i>列表图片:</span>
                                     <div class="update-file-pic">
                                         <img src="" alt="" id="page-pic">
                                         <label for="setpage-update-pic" class="setpage-update-pic">
@@ -57,7 +58,17 @@
                                         </label>
                                     </div>
                                     <input type="file" id="setpage-update-pic" value="选择文件" style="display: none;">
-                                    <i>上传文图片推荐尺寸最好是png或者jpg,单张照片不大于20M</i>
+                                </div>
+                                <br/>
+                                <div class="input-file-msk">
+                                    <span><i>*</i>遮罩图片:</span>
+                                    <div class="update-file-pic-msk">
+                                        <img src="" alt="" id="page-pic-msk">
+                                        <label for="etpage-update-pic-msk" class="setpage-update-pic-msk">
+                                            点击上传图片
+                                        </label>
+                                    </div>
+                                    <input type="file" id="etpage-update-pic-msk" value="选择文件" style="display: none;">
                                 </div>
                                 <br>
                                 <div class="editor-con">
@@ -90,7 +101,8 @@
                 content:'',
                 keyword:'',
                 type:'',
-                img_path:[]
+                img_path:[],
+                f_img_path:[]
             },
             init: function () {
                 this.onLoad();
@@ -102,12 +114,21 @@
             },
             bindEvent: function () {
                 var _this = this;
+                //上传列表图
                 $('#setpage-update-pic').on('change',function (e) {
                     var targetEvent =  e.target,
                         formData = new FormData();
                         formData.append("myfile",targetEvent.files[0]);
                         formData.append("_token",token);
-                    _this.setPage_update_Pic(formData);
+                    _this.setPage_update_Pic(formData,1);
+                });
+                //上传遮罩图
+                $('#etpage-update-pic-msk').on('change',function (e) {
+                    var targetEvent =  e.target,
+                        formData = new FormData();
+                    formData.append("myfile",targetEvent.files[0]);
+                    formData.append("_token",token);
+                    _this.setPage_update_Pic(formData,2);
                 });
                 //获取标题中值
                 $('#setPage-title').on('change',function () {
@@ -219,7 +240,7 @@
                 })
             },
             //上传缩率图,
-            setPage_update_Pic: function (formData) {
+            setPage_update_Pic: function (formData,num) {
                 var _this = this;
                 $.ajax({
                     url: urlFrom,
@@ -230,10 +251,11 @@
                     processData: false,        //不可缺参数
                     success: function (res) {
                        if(res.code === 2000){
-                           _this.data.img_path.push(res.data[0]);
-                           $('#page-pic').prop('src',res.data[0]);
+                           num == 1? _this.data.img_path.push(res.data[0]): _this.data.f_img_path.push(res.data[0]);
+                           num == 1? $('#page-pic').prop('src',res.data[0]): $('#page-pic-msk').prop('src',res.data[0]);
+
                        }else{
-                           console.log('setPage上传缩率图出现错误');
+                           alert(res.msg);
                        }
                     },
                     error: function (error) {
@@ -261,7 +283,10 @@
                     pageInfo.status = false;
                     console.log(data.img_path.length);
                 }else if(!data.img_path.length){
-                    pageInfo.msg = "请上传缩率图";
+                    pageInfo.msg = "请上传列表图";
+                    pageInfo.status = false;
+                }else if(!data.f_img_path.length) {
+                    pageInfo.msg = "请上传遮罩图";
                     pageInfo.status = false;
                 }else if(!_mm.validate(data.content,'require')){
                     pageInfo.msg = "请输入文章内容";

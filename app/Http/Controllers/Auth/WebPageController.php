@@ -37,7 +37,7 @@ class WebPageController extends Controller
             if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
             }
-            if (!in_array($k, ['img_path', 'f_img_path'])) {
+            if (in_array($k, ['img_path', 'f_img_path'])) {
                 $item = $item[0];
             }
             if (!in_array($k, ['_token', 'q'])) {//过滤多余字段
