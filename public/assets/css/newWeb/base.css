@@ -776,7 +776,7 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 .header .nav{transform:scale(0.83);-moz-transform:scale(0.83);-ms-transform:scale(0.83);-o-transform:scale(0.83);-webkit-transform:scale(0.83);}
 
-.header .nav{width:840px;height:83px;line-height:83px;}
+.header .nav{width:840px;height:83px;line-height:83px;margin:8px 0;}
 
 .header .nav li {font-size:18px;margin:0 36px;}
 
