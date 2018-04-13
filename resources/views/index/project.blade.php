@@ -58,108 +58,118 @@
     <!-- main -->
     <div class="main">
         <div class="content">
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>
-                    <div class="childHide">
-                        <div class="childTag">
-                            <p>BRAND</p>
-                            <p>DISPLAY</p>
-                            <div class="childSub"></div>
+            @foreach($zhongdian_data as $v)
+                <a href="{{URL::asset('detail/'.$v->id)}}">
+                    <div class="child">
+                        <img class="childImg" src="{{$v->img_path}}"/>
+                        <div class="childHide">
+                            <img src="{{$v->f_img_path}}"/>
                         </div>
-                        <div class="childContent">
-                            <p class="title"><img src="{{URL::asset('assets/images/images/brandIcon1.png')}}" alt=""/>
-                            </p>
-                            <p class="title">成就与责任</p>
-                            <p class="info">国家级非物质文化遗产</p>
-                        </div>
-                        <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
                     </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>
-                    <div class="childHide">
-                        <div class="childTag">
-                            <p>BRAND</p>
-                            <p>DISPLAY</p>
-                            <div class="childSub"></div>
-                        </div>
-                        <div class="childContent">
-                            <p class="title"><img src="{{URL::asset('assets/images/images/brandIcon2.png')}}" alt=""/>
-                            </p>
-                            <p class="info">泛亚医药，一切为了健康</p>
-                        </div>
-                        <img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>
-                </div>
-            </a>
+                </a>
+            @endforeach
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>--}}
+                    {{--<div class="childHide">--}}
+                        {{--<div class="childTag">--}}
+                            {{--<p>BRAND</p>--}}
+                            {{--<p>DISPLAY</p>--}}
+                            {{--<div class="childSub"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="childContent">--}}
+                            {{--<p class="title"><img src="{{URL::asset('assets/images/images/brandIcon1.png')}}" alt=""/>--}}
+                            {{--</p>--}}
+                            {{--<p class="title">成就与责任</p>--}}
+                            {{--<p class="info">国家级非物质文化遗产</p>--}}
+                        {{--</div>--}}
+                        {{--<img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>--}}
+                    {{--<div class="childHide">--}}
+                        {{--<div class="childTag">--}}
+                            {{--<p>BRAND</p>--}}
+                            {{--<p>DISPLAY</p>--}}
+                            {{--<div class="childSub"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="childContent">--}}
+                            {{--<p class="title"><img src="{{URL::asset('assets/images/images/brandIcon2.png')}}" alt=""/>--}}
+                            {{--</p>--}}
+                            {{--<p class="info">泛亚医药，一切为了健康</p>--}}
+                        {{--</div>--}}
+                        {{--<img class="childPointer" src="{{URL::asset('assets/images/images/hidePointer.png')}}"/>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
         </div>
         <a href="">
             <div class="linkBtn">

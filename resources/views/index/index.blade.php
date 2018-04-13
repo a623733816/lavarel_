@@ -53,35 +53,12 @@
     <!-- banner -->
     <div class="banner">
         <div class="contents">
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1483427615.jpg')}})">
-                    <!--<div class="contentInfo">
-                        <p class="title1">始于2001年</p>
-                        <p class="title2">中国品牌设计公司50强</p>
-                        <span class="title3">广州市赤风设计有限公司</span>
-                    </div>-->
-                </div>
-            </a>
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1461650738.jpg')}})">
-                </div>
-            </a>
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1432952879.jpg')}})">
-                </div>
-            </a>
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1433515769.jpg')}})">
-                </div>
-            </a>
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031633.jpg')}})">
-                </div>
-            </a>
-            <a href="#">
-                <div class="content" style="background-image:url({{URL::asset('upload/banner/index/1435031636.jpg')}})">
-                </div>
-            </a>
+            @foreach($banner_data as $k=>$v)
+                <a href="#">
+                    <div class="content" style="background-image:url({{$v->img_path}})">
+                    </div>
+                </a>
+            @endforeach
         </div>
         <div class="bannerNav"></div>
         <img class="bannerBtn leftBtn" onclick="bannerBtnClick('-')"
@@ -94,53 +71,72 @@
     <!-- newActive -->
     <div class="newActive">
         <div class="container">
-            <div class="content">
-                <div class="left">
-                    <img src="{{URL::asset('assets/images/images/indexNewest.jpg')}}" alt=""/>
-                </div>
-                <div class="right">
-                    <div class="category">Newest</div>
-                    <div class="title">叩开通往国家品牌的大门</div>
-                    <div class="text">
-                        今天中国经济的发展，比任何时候都需要一批能够在全球市场上代表国家形象来参与商业竞争、文化交流的国家品牌，“品牌战略”已上升为国家战略。发挥品牌引领作用，推进品牌建设，必须聚焦现代企业的成长潜力。现代企业，尤其是中小企业，是中国经济的脊梁，是推动中国经济社会发展的重要力量。
+            @foreach($zuixin_data as $v)
+                <div class="content">
+                    <div class="left">
+                        <img src="{{$v->img_path}}" alt=""/>
                     </div>
-                    <a href="{{URL::asset('detail/1')}}">
-                    <div class="linkBtn">
-                        <span>全文&nbsp;&nbsp;→</span>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="content">
-                <div class="left">
-                    <img src="{{URL::asset('assets/images/images/indexFocus.jpg')}}" alt=""/>
-                </div>
-                <div class="right">
-                    <div class="category">Focus</div>
-                    <div class="title">重点品牌入选范围包含</div>
-                    <div class="text">
-                        企业品牌、产品品牌、成长性品牌、自主创新品牌、中华老字号品牌、旅游区域品牌。其中包括：食品、养生保健、餐饮、建材建筑装饰、农业、服装、轻工、电子商务、医药、汽车及配件制造、印刷、包装、礼品、金融业、信息技术、商业零售等行业。
-                    </div>
-                    <div class="linkBtn">
-                        <span>全文&nbsp;&nbsp;→</span>
+                    <div class="right">
+                        <div class="category">{{$v->keyword}}</div>
+                        <div class="title">{{$v->title}}</div>
+                        <div class="text">
+                            {{$v->desc}}
+                        </div>
+                        <a href="{{URL::asset('detail/'.$v->id)}}">
+                            <div class="linkBtn">
+                                <span>全文&nbsp;&nbsp;→</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="content">
-                <div class="left">
-                    <img src="{{URL::asset('assets/images/images/indexInterview.jpg')}}" alt=""/>
-                </div>
-                <div class="right">
-                    <div class="category">Interview</div>
-                    <div class="title">培育方向与入选品牌权益</div>
-                    <div class="text">
-                        入选品牌代表了改革开放40年来企业品牌建设的高质量品牌成果，荣誉证书和证牌统一制作、编号和颁发。企业可使用统一的荣誉标识刊登广告和宣传。同时将在品牌价值提升，品牌商业化和品牌产权资本化等方面获得精准服务对接，由国家品牌战略研究智库提供一对一帮扶，助力成就国家品牌。
-                    </div>
-                    <div class="linkBtn">
-                        <span>全文&nbsp;&nbsp;→</span>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            {{--<div class="content">--}}
+                {{--<div class="left">--}}
+                    {{--<img src="{{URL::asset('assets/images/images/indexNewest.jpg')}}" alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="right">--}}
+                    {{--<div class="category">Newest</div>--}}
+                    {{--<div class="title">叩开通往国家品牌的大门</div>--}}
+                    {{--<div class="text">--}}
+                        {{--今天中国经济的发展，比任何时候都需要一批能够在全球市场上代表国家形象来参与商业竞争、文化交流的国家品牌，“品牌战略”已上升为国家战略。发挥品牌引领作用，推进品牌建设，必须聚焦现代企业的成长潜力。现代企业，尤其是中小企业，是中国经济的脊梁，是推动中国经济社会发展的重要力量。--}}
+                    {{--</div>--}}
+                    {{--<a href="{{URL::asset('detail/1')}}">--}}
+                    {{--<div class="linkBtn">--}}
+                        {{--<span>全文&nbsp;&nbsp;→</span>--}}
+                    {{--</div>--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="content">--}}
+                {{--<div class="left">--}}
+                    {{--<img src="{{URL::asset('assets/images/images/indexFocus.jpg')}}" alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="right">--}}
+                    {{--<div class="category">Focus</div>--}}
+                    {{--<div class="title">重点品牌入选范围包含</div>--}}
+                    {{--<div class="text">--}}
+                        {{--企业品牌、产品品牌、成长性品牌、自主创新品牌、中华老字号品牌、旅游区域品牌。其中包括：食品、养生保健、餐饮、建材建筑装饰、农业、服装、轻工、电子商务、医药、汽车及配件制造、印刷、包装、礼品、金融业、信息技术、商业零售等行业。--}}
+                    {{--</div>--}}
+                    {{--<div class="linkBtn">--}}
+                        {{--<span>全文&nbsp;&nbsp;→</span>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="content">--}}
+                {{--<div class="left">--}}
+                    {{--<img src="{{URL::asset('assets/images/images/indexInterview.jpg')}}" alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="right">--}}
+                    {{--<div class="category">Interview</div>--}}
+                    {{--<div class="title">培育方向与入选品牌权益</div>--}}
+                    {{--<div class="text">--}}
+                        {{--入选品牌代表了改革开放40年来企业品牌建设的高质量品牌成果，荣誉证书和证牌统一制作、编号和颁发。企业可使用统一的荣誉标识刊登广告和宣传。同时将在品牌价值提升，品牌商业化和品牌产权资本化等方面获得精准服务对接，由国家品牌战略研究智库提供一对一帮扶，助力成就国家品牌。--}}
+                    {{--</div>--}}
+                    {{--<div class="linkBtn">--}}
+                        {{--<span>全文&nbsp;&nbsp;→</span>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </div>
     <!-- newActive over -->
@@ -217,89 +213,99 @@
         <span class="mainInfo">充分发挥政府政策的引导作用</span>
         <span class="mainInfo mainTitleColor">支持重点品牌进入国家品牌计划</span>
         <div class="content">
-            <a href="">
+            @foreach($zhongdian_data as $v)
+                <a href="{{URL::asset('detail/'.$v->id)}}">
                 <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>
-                    <div class="childHide">
-                        <img src="{{URL::asset('assets/images/images/brandMask.jpg')}}"/>
-                    </div>
+                <img class="childImg" src="{{$v->img_path}}"/>
+                <div class="childHide">
+                <img src="{{$v->f_img_path}}"/>
                 </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>
-                    <div class="childHide">
-                        <img src="{{URL::asset('assets/images/images/brandMask.jpg')}}"/>
-                    </div>
                 </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>
-                </div>
-            </a>
-            <a href="">
-                <div class="child">
-                    <img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>
-                </div>
-            </a>
+                </a>
+                @endforeach
+            {{--<a href="{{URL::asset('detail/'.$v->id)}}">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1499499098.jpg')}}"/>--}}
+                    {{--<div class="childHide">--}}
+                        {{--<img src="{{URL::asset('assets/images/images/brandMask.jpg')}}"/>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1497520017.jpg')}}"/>--}}
+                    {{--<div class="childHide">--}}
+                        {{--<img src="{{URL::asset('assets/images/images/brandMask.jpg')}}"/>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454383338.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454311379.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454311843.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1454381491.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1471259608.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433514448.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1471576431.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438242091.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438266406.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438093006.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433309385.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1433310187.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="">--}}
+                {{--<div class="child">--}}
+                    {{--<img class="childImg" src="{{URL::asset('assets/images/images/1438610389.jpg')}}"/>--}}
+                {{--</div>--}}
+            {{--</a>--}}
         </div>
-        <a href="">
+        <a href="{{URL::asset('project')}}">
             <div class="indexLinkBtn">
                 <span>查看更多&nbsp;&nbsp;&nbsp;&nbsp;→</span>
             </div>
