@@ -27,8 +27,8 @@ class IndexController extends Controller
     {
         return view('index.index')
             ->with('banner_data', BannerInfo::all())
-            ->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->get())
-            ->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->get());
+            ->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->orderby('created_at', ' desc')->get())
+            ->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->orderby('created_at', ' desc')->get());
     }
 
     public function job()
@@ -42,7 +42,7 @@ class IndexController extends Controller
      */
     public function news()
     {
-        return view('index.news')->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->get());
+        return view('index.news')->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->orderby('created_at', ' desc')->get());
     }
 
     /**
@@ -68,7 +68,7 @@ class IndexController extends Controller
      */
     public function superiority()
     {
-        return view('index.superiority')->with('lingjun_data', WebPageInfo::where(['type' => 3])->skip(0)->take(3)->get());
+        return view('index.superiority')->with('lingjun_data', WebPageInfo::where(['type' => 3])->skip(0)->take(3)->orderby('created_at', ' desc')->get());
     }
 
     /**
@@ -83,7 +83,7 @@ class IndexController extends Controller
         $page_size = $data['page_size'];
         $type = $data['type'];
         $page_num = $page_size * ($page - 1);
-        $data = WebPageInfo::where(['type' => $type])->skip($page_num)->take($page_size)->get();
+        $data = WebPageInfo::where(['type' => $type])->skip($page_num)->take($page_size)->orderby('created_at', ' desc')->get();
         return Response()->json(['msg' => '成功！', 'data' => $data, 'code' => 2000], 200);
     }
 
@@ -93,7 +93,7 @@ class IndexController extends Controller
      */
     public function project()
     {
-        return view('index.project')->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->get());
+        return view('index.project')->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->orderby('created_at', ' desc')->get());
     }
 
     public function contact()

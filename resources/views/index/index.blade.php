@@ -190,7 +190,7 @@
     <!-- breed -->
     <div class="breed">
         <div class="container">
-            <a href="">
+            <a href="javascript:(0);">
                 <img src="{{URL::asset('assets/images/images/indexBreed.jpg')}}" alt=""/>
             </a>
         </div>
@@ -199,7 +199,7 @@
     <!-- person -->
     <div class="person">
         <div class="container">
-            <a href="">
+            <a href="{{URL::asset('superiority')}}">
                 <img src="{{URL::asset('assets/images/images/indexPerson.jpg')}}" alt=""/>
             </a>
         </div>
@@ -315,7 +315,7 @@
     <!-- service -->
     <div class="service">
         <div class="container">
-            <a href="">
+            <a href="{{URL::asset('partner')}}">
                 <img src="{{URL::asset('assets/images/images/indexService.jpg')}}" alt=""/>
             </a>
         </div>

@@ -59,7 +59,7 @@
 @if($active=='superiority')
                     <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/peopleBanner.jpg')}});">
 @endif
-@if($active=='superiority')
+@if($active=='partner')
                             <div class="banner" style="background-image:url({{URL::asset('upload/banner/other/conditionBanner.jpg')}});">
 @endif
         <img class="bannerBg" src="{{URL::asset('assets/images/images/otherBannerBg.jpg')}}"/>
