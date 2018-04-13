@@ -14,6 +14,7 @@ Route::get('redwind', 'IndexController@redwind');
 Route::get('superiority', 'IndexController@superiority');
 Route::post('addProjectInfo', ['as' => 'index.addProjectInfo', 'uses' => 'IndexController@addProjectInfo']);
 Route::post('addCustomerInfo', ['as' => 'index.addCustomerInfo', 'uses' => 'IndexController@addCustomerInfo']);
+Route::post('getWebData', ['as' => 'index.getWebData', 'uses' => 'IndexController@getWebData']);
 Route::get('detail/{id}', 'IndexController@detail');
 
 
