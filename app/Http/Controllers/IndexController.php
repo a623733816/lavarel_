@@ -28,7 +28,7 @@ class IndexController extends Controller
         return view('index.index')
             ->with('banner_data', BannerInfo::all())
             ->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->get())
-            ->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(14)->get());
+            ->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->get());
     }
 
     public function job()
@@ -108,7 +108,31 @@ class IndexController extends Controller
      */
     public function detail($id)
     {
-        return view('index.detail')->with('detail_data', WebPageInfo::find($id));
+        $detail_data = WebPageInfo::find($id);
+        switch ($detail_data->type) {
+            case 1:
+                $more_url = asset('news');
+                $active = 'news';
+                break;
+            case 2:
+                $more_url = asset('project');
+                $active = 'project';
+                break;
+            case 3:
+                $more_url = asset('superiority');
+                $active = 'superiority';
+                break;
+            case 4:
+                $more_url = asset('partner');
+                $active = 'partner';
+                break;
+            default:
+                $more_url = asset('/');
+                $active = 'index';
+        }
+        return view('index.detail')->with('detail_data', $detail_data)
+            ->with('more_url', $more_url)
+            ->with('active', $active);
     }
 
     /**

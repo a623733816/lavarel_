@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/font.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/base.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/'.$active.'.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/newWeb/detail.css')}}"/>
     <script src="{{URL::asset('assets/js/newWeb/jquery-1.11.0.min.js')}}"></script>
     <!--[if lt IE 9]>
     <script src="{{URL::asset('assets/js/newWeb/html5shiv.min.js')}}"></script>

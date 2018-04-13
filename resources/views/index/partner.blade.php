@@ -65,7 +65,7 @@
                 <span class="line"></span>
             </div>
             <div class="content">
-                {{$ruxuan_data->content}}
+                {!!$ruxuan_data->content!!}
             </div>
         </div>
     </div>
