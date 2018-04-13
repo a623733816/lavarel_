@@ -25,7 +25,17 @@
                                 </div>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
-                                    <input type="text" placeholder="请输入标题" id="setPage-title">
+                                    <input type="text" placeholder="请输入标题1" id="setPage-title">
+                                </div>
+                            <br/>
+                                <div class="input-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
+                                    <input type="text" placeholder="请输入标题2" id="setPage-title-a">
+                                </div>
+                            <br/>
+                                <div class="input-item">
+                                    <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
+                                    <input type="text" placeholder="请输入标题3" id="setPage-title-b">
                                 </div>
                                 <br/>
                                 <div class="input-item">
@@ -97,6 +107,8 @@
             data:{
                 _token:token,
                 title:'',
+                title_a:'',
+                title_b:'',
                 desc:'',
                 content:'',
                 keyword:'',
@@ -133,6 +145,12 @@
                 //获取标题中值
                 $('#setPage-title').on('change',function () {
                     _this.data.title = $.trim($(this).val());
+                });
+                $('#setPage-title-a').on('change',function () {
+                    _this.data.title_a = $.trim($(this).val());
+                });
+                $('#setPage-title-b').on('change',function () {
+                    _this.data.title_b = $.trim($(this).val());
                 });
                 //获取关键字
                 $('#setPage-keyword').on('change',function () {
