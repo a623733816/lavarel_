@@ -83,8 +83,12 @@ class IndexController extends Controller
         $page_size = $data['page_size'];
         $type = $data['type'];
         $page_num = $page_size * ($page - 1);
-        $data = WebPageInfo::where(['type' => $type])->skip($page_num)->take($page_size)->orderby('created_at', ' desc')->get();
-        return Response()->json(['msg' => '成功！', 'data' => $data, 'code' => 2000], 200);
+        $data_ = WebPageInfo::where(['type' => $type])->skip($page_num)->take($page_size)->orderby('created_at', ' desc')->get();
+        foreach($data_ as &$v)
+        {
+            $v->detail_url=asset('detail/'.$v->id);
+        }
+        return Response()->json(['msg' => '成功！', 'data' => $data_, 'code' => 2000], 200);
     }
 
     /**

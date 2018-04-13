@@ -752,7 +752,7 @@ input[type="button"], input[type="submit"], input[type="reset"],input[type="text
 
 .main .linkBtn{margin: 66px auto 0px auto;}
 
-.linkBtn{width:128px;height:32px;line-height:32px;font-size:14px;}
+.linkBtn{width:128px;height:32px;line-height:32px;font-size:14px;cursor:pointer;}
 
 .linkBtn span{margin-left:16px;}
 

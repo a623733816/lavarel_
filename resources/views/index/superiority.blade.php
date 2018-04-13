@@ -59,7 +59,6 @@
     <!-- main -->
     <div class="newActive" id="main">
         <div class="container">
-
             @foreach($lingjun_data as $v)
                 <div class="content">
                     <div class="left">
@@ -78,14 +77,14 @@
                         </a>
                     </div>
                 </div>
+                <div class="_type" style="display: none">{{$v->type}}</div>
             @endforeach
         </div>
-
-            <a href="">
-                <div class="linkBtn">
-                    <span>了解更多&nbsp;&nbsp;&nbsp;&nbsp;→</span>
-                </div>
-            </a>
+        <div class="linkBtn peopleListMore">
+            <span>了解更多&nbsp;&nbsp;&nbsp;&nbsp;→</span>
+            <input type="hidden" id="get_url" value="{{route('index.getWebData')}}">
+            <input type="hidden" id="page_size" value="3">
+        </div>
         </div>
     </div>
     <!-- main over -->
