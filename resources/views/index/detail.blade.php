@@ -67,7 +67,7 @@
     <!-- banner over -->
 
     <!-- main -->
-    <div class="main">
+    <div class="main detailMain">
         <div class="container">
             <div class="title">
                 <p>{{$detail_data->title}}</p>
