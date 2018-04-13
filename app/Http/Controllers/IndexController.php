@@ -26,7 +26,7 @@ class IndexController extends Controller
     public function index()
     {
         return view('index.index')
-            ->with('banner_data', BannerInfo::all())
+            ->with('banner_data', BannerInfo::orderby('created_at', ' desc')->get())
             ->with('zuixin_data', WebPageInfo::where(['type' => 1])->skip(0)->take(3)->orderby('created_at', ' desc')->get())
             ->with('zhongdian_data', WebPageInfo::where(['type' => 2])->skip(0)->take(15)->orderby('created_at', ' desc')->get());
     }
