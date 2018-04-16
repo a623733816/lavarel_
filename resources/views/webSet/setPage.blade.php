@@ -132,13 +132,13 @@
             bindEvent: function () {
                 var _this = this;
                 var setPageId = $.trim($('#set-page-id').val());
-                var title =  $('#setPage-title').val(),
-                    title_a = $('#setPage-title-a').val(),
-                    title_b = $('#setPage-title-b').val(),
-                    desc = $('#setPage-desc').val(),
-                    content=  $('#editor').html(),
-                    keyword = $('#setPage-keyword').val(),
-                        type = $('.select-class').val();
+                var title =  $.trim($('#setPage-title').val()),
+                    title_a = $.trim($('#setPage-title-a').val()),
+                    title_b = $.trim($('#setPage-title-b').val()),
+                    desc = $.trim($('#setPage-desc').val()),
+                    content=  $.trim($('#editor').html()),
+                    keyword = $.trim($('#setPage-keyword').val()),
+                    type = $.trim($('.select-class').val());
                 var  picData1 = [],
                     picData2 = [];
                 picData1.push($('#page-pic').prop('src'));
