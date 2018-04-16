@@ -47,9 +47,12 @@
                                 <div class="input-class-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>分类:</label>
                                     <select class="select-class">
+                                        <?php
+                                            $active_id=isset($edit_info->type)?$edit_info->type : '';
+                                        ?>
                                         <option value="">请选择</option>
                                         @foreach($web_page_type as $k=>$v)
-                                        <option value="{{$k}}" {{$edit_info->type or ''==$k?'selected':''}} >{{$v}}</option>
+                                        <option value="{{$k}}" {{$active_id==$k?'selected':''}} >{{$v}}</option>
                                         @endforeach
                                     </select>
 

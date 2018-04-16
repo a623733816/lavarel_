@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="banner-input-item">
                                     <label for=""><i>*</i>请输入标题:</label>
-                                    <input type="hidden" value="{{$edit_info->id or ''}}">
+                                    <input type="hidden" value="{{$edit_info->id or ''}}" id="set-banner-id">
                                     <input type="text" value="{{$edit_info->name or ''}}" placeholder="" id="set-banner-title">
                                 </div>
                                 <br/>
@@ -38,7 +38,7 @@
                                         <input type="file" id="bannerFile" style="visibility: hidden;">
                                     </div>
                                     <div class="on onPic">
-                                        <img src="{{$edit_info->img_path or ''}}" alt="">
+                                        <img src="{{$edit_info->img_path or ''}}" alt="" id="set-banner-pic">
                                     </div>
                                     <div class="set">
                                         <label for="bannerFile">点击图片上传</label>
@@ -77,7 +77,7 @@
                 //token
                 var token = $('#fileGetUrl>input').val()
                 var idBanner =  $.trim($('#set-banner-id').val())
-                var name = $.trim($('#set-banner-id').val());
+                var name = $.trim($('#set-banner-title').val());
                 var keyword = $.trim($('#set-banner-des').val());
                 var picData = [],
                     imgData = $.trim($('#set-banner-pic').prop('src'));
@@ -149,14 +149,14 @@
                          data:dataForm,
                          success: function (res) {
                          if(res.code === 2000){
-                         window.location.href  = '/admin/banner';
+                             window.location.href  = '/admin/banner';
                          }else{
-                         alert(res.msg);
-                         }
+                             alert(res.msg);
+                             }
                          },
                          error:function (error) {
-                         console.log('err',error);
-                         }
+                             console.log('err',error);
+                             }
                          })
                     }else{
                         $('.banner-error-msg').html('<p>'+isStatus.msg+'</p>')
