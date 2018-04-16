@@ -24,12 +24,13 @@
                                 </div>
                                 <div class="banner-input-item">
                                     <label for=""><i>*</i>请输入标题:</label>
-                                    <input type="text" placeholder="请输入上传图片的名字" id="set-banner-title">
+                                    <input type="hidden" value="{{$edit_info->id}}">
+                                    <input type="text" value="{{$edit_info->name}}" placeholder="" id="set-banner-title">
                                 </div>
                                 <br/>
                                 <div class="banner-input-item">
                                     <label for=""><i>*</i>描述:</label>
-                                    <textarea class="form-control" rows="3" placeholder="图片描述内容" style="resize: none;" id="set-banner-des"></textarea>
+                                    <textarea class="form-control" rows="3" placeholder="" style="resize: none;" id="set-banner-des">{{$edit_info->keyword}}</textarea>
                                 </div>
                                 <br/>
                                 <div class="kuang">
@@ -37,6 +38,7 @@
                                         <input type="file" id="bannerFile" style="visibility: hidden;">
                                     </div>
                                     <div class="on onPic">
+                                        <img src="{{$edit_info->img_path}}" alt="">
                                     </div>
                                     <div class="set">
                                         <label for="bannerFile">点击图片上传</label>
