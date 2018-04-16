@@ -69,8 +69,9 @@ class WebPageController extends Controller
     public function editPageView(WebPageInfo $webPageInfo, $id)
     {
         if (!$id)  return false;
+        $colum_data = array_column(WebPageType::all()->toArray(), 'name', 'id');
         return view('webSet.setPage')
-            ->with('web_page_type', WebPageType::all())
+            ->with('web_page_type', $colum_data)
             ->with('edit_info', $webPageInfo->find($id));
     }
 
