@@ -124,6 +124,7 @@
             onLoad: function () {
                 //文本框初始化
                 this.editor();
+
             },
             bindEvent: function () {
                 var _this = this;

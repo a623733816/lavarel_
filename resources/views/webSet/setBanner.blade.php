@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="banner-input-item">
                                     <label for=""><i>*</i>请输入标题:</label>
-                                    <input type="hidden" value="{{$edit_info->id}}">
+                                    <input type="hidden" value="{{$edit_info->id}}" id="set-banner-id">
                                     <input type="text" value="{{$edit_info->name}}" placeholder="" id="set-banner-title">
                                 </div>
                                 <br/>
@@ -38,7 +38,7 @@
                                         <input type="file" id="bannerFile" style="visibility: hidden;">
                                     </div>
                                     <div class="on onPic">
-                                        <img src="{{$edit_info->img_path}}" alt="">
+                                        <img src="{{$edit_info->img_path}}" alt="" id="set-banner-pic">
                                     </div>
                                     <div class="set">
                                         <label for="bannerFile">点击图片上传</label>
@@ -63,23 +63,44 @@
 
     <div style="" id="fileGetUrl">{!! csrf_field() !!}</div>
     <div style="" class="formUrl" data-action="{{route('WebPage.mostUploads')}}"></div>
+    <!-- 取得banner添加的url鏈接 -->
     <div class="addBanner" data-action="{{route('WebPage.addBannerInfo')}}"></div>
 @endsection
 @section('script')
     <script type="text/javascript">
         var page= {
             init: function () {
+                this.onload();
                 this.bindEvent();
+            },
+            onload: function () {
+
             },
             bindEvent: function () {
                 var _this = this;
                 //token
                 var token = $('#fileGetUrl>input').val()
-                var dataForm = {
-                   name:'',
-                   keyword:'',
-                   img_path: []
-                };
+                var idBanner =  $.trim($('#set-banner-id').val())
+                var name = $.trim($('#set-banner-id').val());
+                var keyword = $.trim($('#set-banner-des').val());
+                var picData = [],
+                    imgData = $.trim($('#set-banner-pic').prop('src'));
+                    picData.push(imgData);
+                if(idBanner){
+                    var dataForm = {
+                        name:name,
+                        id: idBanner,
+                        keyword:keyword,
+                        img_path:  picData
+                    };
+                }else{
+                    var dataForm = {
+                        name:'',
+                        keyword:'',
+                        img_path: []
+                    };
+                }
+
                 //获取bannerTitle
                 $('#set-banner-title').on('change',function () {
                     dataForm.name = $.trim($(this).val());
@@ -109,7 +130,7 @@
                                 var picUrl = result[0];
                                 dataForm.img_path = [];
                                 dataForm.img_path.push(picUrl);
-                                $('.onPic').html('<img src="'+ picUrl+'"/>')
+                                $('#set-banner-pic').prop('src',picUrl);
                             }else{
                                 _mm.errorTips("图片上传路径获取出现了错误");
                             }
@@ -127,22 +148,21 @@
                         var addBannerUrl = $('.addBanner').data('action');
                         //添加token
                         dataForm._token = token;
-                        console.log(dataForm);
-                        $.ajax({
-                            type:"POST",
-                            url:addBannerUrl,
-                            data:dataForm,
-                            success: function (res) {
-                                if(res.code === 2000){
-                                    window.location.href  = '/admin/banner';
-                                }else{
-                                    alert(res.msg);
-                                }
-                            },
-                            error:function (error) {
-                                console.log('err',error);
-                            }
-                        })
+                         $.ajax({
+                         type:"POST",
+                         url:addBannerUrl,
+                         data:dataForm,
+                         success: function (res) {
+                         if(res.code === 2000){
+                         window.location.href  = '/admin/banner';
+                         }else{
+                         alert(res.msg);
+                         }
+                         },
+                         error:function (error) {
+                         console.log('err',error);
+                         }
+                         })
                     }else{
                         $('.banner-error-msg').html('<p>'+isStatus.msg+'</p>')
                     }
