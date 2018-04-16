@@ -33,6 +33,12 @@ class WebPageController extends Controller
     public function addPageInfo(WebPageInfo $webPageInfo, Request $request)
     {
         $data = $request->input();
+        //判断是否有ｉｄ，有就修改
+        if (isset($data['id']) && '' != $data['id']) {
+            $webPageInfo = $webPageInfo::find($data['id']);
+        } else {
+            $webPageInfo->created_at = date('Y-m-d H:i:s');
+        }
         foreach ($data as $k => $item) {
             if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
@@ -40,11 +46,10 @@ class WebPageController extends Controller
             if (in_array($k, ['img_path', 'f_img_path'])) {
                 $item = $item[0];
             }
-            if (!in_array($k, ['_token', 'q'])) {//过滤多余字段
+            if (!in_array($k, ['_token', 'q', 'id'])) {//过滤多余字段
                 $webPageInfo->$k = $item;
             }
         }
-        $webPageInfo->created_at=date('Y-m-d H:i:s');
         if ($webPageInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
@@ -68,7 +73,7 @@ class WebPageController extends Controller
      */
     public function editPageView(WebPageInfo $webPageInfo, $id)
     {
-        if (!$id)  return false;
+        if (!$id) return false;
         $colum_data = array_column(WebPageType::all()->toArray(), 'name', 'id');
         return view('webSet.setPage')
             ->with('web_page_type', $colum_data)
@@ -83,7 +88,7 @@ class WebPageController extends Controller
      */
     public function deletePage(WebPageInfo $webPageInfo, $id)
     {
-        if (!$id)  return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
+        if (!$id) return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
         if ($webPageInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
@@ -98,6 +103,12 @@ class WebPageController extends Controller
     public function addBannerInfo(BannerInfo $bannerInfo, Request $request)
     {
         $data = $request->input();
+        //判断是否有ｉｄ，有就修改
+        if (isset($data['id']) && '' != $data['id']) {
+            $bannerInfo = $bannerInfo::find($data['id']);
+        } else {
+            $bannerInfo->created_at = date('Y-m-d H:i:s');
+        }
         foreach ($data as $k => $item) {
             if ('' == $item && $k != 'id') {
                 return Response()->json(['msg' => '请填写完整信息！', 'code' => 4000], 200);
@@ -105,11 +116,10 @@ class WebPageController extends Controller
             if ($k == 'img_path') {
                 $item = $item[0];
             }
-            if (!in_array($k, ['_token', 'q'])) {//过滤多余字段
+            if (!in_array($k, ['_token', 'q', 'id'])) {//过滤多余字段
                 $bannerInfo->$k = $item;
             }
         }
-        $bannerInfo->created_at=date('Y-m-d H:i:s');
         if ($bannerInfo->save())
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
@@ -132,7 +142,7 @@ class WebPageController extends Controller
      */
     public function editBannerView(BannerInfo $bannerInfo, $id)
     {
-        if (!$id)  return false;
+        if (!$id) return false;
         return view('webSet.setBanner')->with('edit_info', $bannerInfo->find($id));
     }
 
@@ -144,7 +154,7 @@ class WebPageController extends Controller
      */
     public function deleteBanner(BannerInfo $bannerInfo, $id)
     {
-        if (!$id)  return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
+        if (!$id) return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
         if ($bannerInfo->destroy($id))
             return Response()->json(['msg' => '成功！', 'code' => 2000], 200);
         return Response()->json(['msg' => '失败！', 'code' => 4000], 200);
