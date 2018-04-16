@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
-                                    <input type="hidden" value="{{$edit_info->id or ''}}">
+                                    <input type="hidden" value="{{$edit_info->id or ''}}" id="set-page-id">
                                     <input type="text" value="{{$edit_info->title or ''}}" placeholder="请输入标题1" id="setPage-title">
                                 </div>
                             <br/>
@@ -128,13 +128,44 @@
             },
             bindEvent: function () {
                 var _this = this;
+                var setPageId = $.trim($('#set-page-id').val());
+                var title =  $('#setPage-title').val(),
+                    title_a = $('#setPage-title-a').val(),
+                    title_b = $('#setPage-title-b').val(),
+                    desc = $('#setPage-desc').val(),
+                    content=  $('#editor').html(),
+                    keyword = $('#setPage-keyword').val(),
+                        type = $('.select-class').val();
+                var  picData1 = [],
+                    picData2 = [];
+                picData1.push($('#page-pic').prop('src'));
+                picData2.push($('#page-pic-msk').prop('src'));
+
+                if(setPageId){
+                    var data = $.extend({},_this.data,{
+                        title:title,
+                        id:setPageId,
+                        title_a:title_a,
+                        title_b:title_b,
+                        desc:desc,
+                        content:content,
+                        keyword:keyword,
+                        type:type,
+                        img_path:picData1,
+                        f_img_path:picData2
+                    });
+                }else{
+                    var data =  this.data;
+                }
+
                 //上传列表图
                 $('#setpage-update-pic').on('change',function (e) {
+
                     var targetEvent =  e.target,
                         formData = new FormData();
                         formData.append("myfile",targetEvent.files[0]);
-                        formData.append("_token",token);
-                    _this.setPage_update_Pic(formData,1);
+                        formData.append("_token",token)
+                       _this.setPage_update_Pic(formData,1,data);
                 });
                 //上传遮罩图
                 $('#etpage-update-pic-msk').on('change',function (e) {
@@ -142,53 +173,55 @@
                         formData = new FormData();
                     formData.append("myfile",targetEvent.files[0]);
                     formData.append("_token",token);
-                    _this.setPage_update_Pic(formData,2);
+                    _this.setPage_update_Pic(formData,2,data);
                 });
                 //获取标题中值
                 $('#setPage-title').on('change',function () {
-                    _this.data.title = $.trim($(this).val());
+                    data.title = $.trim($(this).val());
                 });
                 $('#setPage-title-a').on('change',function () {
-                    _this.data.title_a = $.trim($(this).val());
+                   data.title_a = $.trim($(this).val());
                 });
                 $('#setPage-title-b').on('change',function () {
-                    _this.data.title_b = $.trim($(this).val());
+                   data.title_b = $.trim($(this).val());
                 });
                 //获取关键字
                 $('#setPage-keyword').on('change',function () {
-                    _this.data.keyword = $.trim($(this).val());
+                    data.keyword = $.trim($(this).val());
                 });
                 //获取类型
                 $('.select-class').on('change',function () {
-                    _this.data.type = $.trim($(this).val());
+                   data.type = $.trim($(this).val());
                 });
                 //获取描述
                 $('#setPage-desc').on('change',function () {
-                    _this.data.desc = $.trim($(this).val());
+                    data.desc = $.trim($(this).val());
                 })
                 //点击提交保存
                 $('#set-page-btn').on('click',function () {
-                    _this.data.content = editor.txt.text().toString();
-                    var isStatus = _this.validateSetPage(_this.data);
+                    data.content = editor.txt.text().toString();
+                    var isStatus = _this.validateSetPage(data);
                     if(isStatus.status){
                         $('.input-err-item').html('');
-                        _this.data.content = editor.txt.html().toString();
+                        data.content = editor.txt.html().toString();
                        //提交上传
-                        $.ajax({
-                            url:addUrl,
-                            type:'POST',
-                            data: _this.data,
-                            success: function (res) {
-                                if(res.code === 2000){
-                                  window.location.href ="/admin/page";
-                                }else{
-                                    alert(res.msg);
-                                }
-                            },
-                            error: function (error) {
-                                console.log(error);
-                            }
-                        })
+                         $.ajax({
+                         url:addUrl,
+                         type:'POST',
+                         data:data,
+                         success: function (res) {
+                         if(res.code === 2000){
+                         window.location.href ="/admin/page";
+                         }else{
+                         alert(res.msg);
+                         }
+                         },
+                         error: function (error) {
+                         console.log(error);
+                         }
+                         })
+
+
                     }else{
                         $('.input-err-item').html('<p>'+ isStatus.msg +'</p>')
                     }
@@ -261,7 +294,7 @@
                 })
             },
             //上传缩率图,
-            setPage_update_Pic: function (formData,num) {
+            setPage_update_Pic: function (formData,num,data) {
                 var _this = this;
                 $.ajax({
                     url: urlFrom,
@@ -273,12 +306,12 @@
                     success: function (res) {
                        if(res.code === 2000){
                            if(num == 1){
-                               _this.data.img_path = [];
-                               _this.data.img_path.push(res.data[0]);
+                               data.img_path = [];
+                               data.img_path.push(res.data[0]);
                                $('#page-pic').prop('src',res.data[0]);
                            }else{
-                               _this.data.f_img_path = [];
-                               _this.data.f_img_path.push(res.data[0]);
+                               data.f_img_path = [];
+                               data.f_img_path.push(res.data[0]);
                                $('#page-pic-msk').prop('src',res.data[0]);
                            }
                        }else{

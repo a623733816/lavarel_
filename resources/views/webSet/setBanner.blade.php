@@ -70,11 +70,7 @@
     <script type="text/javascript">
         var page= {
             init: function () {
-                this.onload();
                 this.bindEvent();
-            },
-            onload: function () {
-
             },
             bindEvent: function () {
                 var _this = this;
@@ -100,7 +96,6 @@
                         img_path: []
                     };
                 }
-
                 //获取bannerTitle
                 $('#set-banner-title').on('change',function () {
                     dataForm.name = $.trim($(this).val());
