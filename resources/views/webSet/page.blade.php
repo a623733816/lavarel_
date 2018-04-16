@@ -100,20 +100,21 @@
                 $('.deleteSetPage').on('click',function () {
                     var deteUrl = $(this).data('delete');
                     //删除setPage数据；
-                    $.ajax({
-                        type:'GET',
-                        url: deteUrl,
-                        success: function (res) {
-                            if(res.code === 2000){
-                                var isDete = confirm('你确定要删除吗');
-                                if(isDete){
+                    var isDete = confirm('你确定要删除吗');
+                    if(isDete){
+                        $.ajax({
+                            type:'GET',
+                            url: deteUrl,
+                            success: function (res) {
+                                if(res.code === 2000){
                                     window.location.href = '/admin/page';
-                                }else{
-                                    alert(res.msg);
                                 }
                             }
-                        }
-                    })
+                        })
+                    }else{
+                       
+                    }
+
                 })
             }
         }
