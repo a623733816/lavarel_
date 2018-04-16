@@ -62,7 +62,7 @@ class WebPageController extends Controller
     public function addPageView()
     {
         $colum_data = array_column(WebPageType::all()->toArray(), 'name', 'id');
-        return view('webSet.setPage')->with('web_page_type', $colum_data);
+        return view('webSet.setPage')->with('web_page_type', $colum_data)->with('edit_info', '');
     }
 
     /**
@@ -131,7 +131,7 @@ class WebPageController extends Controller
      */
     public function addBannerView()
     {
-        return view('webSet.setBanner');
+        return view('webSet.setBanner')->with('edit_info', '');
     }
 
     /**

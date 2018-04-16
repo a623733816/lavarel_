@@ -25,23 +25,23 @@
                                 </div>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
-                                    <input type="hidden" value="{{$edit_info->id}}">
-                                    <input type="text" value="{{$edit_info->title}}" placeholder="请输入标题1" id="setPage-title">
+                                    <input type="hidden" value="{{$edit_info->id or ''}}">
+                                    <input type="text" value="{{$edit_info->title or ''}}" placeholder="请输入标题1" id="setPage-title">
                                 </div>
                             <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
-                                    <input type="text" value="{{$edit_info->title_a}}" placeholder="请输入标题2" id="setPage-title-a">
+                                    <input type="text" value="{{$edit_info->title_a or ''}}" placeholder="请输入标题2" id="setPage-title-a">
                                 </div>
                             <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>标题:</label>
-                                    <input type="text" value="{{$edit_info->title_b}}" placeholder="请输入标题3" id="setPage-title-b">
+                                    <input type="text" value="{{$edit_info->title_b or ''}}" placeholder="请输入标题3" id="setPage-title-b">
                                 </div>
                                 <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>关键词:</label>
-                                    <input type="text" value="{{$edit_info->keyword}}" placeholder="请输入关键词" id="setPage-keyword">
+                                    <input type="text" value="{{$edit_info->keyword or ''}}" placeholder="请输入关键词" id="setPage-keyword">
                                 </div>
                                 <br/>
                                 <div class="input-class-item">
@@ -49,7 +49,7 @@
                                     <select class="select-class">
                                         <option value="">请选择</option>
                                         @foreach($web_page_type as $k=>$v)
-                                        <option value="{{$k}}" {{$edit_info->type==$k?'selected':''}} >{{$v}}</option>
+                                        <option value="{{$k}}" {{$edit_info->type or ''==$k?'selected':''}} >{{$v}}</option>
                                         @endforeach
                                     </select>
 
@@ -57,13 +57,13 @@
                                 <br/>
                                 <div class="input-item">
                                     <label for="setPage-title" class="setPage-title"><i>*</i>描述:</label>
-                                    <textarea class="form-control" rows="3" placeholder="描述内容" id="setPage-desc">{{$edit_info->desc}}</textarea>
+                                    <textarea class="form-control" rows="3" placeholder="描述内容" id="setPage-desc">{{$edit_info->desc or ''}}</textarea>
                                 </div>
                                 <br/>
                                 <div class="input-file">
                                     <span><i>*</i>列表图片:</span>
                                     <div class="update-file-pic">
-                                        <img src="{{$edit_info->img_path}}" alt="" id="page-pic">
+                                        <img src="{{$edit_info->img_path or ''}}" alt="" id="page-pic">
                                         <label for="setpage-update-pic" class="setpage-update-pic">
                                             点击上传图片
                                         </label>
@@ -74,7 +74,7 @@
                                 <div class="input-file-msk">
                                     <span><i>*</i>遮罩图片:</span>
                                     <div class="update-file-pic-msk">
-                                        <img src="{{$edit_info->f_img_path}}" alt="" id="page-pic-msk">
+                                        <img src="{{$edit_info->f_img_path or ''}}" alt="" id="page-pic-msk">
                                         <label for="etpage-update-pic-msk" class="setpage-update-pic-msk">
                                             点击上传图片
                                         </label>
@@ -83,7 +83,7 @@
                                 </div>
                                 <br>
                                 <div class="editor-con">
-                                    <div id="editor">{!! $edit_info->content !!}</div>
+                                    <div id="editor">{!! $edit_info->content or '' !!}</div>
                                 </div>
                                 <br>
                                 <button class="btn btn-primary" id="set-page-btn">点击保存</button>
