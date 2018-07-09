@@ -30,7 +30,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('TagClass',function(){
             return new Tag();
         });
-        
+        //==
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Way\Generators\GeneratorsServiceProvider::class);
+            $this->app->register(\Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class);
+        }
+        //==
         $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
     }
 

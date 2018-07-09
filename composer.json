@@ -19,7 +19,8 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "laracasts/generators": "^1.1",
-        "laravelcollective/html": "5.1.*"
+        "laravelcollective/html": "5.1.*",
+        "xethron/migrations-generator": "^2.0"
     },
     "autoload": {
         "classmap": [

@@ -151,6 +151,9 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
+        //逆向导出数据表到项目
+        Way\Generators\GeneratorsServiceProvider::class,
+        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
     ],
 
     /*
